@@ -7,7 +7,7 @@
     </div>
     <div class="wrapper">
       <div class="card" v-for="post in filteredList">
-        <p> {{ post.fname }} - {{ post.gmailacc }}</p>
+        <p> {{ post.fName }} - {{ post.gmailAcc }}</p>
         </a>
       </div>
     </div>
@@ -28,11 +28,12 @@ export default {
   },
     methods: {
 
-    fetchPeople(locale) {
+    fetchPeople() {
       var self = this;
       try {
-        get(`/static/data/${locale}.json`)
+        get("/static/data/person.json")
             .then(function(response) {
+              console.log(response);
               self.postList = response.data;
            })
             .catch(function(error) {
@@ -47,13 +48,13 @@ export default {
   computed: {
     filteredList() {
       return this.postList.filter(post => {
-        return post.fname.toLowerCase().includes(this.searchTerm.toLowerCase()) 
-        || post.gmailacc.toLowerCase().includes(this.searchTerm.toLowerCase())
+        return post.fName.toLowerCase().includes(this.searchTerm.toLowerCase()) 
+        || post.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
       })
     }
   },
   beforeMount() {
-    this.fetchPeople("person");
+    this.fetchPeople();
   }
 }
 
