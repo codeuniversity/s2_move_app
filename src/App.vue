@@ -5,12 +5,20 @@
       <input type="text" v-model="searchTerm" placeholder="Search"/>
           <label>Search:</label>
     </div>
-    <div class="wrapper">
-      <div class="card" v-for="post in filteredList">
-        <p> {{ post.fName }} {{ post.lName }} - {{ post.gmailAcc }}</p>
+    <div class="wrapper" v-if="isListVisible">  
+      <div class="card" v-for="person in filteredList">
+        <p @click="showDetails(person)"> {{ person.fName }} {{ person.lName }} - {{ person.gmailAcc }}</p>
         </a>
       </div>
     </div>
+    <div v-if="selectedPerson">
+      <img :src="selectedPerson.image"> <br>
+      {{ selectedPerson.fName }} {{ selectedPerson.lName }} <br> 
+      {{ selectedPerson.phone }} - {{ selectedPerson.group }}<br>
+      <a :href="selectedPerson.googleCal"> Google Calendar</a> 
+      <a :href="selectedPerson.wiki"> Wiki</a> 
+      
+    </div>  
 </div>
 </template>
 
@@ -23,7 +31,8 @@ export default {
    data: function() {
     return {
     searchTerm: '',
-    postList: []  
+    personList: [],
+    selectedPerson: ''  
     }   
   },
     methods: {
@@ -33,8 +42,7 @@ export default {
       try {
         get("/static/data/person.json")
             .then(function(response) {
-              console.log(response);
-              self.postList = response.data;
+              self.personList = response.data;
            })
             .catch(function(error) {
               console.error(error);
@@ -43,21 +51,28 @@ export default {
       catch (error) {
         console.error(error);
       }
+    },
+    showDetails(person) {
+      this.selectedPerson = person;
     }
    },  
   computed: {
     filteredList() {
-      return this.postList.filter(post => {
-        var fullName = `${post.fName} ${post.lName}`;
+      return this.personList.filter(person => {
+        var fullName = `${person.fName} ${person.lName}`;
         return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
-        || post.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
+        || person.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
       })
+    },
+    isListVisible() {
+      return this.filteredList.length <= 4;
     }
   },
   beforeMount() {
     this.fetchPeople();
   }
 }
+
 
 </script>
 
