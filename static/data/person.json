@@ -1,0 +1,90 @@
+[{
+    "fname": "Julian",
+    "lname": "Kodlin",
+    "id": "5d8f6a73-8d3a-4519-ba6c-7846e129edb8",
+    "isadmin": "true",
+    "retired": "false",
+    "phone": "0049154332276",
+    "desk": "true",
+    "gmailacc": "julian.kodlin@code.berlin"
+  },
+  {
+    "fname": "Louisa",
+    "lname": "Weyerhaeuser",
+    "id": "ec00acc3-9cec-4d53-908f-85b2f8860263",
+    "isadmin": "true",
+    "retired": "false",
+    "phone": "0049154332276",
+    "desk": "true",
+    "gmailacc": "louisa.weyerhaeuser@code.berlin"
+  },
+  {
+    "fname": "Paulina",
+    "lname": "Steffen",
+    "id": "255fc148-ae11-4e19-ae8d-8540b9ded248",
+    "isadmin": "true",
+    "retired": "false",
+    "phone": "0049154332276",
+    "desk": "true",
+    "gmailacc": "louisa.weyerhaeuser@code.berlin"
+  },
+    {
+    "fname": "Moritz",
+    "lname": "Gnann",
+    "id": "5d1bef37-4336-49cb-8059-5a379d340fd6",
+    "isadmin": "true",
+    "retired": "false",
+    "phone": "0049154332276",
+    "desk": "true",
+    "gmailacc": "moritz.gnann@code.berlin"
+  },
+    {
+    "fname": "Lukas",
+    "lname": "Lohr",
+    "id": "4eac8900-ea24-4628-9dbd-fc6eceb1a90c",
+    "isadmin": "true",
+    "retired": "false",
+    "phone": "0049154332276",
+    "desk": "true",
+    "gmailacc": "lukas.lohr@code.berlin"
+  },
+    {
+    "fname": "Daniele",
+    "lname": "Santos",
+    "id": "e48b5760-4614-4a59-9388-8e97ecb5a6da",
+    "isadmin": "true",
+    "retired": "false",
+    "phone": "0049154332276",
+    "desk": "true",
+    "gmailacc": "daniele.santos@code.berlin"
+  },
+    {
+    "fname": "Marie",
+    "lname": "Klaus",
+    "id": "f7001e63-2b87-4133-bf67-4b4715f4d00b",
+    "isadmin": "true",
+    "retired": "false",
+    "phone": "0049154332276",
+    "desk": "true",
+    "gmailacc": "marie.klaus@code.berlin"
+  },
+    {
+    "fname": "Heike",
+    "lname": "Schmidt",
+    "id": "b2923cac-628a-416f-8738-aea0ff791839",
+    "isadmin": "true",
+    "retired": "false",
+    "phone": "0049154332276",
+    "desk": "true",
+    "gmailacc": "heike.schmidt@code.berlin"
+  },
+    {
+    "fname": "Joana",
+    "lname": "Lemos",
+    "id": "5b6136bc-799c-4cc3-8b6e-825c63f244ea",
+    "isadmin": "true",
+    "retired": "false",
+    "phone": "0049154332276",
+    "desk": "true",
+    "gmailacc": "joana.lemos@code.berlin"
+    }]
