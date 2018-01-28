@@ -7,7 +7,7 @@
     </div>
     <div class="wrapper">
       <div class="card" v-for="post in filteredList">
-        <p> {{ post.fName }} - {{ post.gmailAcc }}</p>
+        <p> {{ post.fName }} {{ post.lName }} - {{ post.gmailAcc }}</p>
         </a>
       </div>
     </div>
@@ -48,7 +48,8 @@ export default {
   computed: {
     filteredList() {
       return this.postList.filter(post => {
-        return post.fName.toLowerCase().includes(this.searchTerm.toLowerCase()) 
+        var fullName = `${post.fName} ${post.lName}`;
+        return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
         || post.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
       })
     }
