@@ -1,185 +1,33 @@
 <template>
   <div id="app">
-    <router-view/>
-    <div class="search-wrapper">
-      <input type="text" v-model="searchTerm" placeholder="Search"/>
-          <label>Search:</label>
-    </div>
-    <div class="wrapper" v-if="isListVisible">  
-      <div class="card" v-for="person in filteredList">
-        <p @click="showDetails(person)"> {{ person.fName }} {{ person.lName }} - {{ person.gmailAcc }}</p>
-        </a>
-      </div>
-    </div>
-    <div v-if="selectedPerson">
-      <img :src="selectedPerson.image"> <br>
-      {{ selectedPerson.fName }} {{ selectedPerson.lName }} <br> 
-      {{ selectedPerson.phone }} - {{ selectedPerson.group }}<br>
-      <a :href="selectedPerson.googleCal"> Google Calendar</a> 
-      <a :href="selectedPerson.wiki"> Wiki</a> 
-      
+
+      <appSearch> </appSearch>
     </div>  
 </div>
 </template>
 
 <script>
 
-import { get } from 'axios'
+import Search from "./components/Search.vue"
 
 export default {
-  name: 'App',
-   data: function() {
-    return {
-    searchTerm: '',
-    personList: [],
-    selectedPerson: ''  
-    }   
-  },
-    methods: {
 
-    fetchPeople() {
-      var self = this;
-      try {
-        get("/static/data/person.json")
-            .then(function(response) {
-              self.personList = response.data;
-           })
-            .catch(function(error) {
-              console.error(error);
-            });
-      }
-      catch (error) {
-        console.error(error);
-      }
-    },
-    showDetails(person) {
-      this.selectedPerson = person;
+        data () {
+            return {            
+        }
+      },
+        components: {
+            appSearch: Search
+        }
     }
-   },  
-  computed: {
-    filteredList() {
-      return this.personList.filter(person => {
-        var fullName = `${person.fName} ${person.lName}`;
-        return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
-        || person.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
-      })
-    },
-    isListVisible() {
-      return this.filteredList.length <= 4;
-    }
-  },
-  beforeMount() {
-    this.fetchPeople();
-  }
-}
-
-
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-#helloimg {
-  width: 200px;
-} 
-html, body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 16px;
-  margin-bottom: 16px;
+<style scoped>
+
+body {
+/*  background-image: url("./assets/background.jpg");
+*/
+background-color: blue;
 }
 
-div#app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  
-  .search-wrapper {
-    position: relative;
-    label {
-      position: absolute;
-      font-size: 12px;
-      color: rgba(0,0,0,.50);
-      top: 8px;
-      left: 12px;
-      z-index: -1;
-      transition: .15s all ease-in-out;
-    }
-    input {
-      padding: 4px 12px;
-      color: rgba(0,0,0,.70);
-      border: 1px solid rgba(0,0,0,.12);
-      transition: .15s all ease-in-out;
-      background: white;
-      &:focus {
-        outline: none;
-        transform: scale(1.05);
-        & + label  {
-          font-size: 10px;
-          transform: translateY(-24px) translateX(-12px);
-        }
-      }
-      &::-webkit-input-placeholder {
-          font-size: 12px;
-          color: rgba(0,0,0,.50);
-          font-weight: 100;
-      }
-    }
-  }
-
-  .wrapper {
-    display: flex;
-    max-width: 444px;
-    flex-wrap: wrap;
-    padding-top: 12px;
-  }
-
-  .card {
-    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
-    max-width: 124px;
-    margin: 12px;
-    transition: .15s all ease-in-out;
-    &:hover {
-      transform: scale(1.1);
-    }
-    a {
-      text-decoration: none;
-      padding: 12px;
-      color: #03A9F4;
-      font-size: 24px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      img {
-        height: 100px;
-      }
-      small {
-        font-size: 10px;
-        padding: 4px;
-      }
-    }
-  }
-  .hotpink {
-    background: hotpink;
-  }
-
-  .green {
-    background: green;
-  }
-
-  .box {
-    width: 100px;
-    height: 100px;
-    border: 1px solid rgba(0,0,0,.12);
-  }
-}
 </style>
