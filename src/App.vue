@@ -95,6 +95,7 @@ html, body {
   flex-direction: column;
   margin-top: 16px;
   margin-bottom: 16px;
+  background-color: green;
 }
 
 div#app {
