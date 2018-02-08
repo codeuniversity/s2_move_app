@@ -12,6 +12,7 @@
 <script>
 
 import Search from './Search.vue'
+
 export default {
 
   name: 'Header',
@@ -41,6 +42,10 @@ export default {
     .logo {
       display: none;
     }
+  }
+
+  .search {
+    float: right;
   }
 
 </style>

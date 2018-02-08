@@ -13,7 +13,7 @@
     <div v-if="selectedPerson">
       <img class="cardimg" :src="selectedPerson.image"> <br>
       <p class="textinfocard"> {{ selectedPerson.fName }} {{ selectedPerson.lName }}</p> 
-      <p class="textinfocard">{{ selectedPerson.group }} - Phone: {{ selectedPerson.phone }}</p><br> 
+      <p class="textinfocard">{{ selectedPerson.group }} - Phone: {{ selectedPerson.mobile }}</p><br> 
       <a :href="selectedPerson.googleCal"> Google Calendar</a> 
       <a :href="selectedPerson.wiki"> Wiki</a>
     </div>
@@ -78,6 +78,10 @@ export default {
 
 <style>
 
+body {
+  font-family: 'MaisonNeue', sans-serif;
+}
+
 input.search {
   background-color: rgb(76, 19, 209);
 }
@@ -87,7 +91,7 @@ input[type=text] {
     padding: 4px;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */  
   color: white;
   opacity: 0.8;
 }
@@ -136,7 +140,7 @@ input[type=text] {
   display: inline-block;
   margin-top: 1%;
   }
-}
+}  
 
 .cardimg {
   width: 100px;
