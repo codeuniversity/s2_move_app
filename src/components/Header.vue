@@ -29,13 +29,18 @@ export default {
     height: 40px;
     width: 100%;
     border-bottom: 2px solid white;
-}
-
-  .logo {
-    height: 40px;
-    width: auto;
-    position: absolute;
-    z-index: 1;
+    float: left;
+  }
+  .logo { 
+      height: 80px;
+      position: absolute;
+      z-index: 1;
+  }
+ 
+  @media (max-width: 650px) {
+    .logo {
+      display: none;
+    }
   }
 
 </style>

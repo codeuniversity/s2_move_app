@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <myappHeader></myappHeader>
   </div>
 </template>
@@ -19,7 +20,7 @@ export default {
 
 body {
 
-background-color:rgb(76, 19, 209);
-
-
+/*background-color:rgb(76, 19, 209);
+*/
+}
 </style>

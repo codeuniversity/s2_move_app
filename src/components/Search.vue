@@ -7,7 +7,7 @@
 
     <div class="wrapper" v-if="isListVisible">  
       <div class="card" v-for="person in filteredList">
-      <p @click="showDetails(person)"> <a href="#">{{ person.fName }} {{ person.lName }} </a> {{ person.gmailAcc }}</p>      </div>
+      <p @click="showDetails(person)"> <a href="#">{{ person.fName }} {{ person.lName }} </a> {{ person.gmailAcc }}</p>   </div>
     </div>
 
     <div v-if="selectedPerson">
@@ -56,7 +56,7 @@ export default {
     showDetails(person) {
       this.selectedPerson = person;
     }
-   },  
+   }, 
   computed: {
     filteredList() {
       return this.personList.filter(person => {
@@ -78,32 +78,63 @@ export default {
 
 <style>
 
+input.search {
+  background-color: rgb(76, 19, 209);
+}
+input[type=text] {
+    color: white;
+    margin: 8px 0;
+    padding: 4px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: white;
+  opacity: 0.8;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: white;
+  opacity: 0.8;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: white;
+  opacity: 0.8;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: white;
+  opacity: 0.8;
+}
+
+
 @media (max-width: 1280px) {
   .search {
-  width: 30%;
+  width: 53%;
   height: 35px;
   float: right;
   font-size: 16px;
   display: inline-block;
+  margin-top: 1%;
+  border: none;
   }
 }
-@media (max-width: 800px) {
+@media (min-width: 700px) {
   .search {
-  width: 40%;
+  width: 60%;
   height: 35px;
-  margin: auto;
+  float: right;
   font-size: 16px;
-  display:inline-block;
+  display: inline-block;
+  margin-top: 1%;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .search {
-  width: 97%;
+  width: 96%;
   height: 35px;
   margin-right: 4px;
   margin-left: 4px;
   display: inline-block;
+  margin-top: 1%;
   }
 }
 
@@ -116,18 +147,11 @@ export default {
 }
 
 .card {
-  color: white;
+  color: black;
 }
 
 .textinfocard {
-  color: white;
-}
-
-
-label {
-  color: white;
-  font-size: 40px;
-  font-family: Maison;
+  color: black;
 }
 
 a {
