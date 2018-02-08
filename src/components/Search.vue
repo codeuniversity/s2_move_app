@@ -1,26 +1,27 @@
 <template>
 
-<div>  
-  <div class="search-wrapper">
-        <input class="search-input" type="text" v-model="searchTerm" placeholder="Search"/>
-         <!--    <label>Search:</label> -->
-      </div>
-      <div class="wrapper" v-if="isListVisible">  
-        <div class="card" v-for="person in filteredList">
-          <p @click="showDetails(person)"> {{ person.fName }} {{ person.lName }} - {{ person.gmailAcc }}</p>
-          </a>
-        </div>
-      </div>
-      <div v-if="selectedPerson">
-        <img :src="selectedPerson.image"> <br>
-        {{ selectedPerson.fName }} {{ selectedPerson.lName }} <br> 
-        {{ selectedPerson.phone }} - {{ selectedPerson.group }}<br>
-        <a :href="selectedPerson.googleCal"> Google Calendar</a> 
-        <a :href="selectedPerson.wiki"> Wiki</a>        
-      </div>  
-</div>    
-
 </template>    
+  <div id="app">
+    <div class="search-wrapper">
+      <input class="search" type="text" v-model="searchTerm" placeholder="Who are you looking for?"/>
+          <label>TESTING</label>
+    </div>
+    <div class="wrapper" v-if="isListVisible">  
+      <div class="card" v-for="person in filteredList">
+        <p @click="showDetails(person)"> {{ person.fName }} {{ person.lName }} - {{ person.gmailAcc }}</p>
+        </a>
+      </div>
+    </div>
+    <div v-if="selectedPerson">
+      <img :src="selectedPerson.image"> <br>
+      {{ selectedPerson.fName }} {{ selectedPerson.lName }} <br> 
+      {{ selectedPerson.phone }} - {{ selectedPerson.group }}<br>
+      <a :href="selectedPerson.googleCal"> Google Calendar</a> 
+      <a :href="selectedPerson.wiki"> Wiki</a> 
+      
+    </div>  
+</div>
+</template>
 
 <script>
 
@@ -28,11 +29,11 @@ import { get } from 'axios'
 
 export default {
 
+  name: 'Search',
    data: function() {
     return {
     searchTerm: '',
-    personList: [],
-    selectedPerson: ''
+    selectedPerson: ''  
     }   
   },
     methods: {
@@ -73,29 +74,17 @@ export default {
   }
 }
 
-
 </script>
 
-<style scoped>
-   .search-input {
-    /*  width: 560px;
-      height: 50px;*/
-      background-color: #ffffff;
-  /*    margin-left: 381px;
-      margin-top: 405px;*/
-      width: 40vh;
-      height: 8vh;
-      margin: 30vh 10vh;
-     /* margin-top: 40vh;
-      margin-left: 80vh;*/
 
-  }
-  .card {
-    background-color: white;
-    width: 300px;
-    position: absolute;
-    right: 480px;
-    padding: 10px;
-
-  }
+<style>
+.search {
+  width: 100%;
+  height: 35px;
+}
+label {
+  color: white;
+  font-size: 40px;
+  font-family: Maison;
+}
 </style>
