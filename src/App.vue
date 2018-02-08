@@ -28,7 +28,6 @@ body {
 /*  background-image: url("./assets/background.jpg");
 */
 background-color:rgb(76, 19, 209);
-font-family: Maison;
 }
 
 
