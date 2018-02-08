@@ -1,35 +1,20 @@
 <template>
   <div id="app">
-
-      <appSearch class="search"> hello </appSearch>
-    </div>  
-</div>
+    <myappHeader></myappHeader>
+  </div>
 </template>
 
 <script>
-
-import Search from "./components/Search.vue"
+import Header from "./components/Header.vue"
 
 export default {
 
-        data () {
-            return {            
-        }
-      },
         components: {
-            appSearch: Search
+            myappHeader: Header
         }
     }
 </script>
 
 <style>
-
-body {
-/*  background-image: url("./assets/background.jpg");
-*/
-background-color:rgb(76, 19, 209);
-font-family: Maison;
-}
-
 
 </style>

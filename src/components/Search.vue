@@ -1,10 +1,7 @@
 <template>
-
-</template>    
-  <div id="app">
+  <div>
     <div class="search-wrapper">
       <input class="search" type="text" v-model="searchTerm" placeholder="Who are you looking for?"/>
-          <label>TESTING</label>
     </div>
     <div class="wrapper" v-if="isListVisible">  
       <div class="card" v-for="person in filteredList">
@@ -12,15 +9,16 @@
         </a>
       </div>
     </div>
+
     <div v-if="selectedPerson">
       <img :src="selectedPerson.image"> <br>
       {{ selectedPerson.fName }} {{ selectedPerson.lName }} <br> 
       {{ selectedPerson.phone }} - {{ selectedPerson.group }}<br>
       <a :href="selectedPerson.googleCal"> Google Calendar</a> 
-      <a :href="selectedPerson.wiki"> Wiki</a> 
-      
-    </div>  
-</div>
+      <a :href="selectedPerson.wiki"> Wiki</a>
+    </div>
+
+  </div>
 </template>
 
 <script>
@@ -33,7 +31,8 @@ export default {
    data: function() {
     return {
     searchTerm: '',
-    selectedPerson: ''  
+    selectedPerson: '',
+    personList: []
     }   
   },
     methods: {
@@ -77,10 +76,13 @@ export default {
 </script>
 
 
-<style>
+<style scoped>
+
 .search {
-  width: 100%;
+  width: 60%;
   height: 35px;
+  float: right;
+
 }
 label {
   color: white;
