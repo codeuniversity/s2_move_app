@@ -3,7 +3,6 @@
   <div>
     <div class="search-wrapper">
       <input class="search" type="text" v-model="searchTerm" placeholder="Who are you looking for?"/>
-          <label></label>
     </div>
 
     <div class="wrapper" v-if="isListVisible">  
@@ -81,16 +80,16 @@ export default {
 
 @media (max-width: 1280px) {
   .search {
-  width: 50%;
+  width: 30%;
   height: 35px;
   float: right;
   font-size: 16px;
   display: inline-block;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   .search {
-  width: 50%;
+  width: 40%;
   height: 35px;
   margin: auto;
   font-size: 16px;
