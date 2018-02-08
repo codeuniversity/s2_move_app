@@ -1,25 +1,27 @@
 <template>
 
 </template>    
-  <div id="app">
+  <div>
     <div class="search-wrapper">
-      <input class="search" type="text" v-model="searchTerm" placeholder="Who are you looking for?"/>
+      <input type="text" v-model="searchTerm" placeholder="Who are you looking for?"/>
           <label>TESTING</label>
     </div>
+
     <div class="wrapper" v-if="isListVisible">  
       <div class="card" v-for="person in filteredList">
         <p @click="showDetails(person)"> {{ person.fName }} {{ person.lName }} - {{ person.gmailAcc }}</p>
         </a>
       </div>
     </div>
+
     <div v-if="selectedPerson">
       <img :src="selectedPerson.image"> <br>
       {{ selectedPerson.fName }} {{ selectedPerson.lName }} <br> 
       {{ selectedPerson.phone }} - {{ selectedPerson.group }}<br>
       <a :href="selectedPerson.googleCal"> Google Calendar</a> 
-      <a :href="selectedPerson.wiki"> Wiki</a> 
-      
+      <a :href="selectedPerson.wiki"> Wiki</a>     
     </div>  
+
 </div>
 </template>
 
@@ -78,9 +80,10 @@ export default {
 
 
 <style>
-.search {
+.search-wrapper {
   width: 100%;
   height: 35px;
+  color: white;
 }
 label {
   color: white;

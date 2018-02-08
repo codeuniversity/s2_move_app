@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-
-      <appSearch class="search"> hello </appSearch>
-    </div>  
+      <div>
+        <appSearch>  </appSearch>
+      </div>  
 </div>
 </template>
 
