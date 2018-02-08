@@ -94,6 +94,7 @@ export default {
   margin: auto;
   font-size: 16px;
   display:inline-block;
+  float: right;
   }
 }
 
@@ -104,6 +105,7 @@ export default {
   margin-right: 4px;
   margin-left: 4px;
   display: inline-block;
+  float: right;
   }
 }
 

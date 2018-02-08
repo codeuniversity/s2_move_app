@@ -38,4 +38,8 @@ export default {
     z-index: 1;
   }
 
+  .search {
+    float: right;
+  }
+
 </style>
