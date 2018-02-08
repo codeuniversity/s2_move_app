@@ -12,9 +12,9 @@
     </div>
 
     <div v-if="selectedPerson">
-      <img :src="selectedPerson.image"> <br>
-      {{ selectedPerson.fName }} {{ selectedPerson.lName }} <br> 
-      {{ selectedPerson.phone }} - {{ selectedPerson.group }}<br>
+      <img class="cardimg" :src="selectedPerson.image"> <br>
+      <p class="textinfocard"> {{ selectedPerson.fName }} {{ selectedPerson.lName }}</p> 
+      <p class="textinfocard">{{ selectedPerson.group }} - Phone: {{ selectedPerson.phone }}</p><br> 
       <a :href="selectedPerson.googleCal"> Google Calendar</a> 
       <a :href="selectedPerson.wiki"> Wiki</a>     
     </div>  
@@ -32,7 +32,8 @@ export default {
    data: function() {
     return {
     searchTerm: '',
-    selectedPerson: ''  
+    selectedPerson: '',
+    personList: []  
     }   
   },
     methods: {
@@ -89,7 +90,7 @@ export default {
 }
 @media (max-width: 1000px) {
   .search {
-  width: 80%;
+  width: 50%;
   height: 35px;
   margin: auto;
   font-size: 16px;
@@ -107,14 +108,27 @@ export default {
   }
 }
 
+.cardimg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  position: relative;
+  left: 30%;
+}
+
+.card {
+  color: white;
+}
+
+.textinfocard {
+  color: white;
+}
+
 
 label {
   color: white;
   font-size: 40px;
   font-family: Maison;
-}
-.card {
-  color: white;
 }
 
 a {
@@ -132,4 +146,6 @@ a {
 a:hover {
   text-decoration: none;
 }
+
+
 </style>
