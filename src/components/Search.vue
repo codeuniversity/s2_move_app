@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div class="search-wrapper">
-      <input type="text" v-model="searchTerm" placeholder="Search"/>
-          <label>Search:</label>
+      <input class="search" type="text" v-model="searchTerm" placeholder="Who are you looking for?"/>
+          <label>TESTING</label>
     </div>
     <div class="wrapper" v-if="isListVisible">  
       <div class="card" v-for="person in filteredList">
@@ -73,3 +73,16 @@ export default {
 }
 
 </script>
+
+
+<style>
+.search {
+  width: 100%;
+  height: 35px;
+}
+label {
+  color: white;
+  font-size: 40px;
+  font-family: Maison;
+}
+</style>

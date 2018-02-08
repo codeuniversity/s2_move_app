@@ -1,7 +1,7 @@
 <template>
   <div id="app">
 
-      <appSearch> </appSearch>
+      <appSearch class="search"> hello </appSearch>
     </div>  
 </div>
 </template>
@@ -22,12 +22,14 @@ export default {
     }
 </script>
 
-<style scoped>
+<style>
 
 body {
 /*  background-image: url("./assets/background.jpg");
 */
-background-color:green;
+background-color:rgb(76, 19, 209);
+font-family: Maison;
 }
+
 
 </style>
