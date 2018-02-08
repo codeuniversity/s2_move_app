@@ -2,22 +2,36 @@
 
   <div>
     <div class="search-wrapper">
-      <input class="search" type="text" v-model="searchTerm" placeholder="Who are you looking for?"/>
+      <input class="search" 
+        v-model="searchTerm" 
+        type="text" 
+        placeholder="Who are you looking for?"
+      />
     </div>
-
     <div class="wrapper" v-if="isListVisible">  
       <div class="card" v-for="person in filteredList">
-      <p @click="showDetails(person)"> <a href="#">{{ person.fName }} {{ person.lName }} </a> {{ person.gmailAcc }}</p>   </div>
+        <p @click="showDetails(person)"> 
+          <a href="#">
+            {{ person.fName }} 
+            {{ person.lName }} 
+          </a> 
+          {{ person.gmailAcc }} 
+        </p>   
+      </div>
     </div>
-
     <div v-if="selectedPerson">
       <img class="cardimg" :src="selectedPerson.image"> <br>
-      <p class="textinfocard"> {{ selectedPerson.fName }} {{ selectedPerson.lName }}</p> 
-      <p class="textinfocard">{{ selectedPerson.group }} - Phone: {{ selectedPerson.mobile }}</p><br> 
+      <p class="textinfocard"> 
+        {{ selectedPerson.fName }} 
+        {{ selectedPerson.lName }}
+      </p> 
+      <p class="textinfocard">
+        {{ selectedPerson.group }} - Phone: {{ selectedPerson.mobile }}
+      </p>
+      <br> 
       <a :href="selectedPerson.googleCal"> Google Calendar</a> 
       <a :href="selectedPerson.wiki"> Wiki</a>
     </div>
-
   </div>
 
 </template>
@@ -66,7 +80,7 @@ export default {
       })
     },
     isListVisible() {
-      return this.filteredList.length <= 4;
+      return this.searchTerm.length >= 2;
     }
   },
   beforeMount() {
