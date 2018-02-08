@@ -38,6 +38,7 @@ font-style: normal;
 }
 
 body {
+
   background-color: white;
   font-family: 'MaisonNeue', sans-serif;
 }
