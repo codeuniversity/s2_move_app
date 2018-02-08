@@ -15,10 +15,11 @@
       <p class="textinfocard"> {{ selectedPerson.fName }} {{ selectedPerson.lName }}</p> 
       <p class="textinfocard">{{ selectedPerson.group }} - Phone: {{ selectedPerson.phone }}</p><br> 
       <a :href="selectedPerson.googleCal"> Google Calendar</a> 
-      <a :href="selectedPerson.wiki"> Wiki</a>     
-    </div>  
+      <a :href="selectedPerson.wiki"> Wiki</a>
+    </div>
 
-</div>
+  </div>
+
 </template>
 
 <script>
@@ -32,7 +33,7 @@ export default {
     return {
     searchTerm: '',
     selectedPerson: '',
-    personList: []  
+    personList: []
     }   
   },
     methods: {
@@ -74,7 +75,6 @@ export default {
 }
 
 </script>
-
 
 <style>
 

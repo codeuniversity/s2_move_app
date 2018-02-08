@@ -11,7 +11,7 @@
     "gmailAcc": "julian.kodlin@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/men/14.jpg"
   },
   {
     "fName": "Louisa",
@@ -25,7 +25,7 @@
     "gmailAcc": "louisa.weyerhaeuser@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/women/50.jpg"
   },
   {
     "fName": "Paulina",
@@ -39,7 +39,7 @@
     "gmailAcc": "paulina.steffen@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/women/40.jpg"
   },
     {
     "fName": "Moritz",
@@ -49,11 +49,11 @@
     "retired": "false",
     "phone": "0049154332276",
     "desk": "true",
-    "group": "VW",
+    "group": null,
     "gmailAcc": "moritz.gnann@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/men/14.jpg"
   },
     {
     "fName": "Lucas",
@@ -67,7 +67,7 @@
     "gmailAcc": "lucas.lohr@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/men/21.jpg"
   },
     {
     "fName": "Daniele",
@@ -81,7 +81,7 @@
     "gmailAcc": "daniele.santos@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/women/64.jpg"
   },
     {
     "fName": "Bob",
@@ -95,7 +95,7 @@
     "gmailAcc": "bob.marley@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/men/66.jpg"
   },
     {
     "fName": "Marie",
@@ -109,7 +109,7 @@
     "gmailAcc": "marie.klaus@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/women/7.jpg"
     },
     {
     "fName": "Heike",
@@ -123,7 +123,7 @@
     "gmailAcc": "heike.schmidt@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/women/14.jpg"
     },
     {
     "fName": "Joana",
@@ -137,7 +137,7 @@
     "gmailAcc": "joana.lemos@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/women/92.jpg"
     },
     {
     "fName": "Silke",
@@ -165,7 +165,7 @@
     "gmailAcc": "aileen.neu@sinnerschrader.com",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/women/10.jpg"
     },
     {
     "fName": "Linnea",
@@ -179,7 +179,7 @@
     "gmailAcc": "linnea.helms@sinnerschrader.com",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/women/22.jpg"
     },
     {
     "fName": "Thomas",
@@ -193,7 +193,7 @@
     "gmailAcc": "thomas.jacob@sinnerschrader.com",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/men/47.jpg"
     },
     {
     "fName": "Philip",
@@ -207,7 +207,7 @@
     "gmailAcc": "philip.behr@sinnerschrader.com",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/men/68.jpg"
     },
     {
     "fName": "Gina",
@@ -221,7 +221,7 @@
     "gmailAcc": "gina.renner@sinnerschrader.com",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/women/69.jpg"
     },
     {
     "fName": "Simon",
@@ -235,7 +235,7 @@
     "gmailAcc": "simon.dittlmann@sinnerschrader.com",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/men/60.jpg"
     },
     {
     "fName": "Stephan",
@@ -249,7 +249,7 @@
     "gmailAcc": "stephan.warnholz@sinnerschrader.com",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/men/90.jpg"
     },
     {
     "fName": "Ellen",
@@ -277,7 +277,7 @@
     "gmailAcc": "eddie.vedder@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/men/40.jpg"
     },
     {
     "fName": "Jack",
@@ -291,7 +291,7 @@
     "gmailAcc": "jack.sparrow@code.berlin",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/men/38.jpg"
     },
     {
     "fName": "Felicitas",
@@ -305,6 +305,6 @@
     "gmailAcc": "felicitas.kugland@sinnerschrader.com",
     "googleCal":"https://calendar.google.com/calendar?cid=bWFyaWUua2xhdXNAY29kZS5iZXJsaW4",
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
-    "image": "http://www.bollywoodlife.com/wp-content/uploads/2016/12/carrie-fisher.jpg"
+    "image": "https://randomuser.me/api/portraits/women/91.jpg"
     }
 ]
