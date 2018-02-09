@@ -1,12 +1,14 @@
 <template>
-
   <div>
     <div class="search-wrapper">
+      <form name="myForm">
       <input class="search" 
-        v-model="searchTerm" 
-        type="text" 
-        placeholder="Who are you looking for?"
-      />
+          name="mySearch"
+          v-model="searchTerm"
+          type="text" 
+          placeholder="Who are you looking for?"
+        />
+    </form>
     </div>
     <div class="wrapper" v-if="isListVisible">  
       <div class="card" v-for="person in filteredList">
@@ -18,6 +20,7 @@
           {{ person.gmailAcc }} 
         </p>   
       </div>
+
     </div>
     <div v-if="selectedPerson">
       <img class="cardimg" :src="selectedPerson.image"> <br>
@@ -33,6 +36,7 @@
       <a :href="selectedPerson.wiki"> Wiki</a>
     </div>
   </div>
+</body>  
 
 </template>
 

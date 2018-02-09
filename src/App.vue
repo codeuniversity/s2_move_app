@@ -3,6 +3,7 @@
 
     <myappHeader></myappHeader>
 
+
 <!--     <h1>Find a coworker</h1>
     <div class="bodyText">
       <p>
@@ -20,10 +21,11 @@
 
 import Header from "./components/Header.vue"
 
+
 export default {
 
         components: {
-            myappHeader: Header
+            myappHeader: Header,
         }
     }
 </script>
