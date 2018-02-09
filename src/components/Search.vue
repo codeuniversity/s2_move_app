@@ -103,23 +103,32 @@ input[type=text] {
     color: white;
     margin: 8px 0;
     padding: 4px;
+    font-family: 'MaisonNeue', sans-serif;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */  
   color: white;
   opacity: 0.8;
+  font-family: 'MaisonNeue', sans-serif;
+
 }
 ::-moz-placeholder { /* Firefox 19+ */
   color: white;
   opacity: 0.8;
+  font-family: 'MaisonNeue', sans-serif;
+
 }
 :-ms-input-placeholder { /* IE 10+ */
   color: white;
   opacity: 0.8;
+  font-family: 'MaisonNeue', sans-serif;
+
 }
 :-moz-placeholder { /* Firefox 18- */
   color: white;
   opacity: 0.8;
+  font-family: 'MaisonNeue', sans-serif;
+
 }
 
 
