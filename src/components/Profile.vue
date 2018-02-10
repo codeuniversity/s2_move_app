@@ -1,8 +1,7 @@
-<!-- <template>
-	<div> -->
-<!-- 	<appSearch class="search"> Who are you looking for? </appSearch>
- -->
-<!-- 	  <div v-if="selectedPerson">
+<template>
+	<div>
+
+	  <div v-if="Object.keys(selectedPerson).length !== 0">
       <img class="cardimg" :src="selectedPerson.image"> <br>
       <p class="textinfocard"> 
         {{ selectedPerson.fName }} 
@@ -16,7 +15,7 @@
       <a :href="selectedPerson.wiki"> Wiki</a>
     </div>
     
-  </div>
+  </div>  
 
 
 </template>
@@ -26,8 +25,8 @@
 export default {
 
   name: "Profile",
-  components: {
-    'appProfile': Profile
+  props: {
+    selectedPerson: Object
   }
 }
-</script> -->
+</script>

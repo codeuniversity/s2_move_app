@@ -22,19 +22,8 @@
       </div>
 
     </div>
-    <div v-if="selectedPerson">
-      <img class="cardimg" :src="selectedPerson.image"> <br>
-      <p class="textinfocard"> 
-        {{ selectedPerson.fName }} 
-        {{ selectedPerson.lName }}
-      </p> 
-      <p class="textinfocard">
-        {{ selectedPerson.group }} - Phone: {{ selectedPerson.mobile }}
-      </p>
-      <br> 
-      <a :href="selectedPerson.googleCal"> Google Calendar</a> 
-      <a :href="selectedPerson.wiki"> Wiki</a>
-    </div>
+    <profile :selectedPerson="selectedPerson"></profile> 
+
   </div>
 </body>  
 
@@ -42,6 +31,7 @@
 
 <script>
 
+import Profile from "./Profile.vue"
 import { get } from 'axios'
 
 export default {
@@ -50,9 +40,12 @@ export default {
    data: function() {
     return {
     searchTerm: '',
-    selectedPerson: '',
+    selectedPerson: { },
     personList: []
     }   
+  },
+  components: {
+    profile: Profile
   },
     methods: {
 
