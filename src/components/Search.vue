@@ -12,7 +12,7 @@
         />
       </form>
       <div class="search__list" v-if="isListVisible">  
-        <div class="card" v-for="person in filteredList">
+        <div class="search__item" v-for="person in filteredList">
           <p @click="showDetails(person)"> 
             <a href="#">
               {{ person.fName }} 
@@ -93,7 +93,7 @@ export default {
 
 <style>
 
-* {
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
@@ -147,19 +147,13 @@ body {
 
 @media (max-width: 1280px) {
   .search {
-  width: 53%;
-  }
-}
-
-@media (min-width: 700px) {
-  .search {
-  width: 60%;
+  width: 400px;
   }
 }
 
 @media (max-width: 650px) {
   .search {
-  width: 96%;
+  width: 100%;
   }
 }
 
@@ -169,6 +163,9 @@ body {
   background-color: #4502da;
   top: 50px;
   color: white;
+}
+.search__item {
+  padding: 10px;
 }
 
 a {
