@@ -1,29 +1,29 @@
 <template>
   <div>
-    <div class="search-wrapper">
+    <div class="search">
       <form name="myForm">
-      <input class="search" 
-          name="mySearch"
-          v-model="searchTerm"
-          type="text" 
-          placeholder="Who are you looking for?"
+        <input v-on:submit.prevent
+            autocomplete="off"
+            class="search__input" 
+            name="mySearch"
+            v-model="searchTerm"
+            type="text" 
+            placeholder="Who are you looking for?"
         />
-    </form>
-    </div>
-    <div class="wrapper" v-if="isListVisible">  
-      <div class="card" v-for="person in filteredList">
-        <p @click="showDetails(person)"> 
-          <a href="#">
-            {{ person.fName }} 
-            {{ person.lName }} 
-          </a> 
-          {{ person.gmailAcc }} 
-        </p>   
+      </form>
+      <div class="search__list" v-if="isListVisible">  
+        <div class="card" v-for="person in filteredList">
+          <p @click="showDetails(person)"> 
+            <a href="#">
+              {{ person.fName }} 
+              {{ person.lName }} 
+            </a> 
+            {{ person.gmailAcc }} 
+          </p>   
+        </div>
       </div>
-
+      <profile :selectedPerson="selectedPerson"></profile> 
     </div>
-    <profile :selectedPerson="selectedPerson"></profile> 
-
   </div>
 </body>  
 
@@ -37,30 +37,29 @@ import { get } from 'axios'
 export default {
 
   name: 'Search',
-   data: function() {
+   data() {
     return {
     searchTerm: '',
-    selectedPerson: { },
+    selectedPerson: {},
     personList: []
     }   
   },
   components: {
     profile: Profile
   },
-    methods: {
-
+  methods: {
     fetchPeople() {
       var self = this;
       try {
         get("/static/data/person.json")
-            .then(function(response) {
-              self.personList = response.data;
-           })
-            .catch(function(error) {
-              console.error(error);
-            });
+        .then(function(response) {
+          self.personList = response.data;
+        })
+        .catch(function(error) {
+          console.error(error);
+        });
       }
-      catch (error) {
+      catch(error) {
         console.error(error);
       }
     },
@@ -82,6 +81,11 @@ export default {
   },
   beforeMount() {
     this.fetchPeople();
+  },
+  watch: {
+    searchTerm () {
+      this.selectedPerson = { };
+    },
   }
 }
 
@@ -89,93 +93,82 @@ export default {
 
 <style>
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'MaisonNeue', sans-serif;
 }
 
-input.search {
+.search__input {
   background-color: rgb(76, 19, 209);
-}
-input[type=text] {
-    color: white;
-    margin: 8px 0;
-    padding: 4px;
-    font-family: 'MaisonNeue', sans-serif;
+  color: white;
+  margin: 8px 0;
+  padding: 4px;
+  font-family: 'MaisonNeue', sans-serif;
+  font-size: 16px;
+  position: absolute;
+  border: none;
+  width: 100%;
+  height: 40px;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */  
   color: white;
   opacity: 0.8;
   font-family: 'MaisonNeue', sans-serif;
-
 }
 ::-moz-placeholder { /* Firefox 19+ */
   color: white;
   opacity: 0.8;
   font-family: 'MaisonNeue', sans-serif;
-
 }
+
 :-ms-input-placeholder { /* IE 10+ */
   color: white;
   opacity: 0.8;
   font-family: 'MaisonNeue', sans-serif;
-
 }
+
 :-moz-placeholder { /* Firefox 18- */
   color: white;
   opacity: 0.8;
   font-family: 'MaisonNeue', sans-serif;
-
 }
 
+.search {
+  height: 35px;
+  border: none;
+  position: relative;
+  margin-top: 1%;
+  float: right;
+}
 
 @media (max-width: 1280px) {
   .search {
   width: 53%;
-  height: 35px;
-  float: right;
-  font-size: 16px;
-  display: inline-block;
-  margin-top: 1%;
-  border: none;
   }
 }
+
 @media (min-width: 700px) {
   .search {
   width: 60%;
-  height: 35px;
-  float: right;
-  font-size: 16px;
-  display: inline-block;
-  margin-top: 1%;
   }
 }
 
 @media (max-width: 650px) {
   .search {
   width: 96%;
-  height: 35px;
-  margin-right: 4px;
-  margin-left: 4px;
-  display: inline-block;
-  margin-top: 1%;
   }
-}  
-
-.cardimg {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  position: relative;
-  left: 30%;
 }
 
-.card {
-  color: black;
-}
-
-.textinfocard {
-  color: black;
+.search__list {
+  position: absolute;
+  width: 100%;
+  background-color: #4502da;
+  top: 50px;
+  color: white;
 }
 
 a {
@@ -189,10 +182,8 @@ a {
   display: inline-block;
 }
 
-
 a:hover {
   text-decoration: none;
 }
-
 
 </style>
