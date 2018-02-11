@@ -9,12 +9,12 @@
       <text class="streetname" y="388.2" x="304.8" text-anchor="middle" dominant-baseline="central" z-index="-1">V&ouml;lckersstra&szlig;e</text>
       </g>
 
-        <g>
+        <g class="changeColor">
         <rect class="building" id="svg_6" height="249" width="136" y="116.2" x="87.8" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#d1d4d6"/>
         <text class="buildingname" text-anchor="middle" dominant-baseline="central" y="236.2" x="157.8">Building <br>B</text>
         </g>
 
-        <g>
+        <g class="changeColor">
           <rect class="building" stroke="#000000" id="svg_7" height="135" width="285.99998" y="229.20001" x="251.8" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#d1d4d6" />
           <text class="buildingname" text-anchor="middle" dominant-baseline="central" y="299.20001" x="391.8">Swipe</text>
         </g>
@@ -37,6 +37,10 @@ export default {
 
 .building {
   transition: transform .9s;
+}
+
+.changeColor:hover .buildingname {
+  fill: white;
 }
 
 .building:hover {
