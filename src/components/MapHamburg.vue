@@ -46,6 +46,7 @@ export default {
 .building:hover {
   fill: rgb(76,19,209);
   transform: scale(1.01,1.01);
+  transform-origin: center;
 }
 
 text {
