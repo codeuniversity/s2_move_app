@@ -18,7 +18,7 @@
               {{ person.fName }} 
               {{ person.lName }} 
             </a> 
-            {{ person.gmailAcc }} 
+            <p class="email"> {{ person.gmailAcc }} </p>
           </p>   
         </div>
       </div>
@@ -110,6 +110,9 @@ body {
   width: 100%;
   height: 40px;
 }
+  .email {
+    width: 100%;
+  }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */  
   color: white;
