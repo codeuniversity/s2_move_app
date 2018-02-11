@@ -52,8 +52,11 @@ stroke: none;
 text-anchor: middle;
 }
 
-.mapHamburg {
-  
+
+@media (max-width: 800px) {
+  .locationMap {
+  display: none;
+  }
 }
 
 .streetname {

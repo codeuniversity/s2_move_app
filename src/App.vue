@@ -7,7 +7,7 @@
       <br>
       <br>
       <br>
-      <h1>Find a coworker</h1>
+      <br>
       <div>
         <myMap></myMap>
       </div>
