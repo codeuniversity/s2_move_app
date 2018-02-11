@@ -143,12 +143,7 @@ body {
   position: relative;
   margin-top: 1%;
   float: right;
-}
-
-@media (max-width: 1280px) {
-  .search {
   width: 400px;
-  }
 }
 
 @media (max-width: 650px) {
