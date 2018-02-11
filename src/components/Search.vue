@@ -11,7 +11,7 @@
             placeholder="Who are you looking for?"
         />
       </form>
-      <div class="search__list" v-if="isListVisible">  
+      <div class="search__list" v-if="Object.keys(selectedPerson).length == 0">  
         <div class="search__item" v-for="person in filteredList">
           <p @click="showDetails(person)"> 
             <a href="#">
@@ -41,7 +41,7 @@ export default {
     return {
     searchTerm: '',
     selectedPerson: {},
-    personList: []
+    personList: [],
     }   
   },
   components: {
@@ -75,9 +75,6 @@ export default {
         || person.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
       })
     },
-    isListVisible() {
-      return this.searchTerm.length >= 2;
-    }
   },
   beforeMount() {
     this.fetchPeople();
@@ -170,10 +167,8 @@ body {
 
 a {
   color: white;
-  background-color: rgb(248, 0, 66);
   text-decoration: none;
   border: 2px solid white;
-  border-radius: 5px;
   padding: 10px;
   margin: 10px;
   display: inline-block;
@@ -181,6 +176,7 @@ a {
 
 a:hover {
   text-decoration: none;
+  background-color: #020249 ;
 }
 
 </style>
