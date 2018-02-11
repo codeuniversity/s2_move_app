@@ -31,9 +31,7 @@ export default {
 
 <style>
 
-/*@import "./style/hello.css"
-*//*validation woff2 - https://caniuse.com/#feat=woff2  */
-/*@font-face {
+@font-face {
 font-family: 'MaisonNeue';
 src: url('./assets/fonts/MaisonWEB-Regular.woff2') format('woff2');
 font-weight: normal;
@@ -51,5 +49,6 @@ body {
 
 h1 {
 font size: 45px;
-}*/
+}
+
 </style>
