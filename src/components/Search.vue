@@ -11,7 +11,7 @@
             placeholder="Who are you looking for?"
         />
       </form>
-      <div class="search__list" v-if="Object.keys(selectedPerson).length == 0">  
+      <div class="search__list" v-if="isListVisible">  
         <div class="search__item" v-for="person in filteredList">
           <p @click="showDetails(person)"> 
             <a href="#">
@@ -75,6 +75,9 @@ export default {
         || person.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
       })
     },
+    isListVisible() {
+      return this.searchTerm.length >=2 && Object.keys(this.selectedPerson).length == 0;
+    }
   },
   beforeMount() {
     this.fetchPeople();
