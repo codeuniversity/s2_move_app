@@ -1,6 +1,7 @@
 <template>
 
   <div class="locationMap">
+    <h1>BERLIN</h1>
     <div class="mapHamburg">
     <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->

@@ -9,7 +9,9 @@
       <br>
       <br>
       <div>
-        <myMap></myMap>
+        <my-navigation></my-navigation>
+        <!-- to load the router map template -->
+        <router-view></router-view>
       </div>
   </div>
 </template>
@@ -17,14 +19,16 @@
 <script>
 
 import Header from "./components/Header.vue"
-import Mymap from "./components/MapHamburg.vue"
+import Mymap from "./components/hamburg/MapHamburg.vue"
+import Navigation from "./components/Navigation.vue"
 
 
 export default {
 
         components: {
             'myappHeader': Header,
-            'myMap': Mymap
+            'myMap': Mymap,
+            'my-navigation': Navigation
         }
     }
 </script>
