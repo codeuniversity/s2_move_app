@@ -9,7 +9,13 @@
       <br>
       <br>
       <div>
-        <my-navigation></my-navigation>
+      <my-navigation></my-navigation>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
         <!-- to load the router map template -->
         <router-view></router-view>
       </div>
