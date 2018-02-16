@@ -1,24 +1,31 @@
 <template>
   <div id="app">
+    <div>
+      <myappHeader></myappHeader>
+    </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- MOBILE NAVIGATION -->
+    <div class="mobile">
+      <p>Mobile Nav</p>
+      <my-mobile-navigation></my-mobile-navigation>
+    </div>
 
-    <myappHeader></myappHeader>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div>
-      <my-navigation></my-navigation>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-        <!-- to load the router map template -->
-        <router-view></router-view>
-      </div>
+        <!-- DESKTOP NAVIGATION -->
+    <div class="desktop">
+        <p>Desktop Nav</p>
+        <my-desktop-navigation></my-desktop-navigation>
+    </div>
+
+      
+      <!-- to load the router map template -->
+        <div class="map">
+          <router-view></router-view>
+        </div>
+
   </div>
 </template>
 
@@ -26,15 +33,16 @@
 
 import Header from "./components/Header.vue"
 import Mymap from "./components/hamburg/MapHamburg.vue"
-import Navigation from "./components/Navigation.vue"
-
+import DesktopNavigation from "./components/navigation/DesktopNavigation.vue"
+import MobileNavigation from "./components/navigation/MobileNavigation.vue"
 
 export default {
 
         components: {
             'myappHeader': Header,
             'myMap': Mymap,
-            'my-navigation': Navigation
+            'my-desktop-navigation': DesktopNavigation,
+            'my-mobile-navigation': MobileNavigation
         }
     }
 </script>
@@ -48,10 +56,31 @@ font-weight: normal;
 font-style: normal;
 }
 
+@media (min-width: 800px) {
+  .mobile {
+  display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .desktop {
+  display: none;
+  }
+}
+
 body {
   background-color: white;
   font-family: 'MaisonNeue', sans-serif;
 }
+
+.map {
+position: absolute;
+top: 200px;
+left: 200px ;
+width: 600px;
+height: 600px;
+}
+
 
 .bodyText {
   font-size: 20px;

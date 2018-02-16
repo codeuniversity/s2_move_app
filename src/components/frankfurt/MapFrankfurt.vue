@@ -3,7 +3,7 @@
   <div class="locationMap">
     <h1>FRANKFURT</h1>
     <div class="mapHamburg">
-    <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+    <svg width="100%" height="100%" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
       <g>
       <rect id="svg_3" height="25" width="535" y="376.2" x="54.8" stroke-width="0" stroke="#000000" fill="#03ffb7"/>

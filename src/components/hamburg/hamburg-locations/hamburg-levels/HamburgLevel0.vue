@@ -4,7 +4,7 @@
 
     <h1>Hamburg Ottensen Level 0</h1>
 
-    <svg width="748px" height="579px" viewBox="0 0 748 579" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg width="100%" height="100%" viewBox="0 0 748 579" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <desc>Created with Sketch.</desc>
     <defs>

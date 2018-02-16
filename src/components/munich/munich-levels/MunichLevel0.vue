@@ -2,7 +2,7 @@
 
   <div class="locationMap">
 
-    <h1>Hamburg Ottensen Level 3</h1>
+    <h1>Frankfurt Level 2</h1>
 
     <svg width="100%" height="100%" viewBox="0 0 748 579" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->

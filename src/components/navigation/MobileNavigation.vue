@@ -1,5 +1,10 @@
 <template>
   <div class="navigation" >
+
+    <div class="rectangle">
+      <img src="../../assets/icons/menu.png" alt="Select a city.">
+    </div>
+
     <ul>
       <router-link to="/berlin" tag="li" active-class="active" exact><a>Berlin</a></router-link>
       <router-link to="/frankfurt" tag="li" active-class="active" exact><a>Frankfurt</a></router-link>
@@ -56,15 +61,6 @@
 
       </router-link>
 
-<!--       <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-          </div>
-      </li> -->
-
       <router-link to="/munich" tag="li" active-class="active" exact><a>Munich</a></router-link>
       <router-link to="/prague" tag="li" active-class="active" exact><a>Prague</a></router-link>
     </ul>
@@ -75,6 +71,8 @@
 
 <style scoped>
 
+
+
 *{
 box-sizing: border-box;
 }
@@ -84,6 +82,28 @@ box-sizing: border-box;
   display: none;
   }
 }
+
+/* ICON */
+
+img {
+  color: black;
+  width: 50px;
+  height: 50px;
+  float: left;
+  position: fixed;
+  margin: auto;
+}
+
+.rectangle {
+  width: 50px;
+  height: 50px;
+  background-color: #4502da;
+  position: fixed;
+
+}
+
+
+/* NAV BAR */
 
 ul {
     list-style-type: none;
