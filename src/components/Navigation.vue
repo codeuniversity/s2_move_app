@@ -136,8 +136,9 @@ li.dropdown {
     text-align: left;
   }
 
-.dropdown-content a:hover 
-{background-color: #03FFB7;}
+.dropdown-content a:hover {
+  background-color: #03FFB7;
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
