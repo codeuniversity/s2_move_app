@@ -3,25 +3,20 @@
     <div>
       <myappHeader></myappHeader>
     </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
         <!-- MOBILE NAVIGATION -->
-    <div class="mobile">
+<!--     <div class="mobile">
       <p>Mobile Nav</p>
       <my-mobile-navigation></my-mobile-navigation>
-    </div>
+    </div> -->
 
         <!-- DESKTOP NAVIGATION -->
-    <div class="desktop">
-        <p>Desktop Nav</p>
+    <div class="desktop navigation">
         <my-desktop-navigation></my-desktop-navigation>
     </div>
 
       
-      <!-- to load the router map template -->
+      <!-- MAPS -->
         <div class="map">
           <router-view></router-view>
         </div>
@@ -31,6 +26,7 @@
 
 <script>
 
+// import components
 import Header from "./components/Header.vue"
 import Mymap from "./components/hamburg/MapHamburg.vue"
 import DesktopNavigation from "./components/navigation/DesktopNavigation.vue"
@@ -56,12 +52,13 @@ font-weight: normal;
 font-style: normal;
 }
 
-@media (min-width: 800px) {
+/*@media (min-width: 800px) {
   .mobile {
   display: none;
   }
-}
+}*/
 
+/* Show all elements for desktop version*/
 @media (max-width: 800px) {
   .desktop {
   display: none;
@@ -73,11 +70,18 @@ body {
   font-family: 'MaisonNeue', sans-serif;
 }
 
+/*Set position of desktop nav bar*/
+.desktop .navigation {
+  position: absolute;
+  top: 180px;
+  width: 600px;
+}
+
 .map {
 position: absolute;
-top: 200px;
-left: 200px ;
-width: 600px;
+top: 180px;
+left: 300px ;
+width: 500px;
 height: 600px;
 }
 

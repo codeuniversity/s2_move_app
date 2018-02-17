@@ -1,185 +1,214 @@
 <template>
-  <div class="navigation" >
+  <div class="navigation">
 
-    <ul>
+      <ul class="mainmenu">
       <!-- BERLIN ROUTE -->
-      <router-link to="/berlin" tag="li" active-class="active" exact>
-        <a>Berlin</a>
+      <router-link 
+        to="/berlin" 
+        tag="li" 
+        active-class="active" exact>
+          <a>BERLIN</a>
       </router-link>
 
-      <!-- BERLIN FRANKFURT ROUTE -->
-      <router-link class="dropdown" to="/frankfurt" tag="li" active-class="active" exact>
-        <a href="javascript:void(0)" class="dropbtn">Frankfurt</a>
+      <!-- FRANKFURT ROUTE -->
+      <router-link 
+        to="/frankfurt"
+        tag="li"
+        active-class="active" exact>
+          <a href="javascript:void(0)">FRANKFURT</a>
 
-        <div class="dropdown-content">
-          <router-link to="/frankfurt/2" active-class="active" exact>
-              <a>Level 2</a>
-          </router-link>
+          <div class="submenu_1">
+            <router-link 
+              to="/frankfurt/2" 
+              tag="li"
+              active-class="active" exact>
+                <a>> Level 2</a>
+            </router-link>
 
-          <router-link to="/frankfurt/6" active-class="active" exact>
-              <a>Level 6</a>
-          </router-link>
+            <router-link 
+              to="/frankfurt/6" 
+              tag="li"
+              active-class="active" exact>
+                <a>> Level 6</a>
+            </router-link>
+          </div>
 
-        </div>
       </router-link>
 
       <!-- HAMBURG ROUTE -->
-      <router-link class="dropdown" to="/hamburg" tag="li" active-class="active" exact>
-        <a href="javascript:void(0)" class="dropbtn">Hamburg</a>
+      <router-link 
+        to="/hamburg" 
+        tag="li" 
+        active-class="active" exact>
+          <a href="javascript:void(0)">HAMBURG</a>
 
-        <div class="dropdown-content">
-          <router-link to="/hamburg/schlump" active-class="active" exact>
-              <a>Schlump - S2 Commerce</a>
-          </router-link>
+          <div class="submenu_1">
+            <router-link 
+              to="/hamburg/schlump" 
+              tag="li"
+              active-class="active" exact>
+                <a>Schlump - S2 Commerce</a>
+            </router-link>
 
-          <router-link class="dropdown" to="/hamburg/ottensen" active-class="active" exact>
-            <a href="javascript:void(0)" class="dropbtn">Ottensen - S2D &amp; Swipe</a>
-            
-              <div class="dropdown-content">
-                <router-link to="/hamburg/ottensen/0" active-class="active" exact>
-                  <a>Level 0</a>
-                </router-link>
+            <router-link 
+              to="/hamburg/ottensen"
+              tag="li"
+              active-class="active" exact>
+                <a href="javascript:void(0)">Ottensen - S2D &amp; Swipe</a>
+          
+                  <div class="submenu_2">
+                    <router-link 
+                      to="/hamburg/ottensen/0"
+                      tag="li"
+                      active-class="active" exact>
+                        <a>> Level 0</a>
+                    </router-link>
 
-                <router-link to="/hamburg/ottensen/1" active-class="active" exact>
-                  <a>Level 1</a>
-                </router-link>
+                    <router-link 
+                      to="/hamburg/ottensen/1"
+                      tag="li"
+                      active-class="active" exact>
+                        <a>> Level 1</a>
+                    </router-link>
 
-                <router-link to="/hamburg/ottensen/2" active-class="active" exact>
-                  <a>Level 2</a>
-                </router-link>
+                    <router-link 
+                      to="/hamburg/ottensen/2"
+                      tag="li"
+                      active-class="active" exact>
+                        <a>> Level 2</a>
+                    </router-link>
 
-                <router-link to="/hamburg/ottensen/3" active-class="active" exact>
-                  <a>Level 3</a>
-                </router-link>
+                    <router-link 
+                      to="/hamburg/ottensen/3"
+                      tag="li"
+                      active-class="active" exact>
+                        <a>> Level 3</a>
+                    </router-link>
 
-                <router-link to="/hamburg/ottensen/4" active-class="active" exact>
-                  <a>Level 4</a>
-                </router-link>
-              </div>
+                    <router-link 
+                      to="/hamburg/ottensen/4"
+                      tag="li"
+                      active-class="active" exact>
+                        <a>> Level 4</a>
+                    </router-link>
 
-          </router-link>
+                  </div>
+              </router-link>
+            </div>
 
-        </div>
-
-      </router-link>
+        </router-link>
 
       <!-- MUNICH ROUTE -->
-      <router-link class="dropdown" to="/munich" tag="li" active-class="active" exact>
-        <a href="javascript:void(0)" class="dropbtn">Munich</a>
+        <router-link 
+          to="/munich" 
+          tag="li" 
+          active-class="active" exact>
+            <a href="javascript:void(0)">MUNICH</a>
 
-        <div class="dropdown-content">
-          <router-link to="/munich/0" active-class="active" exact>
-              <a>Level 0</a>
-          </router-link>
+            <div class="submenu_1">
+              <router-link 
+                to="/munich/0" 
+                tag="li" 
+                active-class="active" exact>
+                  <a>> Level 0</a>
+              </router-link>
 
-          <router-link to="/munich/2" active-class="active" exact>
-              <a>Level 2</a>
+              <router-link 
+                to="/munich/2" 
+                tag="li" 
+                active-class="active" exact>
+                  <a>> Level 2</a>
+              </router-link>
+            </div>
           </router-link>
-        </div>
-      </router-link>
 
       <!-- PRAGUE ROUTE -->
-      <router-link to="/prague" tag="li" active-class="active" exact>
-        <a>Prague</a>
-      </router-link>
+          <router-link 
+            to="/prague"
+            tag="li"
+            active-class="active" exact>
+              <a>PRAGUE</a>
+          </router-link>
+        </router-link>
 
-    </ul>
+      </ul>
   </div>
 
 </template>
 
 <style scoped>
 
-
-
 *{
 box-sizing: border-box;
 }
 
-/*@media (max-width: 800px) {
-  .navigation {
-  display: none;
-  }
-}
-*/
-/* ICON */
-
-img {
-  color: black;
-  width: 50px;
-  height: 50px;
-  float: left;
-  position: fixed;
-  margin: auto;
+/* define a fixed width for the entire menu */
+.navigation {
+  width: 230px;
 }
 
-.rectangle {
-  width: 50px;
-  height: 50px;
-  background-color: #4502da;
-  position: fixed;
-
-}
-
-
-/* NAV BAR */
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li {
-    float: left;
-    border-right: 1px solid #E8ECEF;
-    background-color: #3C4049;
-}
-
+/* underline active routes*/
 .active {
-    border-top: 1px solid #E8ECEF;
+    text-decoration: underline;
 }
 
-li a, .dropbtn {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 25px;
-    text-decoration: none;
+/* reset lists to remove bullet points and padding */
+.mainmenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-li a:hover, .dropdown:hover .dropbtn, li.active {
-    background-color: #03FFB7;
+/* make all links have padding and background color */
+.mainmenu a {
+  display: block;
+  background-color: RGB(69, 2, 218);
+  text-decoration: none;
+  padding: 20px;
+  color: white;
+  font-size: 25px;
 }
 
-li.dropdown {
-    display: block;
+/* add hover behaviour */
+.mainmenu a:hover {
+    background-color: #889EFC;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    max-width: 250px;
-/*    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
-    z-index: 1;
-    background-color: #3C4049;
+/* hover behaviour for links inside .submenu */
+.submenu_1 a:hover {
+  background-color: #889EFC;
 }
 
-.dropdown-content a {
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  Change the submenu's max-height from 0 to 500px;
+*/
+.mainmenu li:hover .submenu_1, 
+.mainmenu .submenu_1 li:hover .submenu_2  {
+  display: block;
+  max-height: 500px;
+}
 
-.dropdown-content a:hover 
-{background-color: #03FFB7;}
+/* overwrite padding and font-size of submenues */
+.submenu_1 a, .submenu_2 a {
+  font-size: 20px;
+  padding: 10px 30px;
+}
 
-.dropdown:hover .dropdown-content {
-    display: block;
+/* overwrite padding and font-size of submenue 2 */
+.submenu_2 a {
+  font-size: 20px;
+  padding: 10px 40px;;
+}
+
+/* Set initial state of all submenus.
+  Set it to max-height: 0, and hide the overflowed content.
+  Use a transition to fade-in content.
+*/
+.submenu_1, .submenu_2 {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
 }
 
 </style>

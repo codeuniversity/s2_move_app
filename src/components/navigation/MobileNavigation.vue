@@ -6,63 +6,87 @@
     </div>
 
     <ul>
-      <router-link to="/berlin" tag="li" active-class="active" exact><a>Berlin</a></router-link>
-      <router-link to="/frankfurt" tag="li" active-class="active" exact><a>Frankfurt</a></router-link>
-            <!-- HAM -->
+      <!-- BERLIN ROUTE -->
+      <router-link to="/berlin" tag="li" active-class="active" exact>
+        <a>Berlin</a>
+      </router-link>
+
+      <!-- BERLIN FRANKFURT ROUTE -->
+      <router-link class="dropdown" to="/frankfurt" tag="li" active-class="active" exact>
+        <a href="javascript:void(0)" class="dropbtn">Frankfurt</a>
+
+        <div class="dropdown-content">
+          <router-link to="/frankfurt/2" active-class="active" exact>
+              <a>Level 2</a>
+          </router-link>
+
+          <router-link to="/frankfurt/6" active-class="active" exact>
+              <a>Level 6</a>
+          </router-link>
+
+        </div>
+      </router-link>
+
+      <!-- HAMBURG ROUTE -->
       <router-link class="dropdown" to="/hamburg" tag="li" active-class="active" exact>
         <a href="javascript:void(0)" class="dropbtn">Hamburg</a>
+
         <div class="dropdown-content">
-          <router-link 
-              to="/hamburg/schlump" 
-              active-class="active" exact>
+          <router-link to="/hamburg/schlump" active-class="active" exact>
               <a>Schlump - S2 Commerce</a>
           </router-link>
 
-          <router-link 
-            class="dropdown"
-            to="/hamburg/ottensen" 
-            active-class="active" exact>
+          <router-link class="dropdown" to="/hamburg/ottensen" active-class="active" exact>
             <a href="javascript:void(0)" class="dropbtn">Ottensen - S2D &amp; Swipe</a>
             
-            <div class="dropdown-content">  
-              <router-link
-                to="/hamburg/ottensen/0"
-                active-class="active" exact>
-                <a>Level 0</a>
-              </router-link>
+              <div class="dropdown-content">
+                <router-link to="/hamburg/ottensen/0" active-class="active" exact>
+                  <a>Level 0</a>
+                </router-link>
 
-              <router-link
-                to="/hamburg/ottensen/1"
-                active-class="active" exact>
-                <a>Level 1</a>
-              </router-link>
+                <router-link to="/hamburg/ottensen/1" active-class="active" exact>
+                  <a>Level 1</a>
+                </router-link>
 
-              <router-link
-                to="/hamburg/ottensen/2"
-                active-class="active" exact>
-                <a>Level 2</a>
-              </router-link>
+                <router-link to="/hamburg/ottensen/2" active-class="active" exact>
+                  <a>Level 2</a>
+                </router-link>
 
-              <router-link
-                to="/hamburg/ottensen/3"
-                active-class="active" exact>
-                <a>Level 3</a>
-              </router-link>
+                <router-link to="/hamburg/ottensen/3" active-class="active" exact>
+                  <a>Level 3</a>
+                </router-link>
 
-              <router-link
-                to="/hamburg/ottensen/4"
-                active-class="active" exact>
-                <a>Level 4</a>
-              </router-link>
-            </div>
+                <router-link to="/hamburg/ottensen/4" active-class="active" exact>
+                  <a>Level 4</a>
+                </router-link>
+              </div>
 
           </router-link>
+
         </div>
 
       </router-link>
 
-      <router-link to="/munich" tag="li" active-class="active" exact><a>Munich</a></router-link>
-      <router-link to="/prague" tag="li" active-class="active" exact><a>Prague</a></router-link>
+      <!-- MUNICH ROUTE -->
+      <router-link class="dropdown" to="/munich" tag="li" active-class="active" exact>
+        <a href="javascript:void(0)" class="dropbtn">Munich</a>
+
+        <div class="dropdown-content">
+          <router-link to="/munich/0" active-class="active" exact>
+              <a>Level 0</a>
+          </router-link>
+
+          <router-link to="/munich/2" active-class="active" exact>
+              <a>Level 2</a>
+          </router-link>
+        </div>
+      </router-link>
+
+      <!-- PRAGUE ROUTE -->
+      <router-link to="/prague" tag="li" active-class="active" exact>
+        <a>Prague</a>
+      </router-link>
+
     </ul>
   </div>
 
@@ -77,12 +101,12 @@
 box-sizing: border-box;
 }
 
-@media (max-width: 800px) {
+/*@media (max-width: 800px) {
   .navigation {
   display: none;
   }
 }
-
+*/
 /* ICON */
 
 img {
