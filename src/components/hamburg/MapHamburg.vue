@@ -119,7 +119,6 @@ text-anchor: middle;
 }
 
 .buildingName {
-
 }
 
 

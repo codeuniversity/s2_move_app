@@ -1,13 +1,13 @@
 <template>
   <div>
       <div class="header" >
-     	<app-header></app-header>
+      <app-header></app-header>
      </div> 
-    <!--   	<br> 
-      	<br>
-      	<br> 
-      	<br>
-      	<br>
+    <!--    <br> 
+        <br>
+        <br> 
+        <br>
+        <br>
         <br>
         <br> -->
       <div class="defaultMap">
@@ -17,14 +17,11 @@
 </template>
 
 <script>
-
 import Header from "./Header.vue"
 import Mymap from "./hamburg/MapHamburg.vue"
 import Navigation from "./Navigation.vue"
-
-
 export default {
-	name: "home",
+  name: "home",
        components: {
             'appHeader': Header,
             'myMap': Mymap,

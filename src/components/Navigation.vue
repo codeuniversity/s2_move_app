@@ -55,16 +55,7 @@
         </div>
 
       </router-link>
-
-<!--       <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-          </div>
-      </li> -->
-
+      
       <router-link to="/munich" tag="li" active-class="active" exact><a>Munich</a></router-link>
       <router-link to="/prague" tag="li" active-class="active" exact><a>Prague</a></router-link>
     </ul>

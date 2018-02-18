@@ -13,19 +13,15 @@
 </template>
 
 <script>
-
 import Search from './Search.vue'
 import Navigation from "./Navigation.vue"
-
 export default {
-
   name: 'Header',
   components: {
     'appSearch': Search,
     "nav-bar": Navigation 
   }
 }
-
 </script>
 
 <style scoped>
