@@ -1,21 +1,18 @@
 <template>
   <div>
-      <div>
-      	<app-header></app-header>
-      	<br> 
+      <div class="header" >
+     	<app-header></app-header>
+     </div> 
+    <!--   	<br> 
       	<br>
       	<br> 
       	<br>
       	<br>
-      	<div>
-      	</div>
-        <br> 
         <br>
-        <br> 
-        <br>
-        <br>
-        <my-map></my-map>
-      </div>  
+        <br> -->
+      <div class="defaultMap">
+          <my-map></my-map>
+      </div> 
   </div>
 </template>
 
@@ -36,7 +33,7 @@ export default {
     }
 </script>
 
-<style>
+<style scoped>
 
 
 body {

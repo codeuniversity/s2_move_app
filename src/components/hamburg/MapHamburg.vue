@@ -1,21 +1,22 @@
 <template>
 
   <div class="locationMap">
-    <h1>HAMBURG</h1>
+      <div class="title">
+        <h1>HAMBURG</h1>
+      </div>
     <div class="mapHamburg">
     <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/2000/xlink">
  <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
       <a xlink:href="#target">
-        <text x="200" y="25">Zoom in on shape below</text>
+        <text x="200" y="24">Zoom in on shape below</text>
       </a>
-
       <g>
         <rect id="svg_3" height="25" width="535" y="376.2" x="54.8" stroke-width="0" stroke="#000000" fill="#03ffb7"/>
         <text class="streetname" y="388.2" x="304.8" text-anchor="middle" dominant-baseline="central" z-index="-1">V&ouml;lckersstra&szlig;e</text>
       </g>
 
         <g class="changeColor">
-        <rect @click="navigateToBuildingB"
+        <rect 
           class="building" id="svg_6"
           height="249" 
           width="136" 
@@ -32,11 +33,11 @@
       
         <g class="changeColor">
         <router-link to="/prague" xlink:title="The link leads to a plan of Building A">
-        <rect @click="navigateToBuildingB"
+        <rect 
           class="building" id="svg_6" 
           height="149" 
           width="200" 
-          y="20.2" 
+          y="50.2" 
           x="300" 
           stroke-linecap="null" 
           stroke-linejoin="null" 
@@ -68,17 +69,21 @@
 <script>
 
 export default {
-  name: 'Mymap',
-  methods: {
-    navigateToBuildingB() {
-      this.$router.push({path:'/berlin'});
-    }
-  }
+  name: 'Mymap'  
 }
 
 </script>
 
 <style scoped>
+
+.title {
+  position: relative;
+  top: 132px;
+}
+
+.mapHamburg {
+  margin-top: 150px;
+}
 
 .building {
   transition: transform .9s;
@@ -103,7 +108,7 @@ text-anchor: middle;
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 427px) {
   .locationMap {
   display: none;
   }
