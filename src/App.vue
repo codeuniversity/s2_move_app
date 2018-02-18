@@ -1,42 +1,22 @@
 <template>
   <div id="app">
-
-    <myappHeader></myappHeader>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <div>
-      <my-navigation></my-navigation>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-        <!-- to load the router map template -->
-        <router-view></router-view>
-      </div>
+    
+    <router-view></router-view>
+      
   </div>
 </template>
 
 <script>
 
-import Header from "./components/Header.vue"
-import Mymap from "./components/hamburg/MapHamburg.vue"
-import Navigation from "./components/Navigation.vue"
-
-
+// import Header from "./components/Header.vue"
+// import Navigation from "./components/Navigation.vue"
 export default {
-
-        components: {
-            'myappHeader': Header,
-            'myMap': Mymap,
-            'my-navigation': Navigation
-        }
-    }
+  name: 'App',
+  components: {
+      // "myappHeader" : Header,
+      // "my-navigation": Navigation  
+      }
+}  
 </script>
 
 <style>

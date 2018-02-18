@@ -1,23 +1,56 @@
 <template>
-    <div class="mainbg">
-<!--       <img class="mainbg" src= "../assets/background@2x.jpg">
- -->   
-    </div>
-
-
+  <div>
+      <div>
+      	<myappHeader></myappHeader>
+      	<br> 
+      	<br>
+      	<br> 
+      	<br>
+      	<br>
+      	<div>
+    		<my-navigation></my-navigation>
+      	</div>
+        <br> 
+        <br>
+        <br> 
+        <br>
+        <br>
+        <my-map></my-map>
+      </div>  
+  </div>
 </template>
 
 <script>
 
+import Header from "./Header.vue"
+import Mymap from "./hamburg/MapHamburg.vue"
+import Navigation from "./Navigation.vue"
+
+
+export default {
+	name: "home",
+       components: {
+            'myappHeader': Header,
+            'myMap': Mymap,
+            'my-navigation': Navigation
+        }
+    }
 </script>
 
-<style scoped>
+<style>
 
-  #wrap {
-    background-image: url("../assets/background.jpg") ;
-    background-size: 100% 100%;
-    height: 850px;
-    width: 1280px;
-    object-fit: contain;
+
+body {
+  background-color: white;
+  font-family: 'MaisonNeue', sans-serif;
 }
-</style>  
+
+.bodyText {
+  font-size: 20px;
+}
+
+h1 {
+font size: 45px;
+}
+
+</style>
