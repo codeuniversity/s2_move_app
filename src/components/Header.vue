@@ -6,18 +6,23 @@
       <div>
         <appSearch class="search"> Who are you looking for? </appSearch>
       </div>
+      <div>
+        <nav-bar></nav-bar>
+      </div>  
     </div>
 </template>
 
 <script>
 
 import Search from './Search.vue'
+import Navigation from "./Navigation.vue"
 
 export default {
 
   name: 'Header',
   components: {
-    'appSearch': Search
+    'appSearch': Search,
+    "nav-bar": Navigation 
   }
 }
 

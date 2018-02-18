@@ -70,13 +70,24 @@
     </ul>
   </div>
 
-
 </template>
+
+<script>
+
+export default {
+  name: "nav-bar"
+}
+
+</script>
 
 <style scoped>
 
 *{
 box-sizing: border-box;
+}
+
+.navigation {
+  margin-top: 100px;
 }
 
 @media (max-width: 800px) {

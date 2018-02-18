@@ -1,14 +1,13 @@
 <template>
   <div>
       <div>
-      	<myappHeader></myappHeader>
+      	<app-header></app-header>
       	<br> 
       	<br>
       	<br> 
       	<br>
       	<br>
       	<div>
-    		<my-navigation></my-navigation>
       	</div>
         <br> 
         <br>
@@ -30,7 +29,7 @@ import Navigation from "./Navigation.vue"
 export default {
 	name: "home",
        components: {
-            'myappHeader': Header,
+            'appHeader': Header,
             'myMap': Mymap,
             'my-navigation': Navigation
         }

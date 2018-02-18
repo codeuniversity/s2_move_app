@@ -8,14 +8,8 @@
 
 <script>
 
-// import Header from "./components/Header.vue"
-// import Navigation from "./components/Navigation.vue"
 export default {
-  name: 'App',
-  components: {
-      // "myappHeader" : Header,
-      // "my-navigation": Navigation  
-      }
+  name: 'App'
 }  
 </script>
 
