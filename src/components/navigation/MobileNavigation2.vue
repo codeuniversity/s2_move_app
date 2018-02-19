@@ -1,4 +1,5 @@
 <template>
+  <div class="container" @click="closeMenu()" :class="{'overlay':!openMenu}">
   <div class="navigation">
 
 <!-- BURGER MENU ICON - Open menu when clicked.-->
@@ -13,7 +14,6 @@
       <router-link 
         to="/berlin"
         tag="li"
-        @click="hideMenu(event)"
         active-class="active" exact>
           <a>BERLIN</a>
       </router-link>
@@ -141,7 +141,7 @@
 
       </ul>
   </div>
-
+</div>
 </template>
 
 
@@ -150,14 +150,21 @@
   export default {
     data(){
       return {
-        openMenu: true
+        openMenu: true,
       };
-    },
-    methods: {
-      hideMenu: function(event) {
-        return this.openMenu = true;
-      }
     }
+//     ,   
+//      methods: {
+//       closeMenu: function() {
+//       const this.openMenu;
+//       if (this.openMenu = true) {
+//     this.openMenu = true;
+//     } else {
+//     this.openMenu = false;
+// }
+//         return this.openMenu;
+//       }
+//     }
   }
 
 </script>
@@ -169,6 +176,16 @@
 box-sizing: border-box;
 }
 
+/* Define dimensions of outer container*/
+.container {
+    position: fixed;
+    height: 812px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 0;
+}
+
 /* ICON */
 
 img {
@@ -178,6 +195,7 @@ img {
   float: left;
   position: fixed;
   margin: auto;
+  z-index: 2;
 }
 
 .rectangle {
@@ -186,24 +204,37 @@ img {
   background-color: #4502da;
   position: fixed;
   top: 10px;
+  z-index: 1;
 }
+
+
+
+
 
 /* BURGER MENU */
 
-/* define a fixed width for the entire menu */
-
+/*show menu bar when menu icon is clicked*/
 .isVisible {
   display: none;
   transition: 1s;
   left: 0;
 }
 
+/* container hides rest of the page when menu icon is clicked*/
+.overlay {
+  background-color: RGBA(30, 33, 42, 0.3);
+}
+
+
+/* define a fixed width for the entire menu */
+
 .navigation {
   width: 150px;
   max-height: 640px;
-  position: absolute;
+  position: fixed;
   top: 60px;
 }
+
 
 /* underline active routes*/
 .active {
@@ -224,7 +255,6 @@ img {
   width: 150px;
   -webkit-animation: slide 0.5s forwards;
   animation: slide 0.5s forwards;
-
 }
 
 @-webkit-keyframes slide {

@@ -42,6 +42,8 @@ export const routes = [
 { path: '/munich', component: MapMunich},
 { path: '/munich/0', component: MunichLevel0},
 { path: '/munich/0', component: MunichLevel2},
-{ path: '/prague', component: MapPrague}
+{ path: '/prague', component: MapPrague},
+// redirect to hamburg
+{ path: '*', redirect: '/hamburg'}
 
 ];

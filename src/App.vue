@@ -5,10 +5,9 @@
     </div>
 
         <!-- MOBILE NAVIGATION -->
-<!--     <div class="mobile">
-      <p>Mobile Nav</p>
+    <div class="mobile">
       <my-mobile-navigation></my-mobile-navigation>
-    </div> -->
+    </div>
 
         <!-- DESKTOP NAVIGATION -->
     <div class="desktop navigation">
@@ -30,7 +29,7 @@
 import Header from "./components/Header.vue"
 import Mymap from "./components/hamburg/MapHamburg.vue"
 import DesktopNavigation from "./components/navigation/DesktopNavigation.vue"
-import MobileNavigation from "./components/navigation/MobileNavigation.vue"
+import MobileNavigation from "./components/navigation/MobileNavigation2.vue"
 
 export default {
 
@@ -52,11 +51,12 @@ font-weight: normal;
 font-style: normal;
 }
 
-/*@media (min-width: 800px) {
+/* Show only elements of mobile version*/
+@media (min-width: 800px) {
   .mobile {
   display: none;
   }
-}*/
+}
 
 /* Show all elements for desktop version*/
 @media (max-width: 800px) {
@@ -68,6 +68,7 @@ font-style: normal;
 body {
   background-color: white;
   font-family: 'MaisonNeue', sans-serif;
+  margin: 0;
 }
 
 /*Set position of desktop nav bar*/

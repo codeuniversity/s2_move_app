@@ -46,14 +46,14 @@
             <router-link 
               to="/hamburg/schlump" 
               tag="li"
-              active-class="active" exact>
+              active-class="active_A" exact>
                 <a>Schlump - S2 Commerce</a>
             </router-link>
 
             <router-link 
               to="/hamburg/ottensen"
               tag="li"
-              active-class="active" exact>
+              active-class="active_A" exact>
                 <a href="javascript:void(0)">Ottensen - S2D &amp; Swipe</a>
           
                   <div class="submenu_2">
@@ -144,12 +144,17 @@ box-sizing: border-box;
 
 /* define a fixed width for the entire menu */
 .navigation {
-  width: 230px;
+  width: 250px;
 }
 
 /* underline active routes*/
 .active {
     text-decoration: underline;
+}
+
+/* underline*/
+.mainmenu .active > .submenu_1 li { 
+    background-color: yellow;
 }
 
 /* reset lists to remove bullet points and padding */
@@ -166,7 +171,7 @@ box-sizing: border-box;
   text-decoration: none;
   padding: 20px;
   color: white;
-  font-size: 25px;
+  font-size: 1.5em;
 }
 
 /* add hover behaviour */
@@ -191,13 +196,13 @@ box-sizing: border-box;
 
 /* overwrite padding and font-size of submenues */
 .submenu_1 a, .submenu_2 a {
-  font-size: 20px;
-  padding: 10px 30px;
+  font-size: 1.2em;
+  padding: 10px 0px 10px 20px;
 }
 
 /* overwrite padding and font-size of submenue 2 */
 .submenu_2 a {
-  font-size: 20px;
+  font-size: 1.2em;
   padding: 10px 40px;;
 }
 

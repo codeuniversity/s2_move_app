@@ -38,7 +38,7 @@ export default {
       z-index: 1;
   }
  
-  @media (max-width: 650px) {
+  @media (max-width: 800px) {
     .logo {
       display: none;
     }
