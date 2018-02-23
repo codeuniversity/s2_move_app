@@ -14,89 +14,91 @@
       <router-link 
         to="/frankfurt"
         tag="li"
-        active-class="active" exact>
+        active-class="active">
           <a href="javascript:void(0)">FRANKFURT</a>
 
-          <div class="submenu_1">
+          <ul class="submenu_1">
+          
             <router-link 
               to="/frankfurt/2" 
               tag="li"
-              active-class="active" exact>
+              active-class="active">
                 <a>> Level 2</a>
             </router-link>
 
             <router-link 
               to="/frankfurt/6" 
               tag="li"
-              active-class="active" exact>
+              active-class="active">
                 <a>> Level 6</a>
             </router-link>
-          </div>
-
+          
+          </ul>
       </router-link>
 
       <!-- HAMBURG ROUTE -->
       <router-link 
         to="/hamburg" 
         tag="li" 
-        active-class="active" exact>
+        active-class="active">
           <a href="javascript:void(0)">HAMBURG</a>
 
-          <div class="submenu_1">
+          <!-- SUBMENU 1 -->
+          <ul class="submenu_1">
             <router-link 
               to="/hamburg/schlump" 
               tag="li"
-              active-class="active_A" exact>
+              active-class="active">
                 <a>Schlump - S2 Commerce</a>
             </router-link>
 
             <router-link 
               to="/hamburg/ottensen"
               tag="li"
-              active-class="active_A" exact>
+              active-class="active_A">
                 <a href="javascript:void(0)">Ottensen - S2D &amp; Swipe</a>
-          
-                  <div class="submenu_2">
+
+                  <!-- SUBMENU 2 -->
+                  <ul class="submenu_2">
                     <router-link 
                       to="/hamburg/ottensen/0"
                       tag="li"
-                      active-class="active" exact>
+                      active-class="active">
                         <a>> Level 0</a>
                     </router-link>
 
                     <router-link 
                       to="/hamburg/ottensen/1"
                       tag="li"
-                      active-class="active" exact>
+                      active-class="active">
                         <a>> Level 1</a>
                     </router-link>
 
                     <router-link 
                       to="/hamburg/ottensen/2"
                       tag="li"
-                      active-class="active" exact>
+                      active-class="active">
                         <a>> Level 2</a>
                     </router-link>
 
                     <router-link 
                       to="/hamburg/ottensen/3"
                       tag="li"
-                      active-class="active" exact>
+                      active-class="active">
                         <a>> Level 3</a>
                     </router-link>
 
                     <router-link 
                       to="/hamburg/ottensen/4"
                       tag="li"
-                      active-class="active" exact>
+                      active-class="active">
                         <a>> Level 4</a>
                     </router-link>
+                  </ul>
 
-                  </div>
               </router-link>
-            </div>
-
-        </router-link>
+            </ul>
+      </router-link>
 
       <!-- MUNICH ROUTE -->
         <router-link 
@@ -105,21 +107,21 @@
           active-class="active" exact>
             <a href="javascript:void(0)">MUNICH</a>
 
-            <div class="submenu_1">
+            <ul class="submenu_1">
               <router-link 
                 to="/munich/0" 
                 tag="li" 
-                active-class="active" exact>
+                active-class="active">
                   <a>> Level 0</a>
               </router-link>
 
               <router-link 
                 to="/munich/2" 
                 tag="li" 
-                active-class="active" exact>
+                active-class="active">
                   <a>> Level 2</a>
               </router-link>
-            </div>
+            </ul>
           </router-link>
 
       <!-- PRAGUE ROUTE -->
@@ -145,16 +147,12 @@ box-sizing: border-box;
 /* define a fixed width for the entire menu */
 .navigation {
   width: 250px;
+  background-color: RGB(69, 2, 218);
 }
 
 /* underline active routes*/
-.active {
+.active > a:link {
     text-decoration: underline;
-}
-
-/* underline*/
-.mainmenu .active > .submenu_1 li { 
-    background-color: yellow;
 }
 
 /* reset lists to remove bullet points and padding */
@@ -162,6 +160,14 @@ box-sizing: border-box;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.submenu_1 {
+  list-style: none;
+}
+
+.submenu_2 {
+  list-style: none;
 }
 
 /* make all links have padding and background color */
@@ -197,13 +203,13 @@ box-sizing: border-box;
 /* overwrite padding and font-size of submenues */
 .submenu_1 a, .submenu_2 a {
   font-size: 1.2em;
-  padding: 10px 0px 10px 20px;
+  padding: 10px 0px 10px 0px;
 }
 
 /* overwrite padding and font-size of submenue 2 */
 .submenu_2 a {
   font-size: 1.2em;
-  padding: 10px 40px;;
+  padding: 10px 0px;;
 }
 
 /* Set initial state of all submenus.

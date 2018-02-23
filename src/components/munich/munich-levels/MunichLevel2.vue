@@ -1,7 +1,7 @@
 <template>
 
   <div class="locationMap">
-    <h1>Frankfurt Level 6</h1>
+    <h1>Munich Level 2</h1>
     <svg width="748px" height="579px" viewBox="0 0 748 579" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <desc>Created with Sketch.</desc>

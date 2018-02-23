@@ -1,14 +1,18 @@
 <template>
-  <div class="container" @click="closeMenu()" :class="{'overlay':!openMenu}">
-  <div class="navigation">
+  <div class="container" :class="{'overlay':!toggleMenu}">
+
 
 <!-- BURGER MENU ICON - Open menu when clicked.-->
 
     <div class="rectangle">
-      <img src="../../assets/icons/menu.png" alt="Select a city." @click="openMenu =!openMenu">
+      <img 
+        src="../../assets/icons/menu.png" 
+        alt="Select a city." 
+        @click="toggleMenu =!toggleMenu">
     </div>
 
-    <ul class="mainmenu" :class="{'isVisible':openMenu}">
+    <div class="navigation">
+      <ul class="mainmenu" :class="{'isHidden':toggleMenu}">
 
       <!-- BERLIN ROUTE -->
       <router-link 
@@ -22,21 +26,21 @@
       <router-link 
         to="/frankfurt"
         tag="li"
-        active-class="active" exact>
+        active-class="active">
           <a href="javascript:void(0)">FRANKFURT</a>
 
           <div class="submenu_1">
             <router-link 
               to="/frankfurt/2" 
               tag="li"
-              active-class="active" exact>
+              active-class="active">
                 <a>> Level 2</a>
             </router-link>
 
             <router-link 
               to="/frankfurt/6" 
               tag="li"
-              active-class="active" exact>
+              active-class="active">
                 <a>> Level 6</a>
             </router-link>
           </div>
@@ -47,56 +51,56 @@
       <router-link 
         to="/hamburg" 
         tag="li" 
-        active-class="active" exact>
+        active-class="active">
           <a href="javascript:void(0)">HAMBURG</a>
 
           <div class="submenu_1">
             <router-link 
               to="/hamburg/schlump" 
               tag="li"
-              active-class="active" exact>
+              active-class="active">
                 <a>S2C</a>
             </router-link>
 
             <router-link 
               to="/hamburg/ottensen"
               tag="li"
-              active-class="active" exact>
+              active-class="active">
                 <a href="javascript:void(0)">S2D &amp; Swipe</a>
           
                   <div class="submenu_2">
                     <router-link 
                       to="/hamburg/ottensen/0"
                       tag="li"
-                      active-class="active" exact>
+                      active-class="active">
                         <a>> Level 0</a>
                     </router-link>
 
                     <router-link 
                       to="/hamburg/ottensen/1"
                       tag="li"
-                      active-class="active" exact>
+                      active-class="active">
                         <a>> Level 1</a>
                     </router-link>
 
                     <router-link 
                       to="/hamburg/ottensen/2"
                       tag="li"
-                      active-class="active" exact>
+                      active-class="active">
                         <a>> Level 2</a>
                     </router-link>
 
                     <router-link 
                       to="/hamburg/ottensen/3"
                       tag="li"
-                      active-class="active" exact>
+                      active-class="active">
                         <a>> Level 3</a>
                     </router-link>
 
                     <router-link 
                       to="/hamburg/ottensen/4"
                       tag="li"
-                      active-class="active" exact>
+                      active-class="active">
                         <a>> Level 4</a>
                     </router-link>
 
@@ -110,21 +114,21 @@
         <router-link 
           to="/munich" 
           tag="li" 
-          active-class="active" exact>
+          active-class="active">
             <a href="javascript:void(0)">MUNICH</a>
 
             <div class="submenu_1">
               <router-link 
                 to="/munich/0" 
                 tag="li" 
-                active-class="active" exact>
+                active-class="active">
                   <a>> Level 0</a>
               </router-link>
 
               <router-link 
                 to="/munich/2" 
                 tag="li" 
-                active-class="active" exact>
+                active-class="active">
                   <a>> Level 2</a>
               </router-link>
             </div>
@@ -134,7 +138,7 @@
           <router-link 
             to="/prague"
             tag="li"
-            active-class="active" exact>
+            active-class="active">
               <a>PRAGUE</a>
           </router-link>
         </router-link>
@@ -150,7 +154,7 @@
   export default {
     data(){
       return {
-        openMenu: true,
+        toggleMenu: true
       };
     }
 //     ,   
@@ -176,15 +180,6 @@
 box-sizing: border-box;
 }
 
-/* Define dimensions of outer container*/
-.container {
-    position: fixed;
-    height: 812px;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    z-index: 0;
-}
 
 /* ICON */
 
@@ -208,13 +203,20 @@ img {
 }
 
 
-
-
-
 /* BURGER MENU */
 
+/* Define dimensions of outer container*/
+.container {
+    position: fixed;
+    height: 812px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 0;
+}
+
 /*show menu bar when menu icon is clicked*/
-.isVisible {
+.isHidden {
   display: none;
   transition: 1s;
   left: 0;
@@ -235,7 +237,6 @@ img {
   top: 60px;
 }
 
-
 /* underline active routes*/
 .active {
   text-decoration: underline;
@@ -243,9 +244,18 @@ img {
 
 /* reset lists to remove bullet points and padding */
 .mainmenu {
+  background-color: RGB(69, 2, 218);
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.submenu_1 {
+  list-style: none;
+}
+
+.submenu_2 {
+  list-style: none;
 }
 
 /*transition for burger menu*/
@@ -265,46 +275,42 @@ img {
   100% { left: 0; }
 }
 
-/* make all links have padding and background color */
-.mainmenu a {
+/* make links have padding and background color */
+a {
   display: block;
-  background-color: RGB(69, 2, 218);
   text-decoration: none;
   padding: 10px;
   color: white;
   font-size: 1em;
 }
 
-/* add hover behaviour */
-.mainmenu a:hover {
-    background-color: #889EFC;
-}
-
-/* hover behaviour for links inside .submenu */
-.submenu_1 a:hover {
-  background-color: #889EFC;
-}
-
 /* when hovering over a .mainmenu item,
   display the submenu inside it.
   Change the submenu's max-height from 0 to 500px;
 */
-.mainmenu li:hover .submenu_1, 
+/*.mainmenu li:hover .submenu_1, 
 .mainmenu .submenu_1 li:hover .submenu_2  {
+  display: block;
+  max-height: 300px;
+}*/
+
+li .submenu_1 {
   display: block;
   max-height: 300px;
 }
 
+
+
 /* overwrite padding and font-size of submenues */
-.submenu_1 a, .submenu_2 a {
+.submenu_1 a {
   font-size: 0.8em;
-  padding: 5px 0px 5px 15px;
+  padding: 10px 0px 10px 20px;
 }
 
 /* overwrite padding and font-size of submenue 2 */
 .submenu_2 a {
   font-size: 0.8em;
-  padding: 5px 20px;;
+  padding: 10px 30px;;
 }
 
 /* Set initial state of all submenus.

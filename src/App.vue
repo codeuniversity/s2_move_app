@@ -29,7 +29,7 @@
 import Header from "./components/Header.vue"
 import Mymap from "./components/hamburg/MapHamburg.vue"
 import DesktopNavigation from "./components/navigation/DesktopNavigation.vue"
-import MobileNavigation from "./components/navigation/MobileNavigation2.vue"
+import MobileNavigation from "./components/navigation/MobileNavigation3.vue"
 
 export default {
 
