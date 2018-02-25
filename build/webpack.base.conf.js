@@ -67,7 +67,8 @@ module.exports = {
           svgo: {
             plugins: [
               {removeDoctype: true},
-              {removeComments: true}
+              {removeComments: true},
+              {cleanupIDs: false}
             ]
           }
         }
