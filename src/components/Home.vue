@@ -3,29 +3,25 @@
       <div class="header" >
       <app-header></app-header>
      </div> 
-    <!--    <br> 
-        <br>
-        <br> 
-        <br>
-        <br>
-        <br>
-        <br> -->
       <div class="defaultMap">
-          <my-map></my-map>
-      </div> 
+        <new-map> </new-map>
+     </div> 
   </div>
 </template>
 
 <script>
 import Header from "./Header.vue"
-import Mymap from "./hamburg/MapHamburg.vue"
+// import Mymap from "./hamburg/MapHamburg.vue"
 import Navigation from "./Navigation.vue"
+import NewMap from "./NewMap.vue"
+
 export default {
   name: "home",
        components: {
             'appHeader': Header,
-            'myMap': Mymap,
-            'my-navigation': Navigation
+            // 'myMap': Mymap,
+            'my-navigation': Navigation,
+            'new-map': NewMap
         }
     }
 </script>
