@@ -2,7 +2,7 @@
 
 <div id="myMap">
 
-    <map-svg class="mapHB"></map-svg>
+    <map-svg id="mapHamburg" class="mapHB"></map-svg>
 
 </div>
 
@@ -11,7 +11,7 @@
 
 <script>
 
-// import svgPanZoom from 'svg-pan-zoom'
+import svgPanZoom from 'svg-pan-zoom'
 import mapSvg from "@/assets/map.svg"
 
 
@@ -19,17 +19,18 @@ export default {
     name: "NewMap",
     components: {
         mapSvg
-    }
-    // mounted() {        
-    //     var panZoomInstance = svgPanZoom('#example', {
-    //     zoomEnabled: true,
-    //     controlIconsEnabled: true,
-    //     fit: true,
-    //     center: true,
-    //     minZoom: 1
-    //     });  
-    //     panZoomInstance.zoom(0.4)
-    // }       
+    },
+    mounted() {        
+        var panZoomInstance = svgPanZoom('#mapHamburg', {
+        zoomEnabled: true,
+        controlIconsEnabled: true,
+        fit: true,
+        center: true,
+        minZoom: 1,
+        onZoom: function() { console.log(this.getZoom()) }
+        });  
+        panZoomInstance.zoom(0.4)
+    }       
 }        
 
 </script>
@@ -40,10 +41,16 @@ export default {
 
 <style>
     .mapHB {
-        width: 260px;
-        height: 400px;
-        object-fit: cover;
-        margin-left: 200px;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        z-index: 0;
+        top: 170px;
+    }
+
+    .svg-pan-zoom_viewport {
+        max-width: 100%;
     }
 
     #svg-pan-zoom-controls {

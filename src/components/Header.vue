@@ -27,11 +27,10 @@ export default {
 <style scoped>
 
   .myheader {
-    background-color: white;
     height: 40px;
     width: 100%;
-    border-bottom: 2px solid white;
-    float: left;
+    position: fixed;
+    z-index: 100;
   }
   .logo { 
       height: 80px;
