@@ -1,6 +1,6 @@
 <template>
 	<div class="login">
-		<h3> Google Sign In </h3>
+		<h3> Sign In </h3>
 		
 <!-- 		<button id="firebaseui-auth-container"> </button>
  -->
@@ -81,8 +81,36 @@ export default {
 
 </script>
 
-<style scoped>
+<style>
 
+
+span.firebaseui-idp-text.firebaseui-idp-text-short {
+	display: none;
+}
+li.firebaseui-list-item {
+	list-style-type: none;
+	margin-top: -50px;
+}
+
+button.firebaseui-idp-button.mdl-button.mdl-js-button.mdl-button--raised.firebaseui-idp-google.firebaseui-id-idp-button {
+	margin:0, auto;
+}
+
+ul.firebaseui-idp-list {
+
+}
+
+div#firebaseui-auth-container {
+	width: 300px;
+	margin-left: 500px;
+	margin-top: 100px;
+}
+
+h3 {
+	width: 300px;
+	margin-left: 615px;
+	margin-top: 30px;
+}
 </style> 
 
 </style>
