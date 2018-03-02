@@ -1,4 +1,4 @@
-## Move App
+# Move App
 
 > A project to help the S2 team to locate other teammembers at different
 buildings, as well as make team allocation easier
