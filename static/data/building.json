@@ -1,0 +1,37 @@
+[
+  {
+    "acronym": "HAM",
+    "id": "d79692e3-773e-490a-b82e-910fc5f969dc",
+    "location": "Hamburg",
+    "phone": "+49 40 39 88 55-0",
+    "address": "Völckersstr. 38, 22765 Hamburg"
+  },
+  {
+    "acronym": "BER",
+    "id": "865fa783-2802-452c-be03-e3db7070d5e6",
+    "location": "Berlin",
+    "phone": "+49 30 34 65 59 45 - 0",
+    "address": "Friedenstr. 91a, 10249 Berlin"
+  },
+  {
+    "acronym": "FRA",
+    "id": "cce8c1c8-91e6-44d1-8208-db866dfaca5f",
+    "location": "Frankfurt",
+    "phone": "+49 69 42 72 64 50 - 0",
+    "address": "Hanauer Landstr. 181, 60314 Frankfurt am Main"
+  },
+  {
+    "acronym": "MUC",
+    "id": "483a77f1-b4b4-4ea4-bfc1-40ecf8e3c6c2",
+    "location": "Munich",
+    "phone": "+49 89 20 60 26 - 800",
+    "address": "Schackstr. 3, 80539 Munich"
+  },
+  {
+    "acronym": "PRA",
+    "id": "52f88de5-4726-4acd-82b0-9ba962cbdfe5",
+    "location": "Prague",
+    "phone": "+420 776 16 32 58",
+    "address": "Drahobejlova 2400/15, Czech Republic Prague 9"
+  }
+]

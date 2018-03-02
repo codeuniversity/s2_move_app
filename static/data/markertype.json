@@ -1,0 +1,17 @@
+[
+  {
+    "name": "printer",
+    "icon": "20",
+    "id": "53d42bcc7e194cd4a8f30f7461de4c90"
+  },
+   {
+    "name": "konfi",
+    "icon": "20",
+    "id": "f856033daf2143d483a47562e5ee93bf"
+  },
+   {
+    "x": "projector",
+    "y": "20",
+    "id": "6027949db1b0f44fdb8ff2c83a50d6338"
+  }
+]
