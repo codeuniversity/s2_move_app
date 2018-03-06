@@ -2,6 +2,10 @@ import Vue from 'vue'
 import VueRouter from 'vue-router';
 import App from './App'
 import router from './routes';
+import { config } from "../helpers/firebaseconfig.js"
+import firebase from "firebase" 
+import firebaseui from "firebaseui" 
+
 
 Vue.use(VueRouter);
 
@@ -10,6 +14,16 @@ Vue.use(VueRouter);
 
 new Vue({
   router,
+   created(){
+  	firebase.initializeApp(config);
+  	firebase.auth().onAuthStateChanged((user) => {
+  		if(!user) {
+        this.$router.push("/login")
+  		} else if (user) {
+        this.$router.push("/dashboard")
+      }
+  	})
+  },
   el: "#app",
   render: h => h(App)
 });
