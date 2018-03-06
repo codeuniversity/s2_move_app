@@ -1,17 +1,14 @@
 <template>
   <div id="app">  
-    <app-header class="mainheader"></app-header> 
-	 <router-view> </router-view>
+
   </div>
 </template>
 
 <script>
 
-import Header from "./components/Header"
 export default {
   name: 'App',
   components: {
-  	appHeader: Header
   }
 }  
 </script>
@@ -30,10 +27,10 @@ body {
   font-family: 'MaisonNeue', sans-serif;
 }
 
-.bodyText {
+.body__text {
   font-size: 20px;
 }
-.mainheader {
+.header {
   margin-top: 180px;
 }
 h1 {

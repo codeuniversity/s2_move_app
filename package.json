@@ -2,7 +2,7 @@
   "name": "move_app",
   "version": "1.0.0",
   "description": "A project to help the S2 team to locate other teammembers",
-  "author": "Daniele",
+  "author": "Daniele Santos and Marie Klaus",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -17,6 +17,7 @@
     "firebase": "^4.10.0",
     "firebaseui": "^2.6.1",
     "mixpanel": "^0.8.0",
+    "npm": "^5.7.1",
     "style-loader": "^0.20.1",
     "svg-pan-zoom": "^3.5.3",
     "svg-url-loader": "^2.3.1",
