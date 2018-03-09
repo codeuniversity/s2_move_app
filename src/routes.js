@@ -40,8 +40,9 @@ const router = new VueRouter({
 			{ path: '/search', component: Search },
 			{ path: '/berlin', component: Berlin },
 			{ path: '/frankfurt', component: Frankfurt },
-			{ path: '/ottensen', component: HamburgOttensen },
-			{ path: '/schlump', component: HamburgSchlump },
+			{ path: '/hamburg', component: HamburgOttensen },
+			{ path: '/hamburg/ottensen', component: HamburgOttensen },
+			{ path: '/hamburg/schlump', component: HamburgSchlump },
 			{ path: '/munich', component: Munich },
 			{ path: '/prague', component: Prague }
 		]}
