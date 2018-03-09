@@ -13,7 +13,7 @@ export default {
   components: {
   	"appDashboard": Dashboard
   }
-}  
+}
 </script>
 
 <style>

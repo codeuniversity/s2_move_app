@@ -2,7 +2,10 @@
 	<div>
 		<div>
 			<app-header></app-header>
+			<app-menu></app-menu>
+
 		</div>
+
 			<app-profile></app-profile>
 	</div>
 </template>
@@ -11,13 +14,15 @@
 
 import Header from "./Header.vue"
 import Profile from "./Profile.vue"
+import Menu from "./Menu.vue"
 
 
 export default {
-	name: "appDashboard",
+	name: 'Dashboard',
 	components: {
 		"appHeader": Header,
-		"appProfile": Profile
+		"appProfile": Profile,
+		"appMenu": Menu
 	}
 }
 

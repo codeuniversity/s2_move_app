@@ -3,8 +3,10 @@ import VueRouter from 'vue-router';
 import App from './App'
 import router from './routes';
 import { config } from "../helpers/firebaseconfig.js"
-import firebase from "firebase" 
-import firebaseui from "firebaseui" 
+import firebase from "firebase";
+import firebaseui from "firebaseui";
+import vuefire from 'vuefire';
+import axios from 'axios';
 
 
 Vue.use(VueRouter);
@@ -29,3 +31,5 @@ new Vue({
 });
  
 Vue.config.productionTip = false
+
+//Vue.use(VueFire);
