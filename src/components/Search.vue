@@ -12,7 +12,7 @@
         />
       </form>
       <div class="search__list" v-if="isListVisible">  
-        <div class="search__item" v-for="user in userList">
+        <div class="search__item" v-for="user in filteredList">
           <p @click="showDetails(user)"> 
             <a href="#">
               {{ user.fName }} 
@@ -32,56 +32,53 @@
 <script>
 
 import Profile from "./Profile.vue"
-import { get } from 'axios'
+import axios from "axios"
+
 
 export default {
 
   name: 'Search',
    data() {
     return {
-    searchTerm: '',
-    selectedUser: {},
-    userList: [],
+	    searchTerm: '',
+	    selectedUser: {},
+	    userList: [],
     }   
+  },
+  created() {
+    axios.get("https://s2-move.firebaseio.com/users.json")
+      .then(res => {
+          const data = res.data
+          const users = []
+          for (let key in data) {
+            const user = data[key]
+            user.id = key
+            users.push(user)
+          }
+          this.userList = users
+            // console.log(users)
+          })
+      .catch(error => console.log(error))
   },
   components: {
     profile: Profile
   },
   methods: {
-    fetchUser() {
-      var self = this;
-      try {
-        get("https://s2-move.firebaseio.com/users.json")
-        .then(function(response) {
-          console.log(response)
-          self.userList = response.data;
-        })
-        .catch(function(error) {
-          console.error(error);
-        });
-      }
-      catch(error) {
-        console.error(error);
-      }
-    },
     showDetails(user) {
       this.selectedUser = user;
-    }
+    }  
    }, 
   computed: {
     filteredList() {
-      return this.userList.filter(user => {
-        var fullName = `${user.fName} ${user.lName}`;
-        return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
-        || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
+      	return this.userList.filter(user => {
+          var fullName = `${user.fName} ${user.lName}`;
+            return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
+            || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
       })
     },
     isListVisible() {
-      return this.searchTerm.length >=4 && Object.keys(this.selectedUser).length == 0;
+      return this.searchTerm.length >=2 && Object.keys(this.selectedUser).length == 0;
     }
-  },
-  beforeMount() {
-    this.fetchUser();
   },
   watch: {
     searchTerm () {
