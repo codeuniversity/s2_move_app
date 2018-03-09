@@ -1,0 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.burger-menu {
+  width: 308px;
+  background-color: yellow;
+}
+  .user-info {
+  width: 100%;
+  height: 231px;
+  background-color: #1e212a;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.user-text{
+  color: white;
+  position: absolute;
+  z-index: 2;
+  left:0;
+  right:0;
+}
+
+.user-text h2 {  
+  position: absolute;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: -0.9px;
+  color: #f4f7fa;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  top: 170px; 
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.desk-text {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  top: 202px; 
+}
+
+.desk-text ul {
+  position: absolute;
+
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.desk-text ul li {
+  display: inline;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -0.6px;
+  text-align: center;
+  color: #1e212a;
+  padding:1px;
+  background-color: #03ffb7;
+}
+
+.desk-text li {
+  margin: 3px;
+}
+
+img {
+  position: absolute;
+  /*max-height:100%;*/
+  /*object-fit: contain;*/
+  width: 100%;
+  margin: auto;
+  top: 0; 
+  left: 0; 
+  bottom: 0; 
+  right: 0;
+  z-index: 1
+}

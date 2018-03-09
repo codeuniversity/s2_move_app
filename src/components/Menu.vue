@@ -20,25 +20,25 @@
     </div>
 
 <!-- NAVIGATION MENU -->
-    <div class="nav">
+   <!--  <div class="nav">
       <ul class="burger-menu">
       <!-- HAMBURG ROUTE -->
-        <router-link 
+<!--         <router-link 
           to="/hamburg" 
           tag="li" 
           active-class="active">
-          <a href="javascript:void(0)">HAMBURG</a>
+          <a href="javascript:void(0)">HAMBURG</a> -->
 
           <!-- SUBMENU 1 / Select location -->
-          <ul class="submenu_1">
+<!--           <ul class="submenu_1">
             <router-link 
               to="/hamburg/schlump" 
               tag="li"
               active-class="active">
-              <a>S2</a>
+              <a>S2</a> -->
 
           <!-- SUBMENU 2 / Select building -->
-              <ul class="submenu_2">
+<!--               <ul class="submenu_2">
                 <router-link 
                   to="/hamburg/ottensen/0"
                   tag="li"
@@ -87,7 +87,7 @@
               to="/hamburg/ottensen"
               tag="li"
               active-class="active_A">
-                <a href="javascript:void(0)">Ottensen - S2D &amp; Swipe</a>
+                <a href="javascript:void(0)">Ottensen - S2D &amp; Swipe</a> -->
 
                   <!-- SUBMENU 2 -->
               
@@ -95,15 +95,15 @@
 
 
       <!-- BERLIN ROUTE -->
-        <router-link 
+<!--         <router-link 
         to="/berlin" 
         tag="li" 
         active-class="active" exact>
           <a>BERLIN</a>
-      </router-link>
+      </router-link> -->
 
       <!-- FRANKFURT ROUTE -->
-      <router-link 
+ <!--      <router-link 
         to="/frankfurt"
         tag="li"
         active-class="active">
@@ -133,10 +133,10 @@
 
               </router-link>
             </ul>
-      </router-link>
+      </router-link> -->
 
       <!-- MUNICH ROUTE -->
-        <router-link 
+<!--         <router-link 
           to="/munich" 
           tag="li" 
           active-class="active" exact>
@@ -160,7 +160,7 @@
           </router-link>
 
       <!-- PRAGUE ROUTE -->
-          <router-link 
+<!--           <router-link 
             to="/prague"
             tag="li"
             active-class="active" exact>
@@ -174,7 +174,7 @@
 
 
 
-    </div>
+    </div>  -->
   </div>
 
 </template>
@@ -211,95 +211,11 @@ export default {
 }
 
 </script>
-<style scoped>
 
-*{
-  margin: 0;
-  padding: 0;
-}
+<style lang="css">
 
-*{
-  box-sizing: border-box;
-}
+@import "../../vendor/css/menu.component.css"
 
-.burger-menu {
-  width: 308px;
-  background-color: yellow;
-}
-  .user-info {
-  width: 100%;
-  height: 231px;
-  background-color: #1e212a;
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.user-text{
-  color: white;
-  position: absolute;
-  z-index: 2;
-  left:0;
-  right:0;
-}
-
-.user-text h2 {  
-  position: absolute;
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: -0.9px;
-  color: #f4f7fa;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 2;
-  top: 170px; 
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-
-.desk-text {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-  top: 202px; 
-}
-
-.desk-text ul {
-  position: absolute;
-
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-
-.desk-text ul li {
-  display: inline;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: -0.6px;
-  text-align: center;
-  color: #1e212a;
-  padding:1px;
-  background-color: #03ffb7;
-}
-
-.desk-text li {
-  margin: 3px;
-}
-
-img {
-  position: absolute;
-  /*max-height:100%;*/
-  /*object-fit: contain;*/
-  width: 100%;
-  margin: auto;
-  top: 0; 
-  left: 0; 
-  bottom: 0; 
-  right: 0;
-  z-index: 1
-
-}
 </style>
 
 
