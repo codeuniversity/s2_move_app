@@ -11,7 +11,7 @@ import axios from 'axios';
 Vue.use(VueRouter);
 
 // routes will always returns index.html
-// history mode allows us not display the # before a path(outcome will be localhost:8080/user, rather than localhost:8080/#/user)
+// history mode allows us note display the # before a path(outcome will be localhost:8080/user, rather than localhost:8080/#/user)
 
 new Vue({
   router,

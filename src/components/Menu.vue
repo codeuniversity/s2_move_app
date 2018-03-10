@@ -20,162 +20,104 @@
     </div>
 
 <!-- NAVIGATION MENU -->
-   <!--  <div class="nav">
-      <ul class="burger-menu">
+    <div class="nav">
+      <ul class="nav__locations">
+
       <!-- HAMBURG ROUTE -->
-<!--         <router-link 
+        <router-link 
           to="/hamburg" 
           tag="li" 
           active-class="active">
-          <a href="javascript:void(0)">HAMBURG</a> -->
+          <a href="javascript:void(0)">HAMBURG</a>
 
           <!-- SUBMENU 1 / Select location -->
-<!--           <ul class="submenu_1">
+          <ul class="submenu-1">
             <router-link 
-              to="/hamburg/schlump" 
+              to="/hamburg/ottensen" 
               tag="li"
               active-class="active">
-              <a>S2</a> -->
+              <a href="javascript:void(0)">S2</a>
 
-          <!-- SUBMENU 2 / Select building -->
-<!--               <ul class="submenu_2">
+          <!-- HAMBURG SUBMENU 2 / Select building -->           
+
+              <ul class="submenu-2">
                 <router-link 
-                  to="/hamburg/ottensen/0"
+                  to="/hamburg/ottensen"
                   tag="li"
                   active-class="active">
                   <a>A</a>
                 </router-link>
 
                 <router-link 
-                  to="/hamburg/ottensen/1"
+                  to="/hamburg/ottensen"
                   tag="li"
                   active-class="active">
                   <a>B</a>
                 </router-link>
 
-                    <router-link 
-                      to="/hamburg/ottensen/2"
-                      tag="li"
-                      active-class="active">
-                        <a>> Level 2</a>
-                    </router-link>
-
-                    <router-link 
-                      to="/hamburg/ottensen/3"
-                      tag="li"
-                      active-class="active">
-                        <a>> Level 3</a>
-                    </router-link>
-
-                    <router-link 
-                      to="/hamburg/ottensen/4"
-                      tag="li"
-                      active-class="active">
-                        <a>> Level 4</a>
-                    </router-link>
-
+                <router-link 
+                  to="/hamburg/ottensen"
+                  tag="li"
+                  active-class="active">
+                  <a>H</a>
+                </router-link>
+              </ul>
             </router-link>
 
-            <router-link 
+          <!-- SUBMENU 1 / Select location -->
+            <router-link
+              to="/hamburg/ottensen" 
+              tag="li"
+              active-class="active">
+              <a>S2S</a>
+            </router-link>
+
+            <router-link
               to="/hamburg/schlump" 
               tag="li"
               active-class="active">
-                <a>S2S</a>
+              <a>S2C</a>
             </router-link>
-
-            <router-link 
-              to="/hamburg/ottensen"
-              tag="li"
-              active-class="active_A">
-                <a href="javascript:void(0)">Ottensen - S2D &amp; Swipe</a> -->
-
-                  <!-- SUBMENU 2 -->
-              
-
-
-
-      <!-- BERLIN ROUTE -->
-<!--         <router-link 
-        to="/berlin" 
-        tag="li" 
-        active-class="active" exact>
-          <a>BERLIN</a>
-      </router-link> -->
-
-      <!-- FRANKFURT ROUTE -->
- <!--      <router-link 
-        to="/frankfurt"
-        tag="li"
-        active-class="active">
-          <a href="javascript:void(0)">FRANKFURT</a>
-
-          <ul class="submenu_1">
-          
-            <router-link 
-              to="/frankfurt/2" 
-              tag="li"
-              active-class="active">
-                <a>> Level 2</a>
-            </router-link>
-
-            <router-link 
-              to="/frankfurt/6" 
-              tag="li"
-              active-class="active">
-                <a>> Level 6</a>
-            </router-link>
-          
           </ul>
-      </router-link>
-
-
-                  </ul>
-
-              </router-link>
-            </ul>
-      </router-link> -->
-
-      <!-- MUNICH ROUTE -->
-<!--         <router-link 
-          to="/munich" 
-          tag="li" 
-          active-class="active" exact>
-            <a href="javascript:void(0)">MUNICH</a>
-
-            <ul class="submenu_1">
-              <router-link 
-                to="/munich/0" 
-                tag="li" 
-                active-class="active">
-                  <a>> Level 0</a>
-              </router-link>
-
-              <router-link 
-                to="/munich/2" 
-                tag="li" 
-                active-class="active">
-                  <a>> Level 2</a>
-              </router-link>
-            </ul>
-          </router-link>
-
-      <!-- PRAGUE ROUTE -->
-<!--           <router-link 
-            to="/prague"
-            tag="li"
-            active-class="active" exact>
-              <a>PRAGUE</a>
           </router-link>
         </router-link>
 
+      <!-- BERLIN ROUTE -->
+        <router-link 
+          to="/berlin"
+          tag="li" 
+          active-class="active" exact>
+          <a>BERLIN</a>
+        </router-link>
+
+      <!-- FRANKFURT ROUTE -->
+        <router-link 
+          to="/frankfurt"
+          tag="li"
+          active-class="active">
+          <a>FRANKFURT</a>
+        </router-link>
+
+      <!-- MUNICH ROUTE -->
+        <router-link 
+          to="/munich" 
+          tag="li" 
+          active-class="active" exact>
+          <a>MUNICH</a>
+        </router-link>
+
+              <!-- FRANKFURT ROUTE -->
+        <router-link 
+          to="/frankfurt"
+          tag="li"
+          active-class="active">
+          <a>FRANKFURT</a>
+        </router-link>
+
       </ul>
-
-
-
-
-
-    </div>  -->
+    </div>
   </div>
+
 
 </template>
 

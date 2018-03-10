@@ -8,9 +8,12 @@
 }
 
 .burger-menu {
-  width: 308px;
-  background-color: yellow;
+  position: relative;
+  width: 315px;
 }
+
+/* USER INFORMATION */
+
   .user-info {
   width: 100%;
   height: 231px;
@@ -18,6 +21,7 @@
   position: relative;
   z-index: 0;
   overflow: hidden;
+  border: solid 2px #1e212a;
 }
 
 .user-text{
@@ -32,7 +36,7 @@
   position: absolute;
   font-size: 28px;
   font-weight: bold;
-  letter-spacing: -0.9px;
+  letter-spacing: 1px;
   color: #f4f7fa;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   z-index: 2;
@@ -51,7 +55,6 @@
 
 .desk-text ul {
   position: absolute;
-
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
@@ -61,10 +64,9 @@
   display: inline;
   font-size: 20px;
   font-weight: bold;
-  letter-spacing: -0.6px;
-  text-align: center;
+  letter-spacing: 1px;
   color: #1e212a;
-  padding:1px;
+  padding:2px;
   background-color: #03ffb7;
 }
 
@@ -74,8 +76,6 @@
 
 img {
   position: absolute;
-  /*max-height:100%;*/
-  /*object-fit: contain;*/
   width: 100%;
   margin: auto;
   top: 0; 
@@ -83,4 +83,89 @@ img {
   bottom: 0; 
   right: 0;
   z-index: 1
+}
+
+/* LOCATION NAVIGATION */
+
+.nav {
+  position: relative;
+  width: 100%;
+  background-color: #f4f7fa;
+}
+
+
+/* underline active routes*/
+.active > a:link {
+    text-decoration: underline;
+}
+
+/* Define styles for all links*/
+.nav__locations a {
+  display: block;
+  text-decoration: none;
+  line-height: 60px;
+  /*padding: 1px;*/
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e212a;
+  border-bottom: solid 2px #1e212a;
+  border-left: solid 2px #1e212a;
+  border-right: solid 2px #1e212a;
+  text-align: center;
+}
+
+.nav__locations li {
+    width: 315px;
+}
+
+/* reset lists to remove bullet points and padding */
+/*.nav__locations {
+  list-style: none;
+  padding: 0;
+}
+
+.submenu-1 {
+  list-style: none;
+}
+.submenu-2 {
+  list-style: none;
+}
+
+*/
+
+/* add hover behaviour */
+.mainmenu a:hover {
+    background-color: #889EFC;
+}
+/* hover behaviour for links inside .submenu */
+.submenu_1 a:hover {
+  background-color: #889EFC;
+}
+/* when hovering over a .mainmenu item,
+  display the submenu inside it.
+  Change the submenu's max-height from 0 to 500px;
+*/
+.mainmenu li:hover .submenu_1, 
+.mainmenu .submenu_1 li:hover .submenu_2  {
+  display: block;
+  max-height: 500px;
+}
+/* overwrite padding and font-size of submenues */
+.submenu_1 a, .submenu_2 a {
+  font-size: 1.2em;
+  padding: 10px 0px 10px 0px;
+}
+/* overwrite padding and font-size of submenue 2 */
+.submenu_2 a {
+  font-size: 1.2em;
+  padding: 10px 0px;;
+}
+/* Set initial state of all submenus.
+  Set it to max-height: 0, and hide the overflowed content.
+  Use a transition to fade-in content.
+*/
+.submenu_1, .submenu_2 {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 0.5s ease-out;
 }
