@@ -91,6 +91,6 @@ export default {
 
 <style lang="css">
 
-@import "../../vendor/css/search.component.css"
+@import "../../styles/css/search.component.css"
 
 </style>
