@@ -12,8 +12,8 @@
       </p>
       <br> 
       <div class="profile__social">
-        <a :href="selectedPerson.googleCal"> Google Calendar</a> 
-        <a :href="selectedPerson.wiki"> Wiki</a>
+        <a :href="selectedUser.googleCal"> Google Calendar</a> 
+        <a :href="selectedUser.wiki"> Wiki</a>
     </div>
   </div>  
 
