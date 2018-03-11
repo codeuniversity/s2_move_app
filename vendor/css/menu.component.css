@@ -24,6 +24,7 @@
   border: solid 2px #1e212a;
 }
 
+/* style user name*/
 .user-text{
   color: white;
   position: absolute;
@@ -46,11 +47,12 @@
   transform: translate(-50%, -50%);
 }
 
+/* style desk location of user */
 .desk-text {
   position: absolute;
   width: 100%;
   z-index: 2;
-  top: 202px; 
+  top: 204px; 
 }
 
 .desk-text ul {
@@ -66,14 +68,15 @@
   font-weight: bold;
   letter-spacing: 1px;
   color: #1e212a;
-  padding:2px;
+  padding:1px;
   background-color: #03ffb7;
 }
 
 .desk-text li {
-  margin: 3px;
+  margin: 8px;
 }
 
+/* style user image*/
 img {
   position: absolute;
   width: 100%;
@@ -87,16 +90,11 @@ img {
 
 /* LOCATION NAVIGATION */
 
+/*style location navigation*/
 .nav {
   position: relative;
   width: 100%;
   background-color: #f4f7fa;
-}
-
-
-/* underline active routes*/
-.active > a:link {
-    text-decoration: underline;
 }
 
 /* Define styles for all links*/
@@ -104,8 +102,8 @@ img {
   display: block;
   text-decoration: none;
   line-height: 60px;
-  /*padding: 1px;*/
   font-size: 20px;
+  letter-spacing: 0.8px;
   font-weight: bold;
   color: #1e212a;
   border-bottom: solid 2px #1e212a;
@@ -114,58 +112,31 @@ img {
   text-align: center;
 }
 
-.nav__locations li {
-    width: 315px;
+
+/* invert colors of parent active routes,*/
+.active > a:link {
+  background-color: #1e212a;
 }
 
-/* reset lists to remove bullet points and padding */
-/*.nav__locations {
-  list-style: none;
-  padding: 0;
+.active > a {
+  color: #f4f7fa;
 }
 
-.submenu-1 {
-  list-style: none;
-}
-.submenu-2 {
-  list-style: none;
-}
-
-*/
-
-/* add hover behaviour */
-.mainmenu a:hover {
-    background-color: #889EFC;
-}
-/* hover behaviour for links inside .submenu */
-.submenu_1 a:hover {
-  background-color: #889EFC;
-}
-/* when hovering over a .mainmenu item,
-  display the submenu inside it.
-  Change the submenu's max-height from 0 to 500px;
-*/
-.mainmenu li:hover .submenu_1, 
-.mainmenu .submenu_1 li:hover .submenu_2  {
-  display: block;
+/* overwrite styles for submenu */
+.submenu-1 a, .submenu-2 a {
   max-height: 500px;
+    color: green;
+  background-color: green;
 }
-/* overwrite padding and font-size of submenues */
-.submenu_1 a, .submenu_2 a {
-  font-size: 1.2em;
-  padding: 10px 0px 10px 0px;
-}
-/* overwrite padding and font-size of submenue 2 */
-.submenu_2 a {
-  font-size: 1.2em;
-  padding: 10px 0px;;
-}
+
+
 /* Set initial state of all submenus.
-  Set it to max-height: 0, and hide the overflowed content.
+  Set it to max-height: 0, and hide the overflowing content.
   Use a transition to fade-in content.
 */
-.submenu_1, .submenu_2 {
+.submenu-1, .submenu-2 {
   overflow: hidden;
   max-height: 0;
   -webkit-transition: all 0.5s ease-out;
 }
+

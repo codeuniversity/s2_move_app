@@ -24,23 +24,29 @@
       <ul class="nav__locations">
 
       <!-- HAMBURG ROUTE -->
+
         <router-link 
           to="/hamburg" 
           tag="li" 
-          active-class="active">
-          <a href="javascript:void(0)">HAMBURG</a>
+          active-class="active" exact
+          @click.native="toggleSubmenu1=!toggleSubmenu1">
+          <a>HAMBURG</a>
+          <!-- <input type="checkbox" id="menu-toggle"/> -->
+
+
 
           <!-- SUBMENU 1 / Select location -->
-          <ul class="submenu-1">
+          <ul :class="{'submenu-1':toggleSubmenu1}">
             <router-link 
               to="/hamburg/ottensen" 
               tag="li"
-              active-class="active">
-              <a href="javascript:void(0)">S2</a>
+              active-class="active"
+              @click.native="toggleSubmenu2=!toggleSubmenu2">
+              <a>S2+</a>
 
           <!-- HAMBURG SUBMENU 2 / Select building -->           
 
-              <ul class="submenu-2">
+              <ul :class="{'submenu-2':toggleSubmenu2}">
                 <router-link 
                   to="/hamburg/ottensen"
                   tag="li"
@@ -51,14 +57,14 @@
                 <router-link 
                   to="/hamburg/ottensen"
                   tag="li"
-                  active-class="active">
+                  active-class="active" exact>
                   <a>B</a>
                 </router-link>
 
                 <router-link 
                   to="/hamburg/ottensen"
                   tag="li"
-                  active-class="active">
+                  active-class="active" exact>
                   <a>H</a>
                 </router-link>
               </ul>
@@ -68,14 +74,14 @@
             <router-link
               to="/hamburg/ottensen" 
               tag="li"
-              active-class="active">
+              active-class="active" exact>
               <a>S2S</a>
             </router-link>
 
             <router-link
               to="/hamburg/schlump" 
               tag="li"
-              active-class="active">
+              active-class="active" exact>
               <a>S2C</a>
             </router-link>
           </ul>
@@ -108,10 +114,10 @@
 
               <!-- FRANKFURT ROUTE -->
         <router-link 
-          to="/frankfurt"
+          to="/prague"
           tag="li"
           active-class="active">
-          <a>FRANKFURT</a>
+          <a>PRAGUE</a>
         </router-link>
 
       </ul>
@@ -130,7 +136,9 @@ export default {
   data () {
     return {
       user: {},
-      desk: {}
+      desk: {},
+      toggleSubmenu1: false,
+      toggleSubmenu2: false,
     }
   },
   created () {
