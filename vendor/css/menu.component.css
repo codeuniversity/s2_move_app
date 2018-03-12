@@ -9,14 +9,14 @@
 
 .burger-menu {
   position: relative;
-  width: 315px;
+  width: 300px;
 }
 
 /* USER INFORMATION */
 
   .user-info {
   width: 100%;
-  height: 231px;
+  height: 225px;
   background-color: #1e212a;
   position: relative;
   z-index: 0;
@@ -95,6 +95,7 @@ img {
   position: relative;
   width: 100%;
   background-color: #f4f7fa;
+  border-right: solid 2px #1e212a;
 }
 
 /* Define styles for all links*/
@@ -108,7 +109,6 @@ img {
   color: #1e212a;
   border-bottom: solid 2px #1e212a;
   border-left: solid 2px #1e212a;
-  border-right: solid 2px #1e212a;
   text-align: center;
 }
 
@@ -120,13 +120,37 @@ img {
 
 .active > a {
   color: #f4f7fa;
+  /*border-bottom: solid 1px #f4f7fa;*/
 }
 
+
 /* overwrite styles for submenu */
-.submenu-1 a, .submenu-2 a {
+/*.submenu-1 li, .submenu-2 li {
+  display: inline-block;
+  position: relative;
   max-height: 500px;
-    color: green;
   background-color: green;
+  text-decoration: none;
+}*/
+
+ul.submenu-1 li, ul.submenu-2 li {
+  display: inline-block;
+    margin: 0px;
+    padding:0px;
+}
+
+.submenu-2 {
+    border-top: solid 2px #1e212a;
+    border-bottom: solid 1px #1e212a;
+    margin: 0px;
+}
+
+
+.submenu-1 a {
+  width: 96px;
+  border-bottom: 0px;
+    margin: 0px;
+    padding:0px;
 }
 
 
@@ -134,9 +158,8 @@ img {
   Set it to max-height: 0, and hide the overflowing content.
   Use a transition to fade-in content.
 */
-.submenu-1, .submenu-2 {
+.submenu-1-visible, .submenu-2-visible {
   overflow: hidden;
   max-height: 0;
-  -webkit-transition: all 0.5s ease-out;
+  /*-webkit-transition: all 3s ease-out;*/
 }
-

@@ -24,33 +24,50 @@
       <ul class="nav__locations">
 
       <!-- HAMBURG ROUTE -->
-
-        <router-link 
+        <router-link
           to="/hamburg" 
           tag="li" 
-          active-class="active" exact
+          active-class="active"
           @click.native="toggleSubmenu1=!toggleSubmenu1">
           <a>HAMBURG</a>
+        </router-link>
           <!-- <input type="checkbox" id="menu-toggle"/> -->
 
-
-
           <!-- SUBMENU 1 / Select location -->
-          <ul :class="{'submenu-1':toggleSubmenu1}">
+          <ul :class="{'submenu-1-visible':toggleSubmenu1}" class="submenu-1">
             <router-link 
               to="/hamburg/ottensen" 
               tag="li"
-              active-class="active"
+              active-class="active" exact
               @click.native="toggleSubmenu2=!toggleSubmenu2">
-              <a>S2+</a>
+              <a>S2</a>
+            </router-link>
+
+            <router-link
+              to="/hamburg/ottensen" 
+              tag="li"
+              active-class="active" exact
+              @click.native="toggleSubmenu2=true">
+              <a>S2S</a>
+            </router-link>
+
+            <router-link
+              to="/hamburg/schlump" 
+              tag="li"
+              active-class="active" exact
+              @click.native="toggleSubmenu2=true">
+              <a>S2C</a>
+            </router-link>
+
+
 
           <!-- HAMBURG SUBMENU 2 / Select building -->           
 
-              <ul :class="{'submenu-2':toggleSubmenu2}">
+              <ul :class="{'submenu-2-visible':toggleSubmenu2}" class="submenu-2">
                 <router-link 
                   to="/hamburg/ottensen"
                   tag="li"
-                  active-class="active">
+                  active-class="active" exact>
                   <a>A</a>
                 </router-link>
 
@@ -68,26 +85,10 @@
                   <a>H</a>
                 </router-link>
               </ul>
-            </router-link>
-
-          <!-- SUBMENU 1 / Select location -->
-            <router-link
-              to="/hamburg/ottensen" 
-              tag="li"
-              active-class="active" exact>
-              <a>S2S</a>
-            </router-link>
-
-            <router-link
-              to="/hamburg/schlump" 
-              tag="li"
-              active-class="active" exact>
-              <a>S2C</a>
-            </router-link>
           </ul>
-          </router-link>
-        </router-link>
+          <!-- SUBMENU 1 / Select location -->
 
+        
       <!-- BERLIN ROUTE -->
         <router-link 
           to="/berlin"
