@@ -1,6 +1,7 @@
 <template>
-  <div class="menu__wrapper">
-  <div class="burger-menu">
+  <div class="menu__wrapper" >
+  <button type="button" @click="openMenu=!openMenu" >THIS IS A BUTTON</button>
+  <div :class="{'menu-visible':openMenu}" class="burger-menu">
 
     <!-- USER INFO -->
     <div class="user-info">
@@ -39,14 +40,16 @@
             <router-link 
               to="/hamburg/ottensen" 
               tag="li"
-              active-class="active" exact>
+              active-class="active" exact
+              @click.native="openMenu=!openMenu">
               <a>S2 &amp S2S</a>
             </router-link>
 
             <router-link
               to="/hamburg/schlump" 
               tag="li"
-              active-class="active" exact>
+              active-class="active" exact
+              @click.native="openMenu=!openMenu">
               <a>S2C</a>
             </router-link>
           </ul>
@@ -56,7 +59,8 @@
         <router-link 
           to="/berlin"
           tag="li" 
-          active-class="active" exact>
+          active-class="active" exact
+          @click.native="openMenu=!openMenu">
           <a>BERLIN</a>
         </router-link>
 
@@ -64,7 +68,8 @@
         <router-link 
           to="/frankfurt"
           tag="li"
-          active-class="active">
+          active-class="active"
+          @click.native="openMenu=!openMenu">
           <a>FRANKFURT</a>
         </router-link>
 
@@ -72,7 +77,8 @@
         <router-link 
           to="/munich" 
           tag="li" 
-          active-class="active" exact>
+          active-class="active" exact
+          @click.native="openMenu=!openMenu">
           <a>MUNICH</a>
         </router-link>
 
@@ -80,12 +86,12 @@
         <router-link 
           to="/prague"
           tag="li"
-          active-class="active">
+          active-class="active" exact
+          @click.native="openMenu=!openMenu">
           <a>PRAGUE</a>
         </router-link>
 
       </ul>
-
 
     </div>
       <div class="menu__feedback">
@@ -112,6 +118,7 @@ export default {
       user: {},
       desk: {},
       toggleSubmenu: false,
+      openMenu: false
     }
   },
   created () {

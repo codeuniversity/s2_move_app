@@ -8,6 +8,11 @@
   box-sizing: border-box;
 }
 
+
+button {
+  position: absolute;
+}
+
 /*Make menu cover anything else on page*/
 .menu__wrapper {  
   position: absolute;
@@ -28,6 +33,13 @@
   border: 2px #1e212a;
   border-style: solid solid none solid;
 }
+
+.menu-visible {
+  overflow: hidden;
+  max-height: 0;
+  /*-webkit-transition: all 3s ease-out;*/
+}
+
 
  /*25% column to cover content of the page, used to toggle the menu*/
 .menu__toggle {
