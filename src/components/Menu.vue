@@ -89,8 +89,8 @@
 
     </div>
       <div class="menu__feedback">
-        <a href="mailto:marie.klaus@code.berlin?subject= Move App user feedback" id="feedback">Feedback</a>
-        <p> Made with love by Code students </p>
+        <a href="mailto:marie.klaus@code.berlin?subject= Move App user feedback" id="feedback"><b>Feedback</b></a>
+        <p> <b>Made with &hearts; by &lt;&gt;</b> </p>
       </div>
 
   </div>
