@@ -1,6 +1,6 @@
 <template>
   <div class="menu__wrapper" >
-  <button type="button" @click="openMenu=!openMenu" >THIS IS A BUTTON</button>
+  <button type="button" @click="openMenu=!openMenu" >Toggle Menu</button>
   <div :class="{'menu-visible':openMenu}" class="burger-menu">
 
     <!-- USER INFO -->
@@ -101,7 +101,11 @@
 
   </div>
 
-  <div class="menu__toggle"></div>
+  <div 
+    :class="{'menu-visible':openMenu}"
+    class="menu__toggle" 
+    @click="openMenu=!openMenu">
+  </div>
 
 </div>
 
