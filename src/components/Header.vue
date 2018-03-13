@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="app-header">
 		<div>
 			<app-search></app-search>
 		</div>
@@ -23,3 +23,11 @@ export default {
 
 </script>
 
+<style scoped>
+	
+	.app-header {
+		position: relative;
+		top: 20px;
+	}
+
+</style>

@@ -3,20 +3,75 @@
   padding: 0;
 }
 
+/*include padding and border into total width and height of elements*/
 *{
   box-sizing: border-box;
 }
 
-.burger-menu {
-  position: relative;
-  width: 300px;
+/*Make menu cover anything else on page*/
+.menu__wrapper {  
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
 }
 
-/* USER INFORMATION */
+/*Make burger menu take up 75% of the page and align right*/
+.burger-menu {
+  position: relative;
+  background-color: #f4f7fa;
+  width: 75%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  float: right;
+  border: solid 2px #1e212a;
+}
 
+ /*25% column to cover content of the page, used to toggle the menu*/
+.menu__toggle {
+  position: relative;
+  background-color: black;
+  width: 25%;
+  height: 100%;
+  opacity: 0.3;
+  float: right;
+}
+
+/*remove default list styles */
+li {
+  list-style: none;
+}
+
+/*Underline links*/
+a:hover {
+    text-decoration: underline;
+}
+
+/* MEDIA QUERIES 
+
+/* Hide menu toggle for non-mobile devices */
+@media (min-width: 415px) {
+  .menu__toggle  {
+  display: none;
+  }
+}
+
+/* Define max width for mobile devices */
+@media (min-width: 415px) {
+  .burger-menu  {
+    width: 300px;
+  }
+}
+
+/*@media (max-width: 350px) {
+  .user-text h2 {
+    font-size: 18px;
+  }
+}*/
+
+/* USER INFORMATION */
   .user-info {
-  width: 100%;
-  height: 225px;
   background-color: #1e212a;
   position: relative;
   z-index: 0;
@@ -24,56 +79,11 @@
   border: solid 2px #1e212a;
 }
 
-/* style user name*/
-.user-text{
-  color: white;
-  position: absolute;
-  z-index: 2;
-  left:0;
-  right:0;
-}
-
-.user-text h2 {  
-  position: absolute;
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #f4f7fa;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  z-index: 2;
-  top: 170px; 
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-
-/* style desk location of user */
-.desk-text {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-  top: 204px; 
-}
-
-.desk-text ul {
-  position: absolute;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-}
-
-.desk-text ul li {
-  display: inline;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  color: #1e212a;
-  padding:1px;
-  background-color: #03ffb7;
-}
-
-.desk-text li {
-  margin: 8px;
+/* CSS trick to keep user image 4x3 format on various screen sizes*/
+.user-info:before {
+  content: '';
+  display: block;
+  padding-bottom: 75%;
 }
 
 /* style user image*/
@@ -86,6 +96,48 @@ img {
   bottom: 0; 
   right: 0;
   z-index: 1
+}
+
+/* style user name*/
+.user-text h2 {  
+  position: absolute;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #f4f7fa;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  bottom: 20px; 
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+/* style desk location of user */
+.desk-text {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  bottom: 18px; 
+}
+
+/* align desk location central*/
+.desk-text ul {
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.desk-text ul li {
+  display: inline;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #1e212a;
+  padding:1px;
+  background-color: #03ffb7;
+  margin: 8px;
 }
 
 /* LOCATION NAVIGATION */
@@ -108,7 +160,7 @@ img {
   font-weight: bold;
   color: #1e212a;
   border-bottom: solid 2px #1e212a;
-  border-left: solid 2px #1e212a;
+  /*border-left: solid 2px #1e212a;*/
   text-align: center;
 }
 
@@ -123,20 +175,10 @@ img {
   /*border-bottom: solid 1px #f4f7fa;*/
 }
 
-
-/* overwrite styles for submenu */
-/*.submenu-1 li, .submenu-2 li {
-  display: inline-block;
-  position: relative;
-  max-height: 500px;
-  background-color: green;
-  text-decoration: none;
-}*/
-
 ul.submenu-1 li, ul.submenu-2 li {
   display: inline-block;
-    margin: 0px;
-    padding:0px;
+  margin: 0px;
+  padding:0px;
 }
 
 .submenu-2 {
@@ -162,4 +204,28 @@ ul.submenu-1 li, ul.submenu-2 li {
   overflow: hidden;
   max-height: 0;
   /*-webkit-transition: all 3s ease-out;*/
+}
+
+/* STYLE FEEDBACK BOX*/
+
+/* CSS trick to make box full screen height*/
+
+.menu__feedback {
+  position: relative;
+  /*bottom: 10px;*/
+  left: 5px;
+/*  border-bottom: solid 2px #1e212a;
+  border-left: solid 2px #1e212a;*/
+
+} 
+
+/*Style feedback link*/
+[href="mailto:marie.klaus@code.berlin?subject= Move App user feedback"] {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1e212a;
+}
+
+.menu__fedback p {
+  top: 20px;
 }

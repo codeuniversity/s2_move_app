@@ -1,4 +1,5 @@
 <template>
+  <div class="menu__wrapper">
   <div class="burger-menu">
 
     <!-- USER INFO -->
@@ -122,9 +123,19 @@
         </router-link>
 
       </ul>
+
+
     </div>
+      <div class="menu__feedback">
+        <a href="mailto:marie.klaus@code.berlin?subject= Move App user feedback" id="feedback">Feedback</a>
+        <p> Made with love by Code students </p>
+      </div>
+
   </div>
 
+  <div class="menu__toggle"></div>
+
+</div>
 
 </template>
 
