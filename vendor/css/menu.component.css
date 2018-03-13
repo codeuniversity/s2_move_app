@@ -175,32 +175,24 @@ img {
   /*border-bottom: solid 1px #f4f7fa;*/
 }
 
-ul.submenu-1 li, ul.submenu-2 li {
+ul.submenu li {
   display: inline-block;
   margin: 0px;
   padding:0px;
 }
 
-.submenu-2 {
-    border-top: solid 2px #1e212a;
-    border-bottom: solid 1px #1e212a;
-    margin: 0px;
-}
-
-
-.submenu-1 a {
+.submenu a {
   width: 96px;
   border-bottom: 0px;
     margin: 0px;
     padding:0px;
 }
 
-
 /* Set initial state of all submenus.
   Set it to max-height: 0, and hide the overflowing content.
   Use a transition to fade-in content.
 */
-.submenu-1-visible, .submenu-2-visible {
+.submenu-visible {
   overflow: hidden;
   max-height: 0;
   /*-webkit-transition: all 3s ease-out;*/

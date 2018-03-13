@@ -29,65 +29,27 @@
           to="/hamburg" 
           tag="li" 
           active-class="active"
-          @click.native="toggleSubmenu1=!toggleSubmenu1">
+          @click.native="toggleSubmenu=!toggleSubmenu">
           <a>HAMBURG</a>
         </router-link>
           <!-- <input type="checkbox" id="menu-toggle"/> -->
 
           <!-- SUBMENU 1 / Select location -->
-          <ul :class="{'submenu-1-visible':toggleSubmenu1}" class="submenu-1">
+          <ul :class="{'submenu-visible':toggleSubmenu}" class="submenu">
             <router-link 
               to="/hamburg/ottensen" 
               tag="li"
-              active-class="active" exact
-              @click.native="toggleSubmenu2=!toggleSubmenu2">
-              <a>S2</a>
-            </router-link>
-
-            <router-link
-              to="/hamburg/ottensen" 
-              tag="li"
-              active-class="active" exact
-              @click.native="toggleSubmenu2=true">
-              <a>S2S</a>
+              active-class="active" exact>
+              <a>S2 &amp S2S</a>
             </router-link>
 
             <router-link
               to="/hamburg/schlump" 
               tag="li"
-              active-class="active" exact
-              @click.native="toggleSubmenu2=true">
+              active-class="active" exact>
               <a>S2C</a>
             </router-link>
-
-
-
-          <!-- HAMBURG SUBMENU 2 / Select building -->           
-
-              <ul :class="{'submenu-2-visible':toggleSubmenu2}" class="submenu-2">
-                <router-link 
-                  to="/hamburg/ottensen"
-                  tag="li"
-                  active-class="active" exact>
-                  <a>A</a>
-                </router-link>
-
-                <router-link 
-                  to="/hamburg/ottensen"
-                  tag="li"
-                  active-class="active" exact>
-                  <a>B</a>
-                </router-link>
-
-                <router-link 
-                  to="/hamburg/ottensen"
-                  tag="li"
-                  active-class="active" exact>
-                  <a>H</a>
-                </router-link>
-              </ul>
           </ul>
-          <!-- SUBMENU 1 / Select location -->
 
         
       <!-- BERLIN ROUTE -->
@@ -149,8 +111,7 @@ export default {
     return {
       user: {},
       desk: {},
-      toggleSubmenu1: false,
-      toggleSubmenu2: false,
+      toggleSubmenu: false,
     }
   },
   created () {
