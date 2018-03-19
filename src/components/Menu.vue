@@ -18,6 +18,9 @@
         </ul>
       </div>
 
+      <!-- default user image -->
+      <img src="../assets/icons/default-user-icon.png" alt="default user image">
+      <!-- user data image -->
       <img :src="user.image" alt="user profile picture">
     </div>
 
