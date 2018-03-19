@@ -77,6 +77,15 @@ a:hover {
   }
 }
 
+/*Hide feedback if screen height is insufficient */
+
+@media (max-height: 558px) {
+  .feedback-visible {
+  display: none;
+  }
+}
+
+
 /*@media (max-width: 350px) {
   .user-text h2 {
     font-size: 18px;
@@ -188,7 +197,12 @@ ul.nav__locations li {
   background-color: #1e212a;
 }
 
+/* Hide submenu by default*/
 ul.submenu {
+  display:none;
+}
+
+ul.submenu-visible.submenu {
   display:flex;
 }
 
@@ -202,23 +216,18 @@ ul.submenu li {
   border-right: 0px;
 }
 
-/* Set initial state of submenu.
-  Set it to max-height: 0, and hide the overflowing content.
-  Use a transition to fade-in content.
-*/
-.submenu-visible {
-  overflow: hidden;
-  max-height: 0;
-  /*-webkit-transition: all 3s ease-out;*/
-}
-
 /* STYLE FEEDBACK BOX*/
 .menu__feedback {
   position: absolute;
   bottom: 0px;
   width: 100%;
   border-bottom: solid 2px #1e212a;
+  text-align: center;
+  padding-bottom: 10px;
+  /*overflow: hidden;*/
 }
+
+
 
 /*Style feedback link*/
 [href="mailto:marie.klaus@code.berlin?subject= Move App user feedback"] {
@@ -228,9 +237,32 @@ ul.submenu li {
 }
 
 .menu__feedback p, .menu__feedback a {
-  display: inline-block;
-  bottom: 20px;
-  padding-left: 18px;
-  padding-bottom: 10px;
+  display: inline;
   font-size: 16px;
 }
+
+/*add some whitespace between feedback link and impressum*/
+.menu__feedback p {
+  padding-left: 12px; 
+}
+
+/*TRANSITIONS*/
+
+/* Set initial state of submenu.
+  Set it to max-height: 0, and hide the overflowing content.
+  Use a transition to fade-in content.
+*/
+/*.submenu-visible {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 3s ease-out;
+}
+
+.menu-visible {
+  overflow: hidden;
+  max-height: 0;
+    -webkit-transition: width 1s;
+  transition-timing-function: ease-in;
+      -webkit-transition-delay: 1s; 
+    transition-delay: 1s;
+}*/

@@ -95,10 +95,11 @@
 
     </div>
       <div class="menu__feedback">
+        <div class="feedback-visible">
         <a href="mailto:marie.klaus@code.berlin?subject= Move App user feedback" id="feedback"><b>Feedback</b></a>
         <p> <b>Made with &hearts; by &lt;&gt;</b> </p>
       </div>
-
+    </div>
   </div>
 
   <div 
@@ -143,6 +144,8 @@ export default {
     .catch(error => console.log(error))
   }
 }
+
+// Create a computed property for the click listener
 
 </script>
 
