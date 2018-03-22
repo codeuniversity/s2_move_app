@@ -16,8 +16,6 @@
         <a :href="selectedUser.wiki"> Wiki</a>
     </div>
   </div>  
-
-
 </template>
 
 <script>

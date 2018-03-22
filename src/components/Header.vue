@@ -11,11 +11,9 @@
 import Search from "./Search.vue"
 
 export default {
-	name: "appHeader",
-	components: {
-		
+	name: "Header",
+	components: {		
 		"appSearch": Search
-
 	}	
 }
 
