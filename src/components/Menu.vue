@@ -1,5 +1,5 @@
 <template>
-  <div  class="menu__wrapper">
+  <div  class="menu__wrapper" :class="{'menu-visible':hideMenu}">
   <div  class="burger-menu">
 
     <!-- USER INFO -->
@@ -43,7 +43,7 @@
               to="/hamburg/ottensen" 
               tag="li"
               active-class="active" exact
-              @click.native="closeMenu">
+              @click.native="closeMenu()">
               <a>S2 &amp S2S</a>
             </router-link>
 
@@ -51,7 +51,7 @@
               to="/hamburg/schlump" 
               tag="li"
               active-class="active" exact
-              @click.native="closeMenu">
+              @click.native="closeMenu()">
               <a>S2C</a>
             </router-link>
           </ul>
@@ -62,7 +62,7 @@
           to="/berlin"
           tag="li" 
           active-class="active" exact
-          @click.native="closeMenu">
+          @click.native="closeMenu()">
           <a>BERLIN</a>
         </router-link>
 
@@ -71,7 +71,7 @@
           to="/frankfurt"
           tag="li"
           active-class="active"
-          @click.native="closeMenu">
+          @click.native="closeMenu()">
           <a>FRANKFURT</a>
         </router-link>
 
@@ -80,7 +80,7 @@
           to="/munich" 
           tag="li" 
           active-class="active" exact
-          @click.native="closeMenu">
+          @click.native="closeMenu()">
           <a>MUNICH</a>
         </router-link>
 
@@ -104,11 +104,7 @@
     </div>
   </div>
 
-  <div 
-    :class="{'menu-visible':showMenu}"
-    class="menu__toggle" 
-    @click="showMenu=!showMenu">
-  </div>
+  <div class="menu__toggle"></div>
 
 </div>
 
@@ -120,25 +116,21 @@ import axios from 'axios';
 
 export default {
 	name: 'Menu',
+  props: ['hideMenu'],
   data () {
     return {
       user: {},
       desk: {},
       showSubmenu: false,
-      showMenu: false
+      showMenu: ''
     }
   },
-  props: ['hideMenu'],
-  computed: {
-    closeMenu: function () {
-      this.hideMenu = !this.hideMenu;
-      this.$emit('closeMenu', this.hideMenu);
-        // this.hideMenu = true
-      // return this.showMenu = true;
-      // return this.hideMenu = true;
-    },
-    closeSubmenu: function () {
-      return this.showSubmenu = false;
+
+  methods: {
+    closeMenu () {
+      this.showSubmenu = false;
+      this.showMenu = !this.hideMenu;
+      return this.$emit('closedMenu', this.showMenu);
     }
   },
   created () {

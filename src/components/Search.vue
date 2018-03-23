@@ -4,7 +4,7 @@
     <app-menu
       :class="{'menu-visible':hideMenu}"
       :hideMenu="hideMenu"
-      @closeMenu="hideMenu=$event"> 
+      @closedMenu="hideMenu = $event" >
     </app-menu>
 	</div>	
 </template>

@@ -12,7 +12,6 @@
 /*Make menu cover anything else on page*/
 .menu__wrapper {  
   position: relative;
-  background-color: yellow;
   float: right;
   width: 100%;
   height: 100vh;
@@ -39,10 +38,10 @@
   /*add transition here*/
 }
 
-
- /*25% column to cover content of the page, used to toggle the menu*/
+ /*25% column to cover content of the page, used to toggle the menu. Hidden desktop/iPad*/
 .menu__toggle {
-  position: relative;
+  display: none;
+  position: absolute;
   background-color: black;
   width: 25%;
   height: 100%;
@@ -62,19 +61,19 @@ a:hover {
 
 /* MEDIA QUERIES 
 
-/* Hide menu toggle for non-mobile devices */
-@media (min-width: 415px) {
+/* Show menu toggle for smartphones only */
+@media (max-width: 414px) {
   .menu__toggle  {
-  display: none;
+  display: block;
   }
 }
 
+/* Limit width of menu for non-smartphone devices.*/
 @media (min-width: 415px) {
   .menu__wrapper {
   max-width: 300px;
   }
 }
-
 
 /* Define max width for mobile devices */
 @media (min-width: 415px) {
@@ -90,7 +89,6 @@ a:hover {
   display: none;
   }
 }
-
 
 /*@media (max-width: 350px) {
   .user-text h2 {
@@ -232,8 +230,6 @@ ul.submenu li {
   padding-bottom: 10px;
   /*overflow: hidden;*/
 }
-
-
 
 /*Style feedback link*/
 [href="mailto:marie.klaus@code.berlin?subject= Move App user feedback"] {
