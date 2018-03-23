@@ -1,6 +1,6 @@
 <template>
 	<div class="app-profile">
-		<p> I'm the profile! Look at me! I'm blue!</p>
+		<p> </p>
 	</div>	
 </template>
 

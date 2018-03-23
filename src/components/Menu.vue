@@ -1,7 +1,6 @@
 <template>
-  <div class="menu__wrapper" >
-  <button type="button" @click="openMenu=!openMenu" >Toggle Menu</button>
-  <div :class="{'menu-visible':openMenu}" class="burger-menu">
+  <div  class="menu__wrapper">
+  <div  class="burger-menu">
 
     <!-- USER INFO -->
     <div class="user-info">
@@ -14,7 +13,7 @@
         <ul>
           <li>{{desk.acronym }}</li>
           <li>{{desk.division}}</li>
-          <li>{{desk.building}}-{{desk.level}}</li>
+          <li>{{desk.building}}{{desk.level}}</li>
         </ul>
       </div>
 
@@ -33,18 +32,18 @@
           to="/hamburg" 
           tag="li" 
           active-class="active"
-          @click.native="toggleSubmenu=!toggleSubmenu">
+          @click.native="showSubmenu=!showSubmenu">
           <a>HAMBURG</a>
         </router-link>
           <!-- <input type="checkbox" id="menu-toggle"/> -->
 
           <!-- SUBMENU 1 / Select location -->
-          <ul :class="{'submenu-visible':toggleSubmenu}" class="submenu">
+          <ul :class="{'submenu-visible':showSubmenu}" class="submenu">
             <router-link 
               to="/hamburg/ottensen" 
               tag="li"
               active-class="active" exact
-              @click.native="openMenu=!openMenu">
+              @click.native="closeMenu">
               <a>S2 &amp S2S</a>
             </router-link>
 
@@ -52,7 +51,7 @@
               to="/hamburg/schlump" 
               tag="li"
               active-class="active" exact
-              @click.native="openMenu=!openMenu">
+              @click.native="closeMenu">
               <a>S2C</a>
             </router-link>
           </ul>
@@ -63,7 +62,7 @@
           to="/berlin"
           tag="li" 
           active-class="active" exact
-          @click.native="openMenu=!openMenu">
+          @click.native="closeMenu">
           <a>BERLIN</a>
         </router-link>
 
@@ -72,7 +71,7 @@
           to="/frankfurt"
           tag="li"
           active-class="active"
-          @click.native="openMenu=!openMenu">
+          @click.native="closeMenu">
           <a>FRANKFURT</a>
         </router-link>
 
@@ -81,7 +80,7 @@
           to="/munich" 
           tag="li" 
           active-class="active" exact
-          @click.native="openMenu=!openMenu">
+          @click.native="closeMenu">
           <a>MUNICH</a>
         </router-link>
 
@@ -90,7 +89,7 @@
           to="/prague"
           tag="li"
           active-class="active" exact
-          @click.native="openMenu=!openMenu">
+          @click.native="closeMenu">
           <a>PRAGUE</a>
         </router-link>
 
@@ -100,15 +99,15 @@
       <div class="menu__feedback">
         <div class="feedback-visible">
         <a href="mailto:marie.klaus@code.berlin?subject= Move App user feedback" id="feedback"><b>Feedback</b></a>
-        <p> <b>Made with &hearts; by &lt;&gt;</b> </p>
+        <p> <b>Logout</b> </p>
       </div>
     </div>
   </div>
 
   <div 
-    :class="{'menu-visible':openMenu}"
+    :class="{'menu-visible':showMenu}"
     class="menu__toggle" 
-    @click="openMenu=!openMenu">
+    @click="showMenu=!showMenu">
   </div>
 
 </div>
@@ -125,8 +124,21 @@ export default {
     return {
       user: {},
       desk: {},
-      toggleSubmenu: false,
-      openMenu: false
+      showSubmenu: false,
+      showMenu: false
+    }
+  },
+  props: ['hideMenu'],
+  computed: {
+    closeMenu: function () {
+      this.hideMenu = !this.hideMenu;
+      this.$emit('closeMenu', this.hideMenu);
+        // this.hideMenu = true
+      // return this.showMenu = true;
+      // return this.hideMenu = true;
+    },
+    closeSubmenu: function () {
+      return this.showSubmenu = false;
     }
   },
   created () {

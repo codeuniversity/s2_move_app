@@ -1,9 +1,7 @@
 <template>
 	<div>
 		<div>
-			<app-menu></app-menu>
 			<app-header></app-header>
-
 		</div>
 
 			<app-profile></app-profile>
@@ -14,7 +12,6 @@
 
 import Header from "./Header.vue"
 import Profile from "./Profile.vue"
-import Menu from "./Menu.vue"
 
 
 export default {
@@ -22,7 +19,6 @@ export default {
 	components: {
 		"appHeader": Header,
 		"appProfile": Profile,
-		"appMenu": Menu
 	}
 }
 

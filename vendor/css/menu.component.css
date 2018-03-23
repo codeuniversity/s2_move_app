@@ -9,13 +9,11 @@
 }
 
 
-button {
-  position: absolute;
-}
-
 /*Make menu cover anything else on page*/
 .menu__wrapper {  
-  position: absolute;
+  position: relative;
+  background-color: yellow;
+  float: right;
   width: 100%;
   height: 100vh;
   z-index: 10;
@@ -32,12 +30,13 @@ button {
   float: right;
   border: 2px #1e212a;
   border-style: solid solid none solid;
+
 }
 
 .menu-visible {
   overflow: hidden;
   max-height: 0;
-  /*-webkit-transition: all 3s ease-out;*/
+  /*add transition here*/
 }
 
 
@@ -69,6 +68,13 @@ a:hover {
   display: none;
   }
 }
+
+@media (min-width: 415px) {
+  .menu__wrapper {
+  max-width: 300px;
+  }
+}
+
 
 /* Define max width for mobile devices */
 @media (min-width: 415px) {
@@ -119,6 +125,7 @@ img {
   right: 0;
   z-index: 1;
 }
+
 
 /* style user name*/
 .user-text h2 {  

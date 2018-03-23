@@ -1,33 +1,32 @@
 <template>
 	<div class="app-header">
-		<div>
 			<app-search></app-search>
 		</div>
-
-		<h1> I am the header and I only show up together with my siblings (Profile, Search and Maps) whenever you sign in. If you don't, then you;'re not to be trusted</h1>
-	</div>	
 </template>
 
 <script>
 
 import Search from "./Search.vue"
+import Menu from "./Menu.vue"
 
 export default {
 	name: "appHeader",
 	components: {
-		
-		"appSearch": Search
-
+		'appSearch': Search,
+		'appMenu': Menu,
 	}	
 }
 
 </script>
 
 <style scoped>
-	
-	.app-header {
+	img {
 		position: relative;
-		top: 20px;
+		height: 30px;
+		width: 30px;
+	}
+	app-menu {
+		position: relative;
 	}
 
 </style>
