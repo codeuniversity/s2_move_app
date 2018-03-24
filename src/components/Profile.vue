@@ -1,29 +1,38 @@
 <template>
-	<div class="app-profile">
-		<p> </p>
-	</div>	
+	  <div class="profile" v-if="Object.keys(selectedUser).length !== 0">
+      <div class="profile__header">
+        <img class="profile__img" :src="selectedUser.image"> <br>
+        <h3 class="profile__name"> 
+          {{ selectedUser.fName }} 
+          {{ selectedUser.lName }}
+        </h3> 
+      </div>
+      <p class="profile__text">
+        {{ selectedUser.team }} - Phone: {{ selectedUser.mobile }}
+      </p>
+      <br> 
+      <div class="profile__social">
+        <a :href="selectedUser.googleCal"> Google Calendar</a> 
+        <a :href="selectedUser.wiki"> Wiki</a>
+    </div>
+  </div>  
+
 </template>
 
 <script>
 
 export default {
-	name: "appProfile"
-	
+
+  name: "Profile",
+  props: {
+    selectedUser: Object
+  }
 }
 
 </script>
 
-<style scoped>
+<style lang="css">
 
-.app-profile {
-  position: relative;
-  top: 50px;
-
-}
-
-	p {
-  color: blue;
-  font-size: 40px;
-	}
+@import "../../styles/css/profile.component.css"
 
 </style>

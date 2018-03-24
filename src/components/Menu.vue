@@ -38,7 +38,6 @@
           @click.native="showSubmenu=!showSubmenu">
           <a>HAMBURG</a>
         </router-link>
-          <!-- <input type="checkbox" id="menu-toggle"/> -->
 
           <!-- SUBMENU 1 / Select location -->
           <ul :class="{'submenu-visible':showSubmenu}" class="submenu">
@@ -156,12 +155,11 @@ export default {
 }
 
 // Create a computed property for the click listener
-
 </script>
 
 <style lang="css">
 
-@import "../../vendor/css/menu.component.css"
+@import "../../styles/css/menu.component.css"
 
 </style>
 
