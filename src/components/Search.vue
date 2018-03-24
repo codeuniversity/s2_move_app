@@ -51,6 +51,10 @@ div.btn {
   background-image: url("../assets/icons/menu-black-icon.png");
 }
 
+div.btn:hover {
+  cursor: pointer;
+}
+
 .menu-visible {
   /*put transition here should*/ 
 }

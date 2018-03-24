@@ -131,6 +131,9 @@ img#btn__close {
   height: 30px;
 }
 
+img#btn__close:hover {
+  cursor: pointer;
+}
 
 
 /* style user name*/
