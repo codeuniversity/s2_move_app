@@ -1,6 +1,6 @@
 <template>
-	<div>
-		<p> I'm the profile! Look at me! I'm blue!</p>
+	<div class="app-profile">
+		<p> </p>
 	</div>	
 </template>
 
@@ -14,7 +14,16 @@ export default {
 </script>
 
 <style scoped>
+
+.app-profile {
+  position: relative;
+  top: 50px;
+
+}
+
 	p {
-	color: blue;
+  color: blue;
+  font-size: 40px;
 	}
+
 </style>

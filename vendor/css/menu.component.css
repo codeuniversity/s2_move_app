@@ -1,0 +1,281 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/*include padding and border into total width and height of elements*/
+*{
+  box-sizing: border-box;
+}
+
+
+/*Make menu cover anything else on page*/
+.menu__wrapper {  
+  position: relative;
+  float: right;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+}
+
+/*Make burger menu take up 75% of the page and align right*/
+.burger-menu {
+  position: relative;
+  background-color: #f4f7fa;
+  width: 75%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  float: right;
+  border: 2px #1e212a;
+  border-style: solid solid none solid;
+
+}
+
+.menu-visible {
+  overflow: hidden;
+  max-height: 0;
+  /*add transition here*/
+}
+
+ /*25% column to cover content of the page, used to toggle the menu. Hidden desktop/iPad*/
+.menu__toggle {
+  display: none;
+  position: absolute;
+  background-color: black;
+  width: 25%;
+  height: 100%;
+  opacity: 0.3;
+  float: right;
+}
+
+/*remove default list styles */
+li {
+  list-style: none;
+}
+
+/*Underline links*/
+a:hover {
+    text-decoration: underline;
+}
+
+/* MEDIA QUERIES 
+
+/* Show menu toggle for smartphones only */
+@media (max-width: 414px) {
+  .menu__toggle  {
+  display: block;
+  }
+}
+
+/* Limit width of menu for non-smartphone devices.*/
+@media (min-width: 415px) {
+  .menu__wrapper {
+  max-width: 300px;
+  }
+}
+
+/* Define max width for mobile devices */
+@media (min-width: 415px) {
+  .burger-menu  {
+    width: 300px;
+  }
+}
+
+/*Hide feedback if screen height is insufficient */
+
+@media (max-height: 558px) {
+  .feedback-visible {
+  display: none;
+  }
+}
+
+/*@media (max-width: 350px) {
+  .user-text h2 {
+    font-size: 18px;
+  }
+}*/
+
+/* USER INFORMATION */
+  .user-info {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-bottom: solid 2px #1e212a;
+}
+
+/* CSS trick to keep user image 4x3 format on various screen sizes*/
+.user-info:before {
+  content: '';
+  display: block;
+  padding-bottom: 75%;
+
+}
+
+/* style user image*/
+img {
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  top: 0; 
+  left: 0; 
+  bottom: 0; 
+  right: 0;
+  z-index: 1;
+}
+
+img#btn__close {
+  position: absolute;
+  margin: initial;
+  width: 30px;
+  height: 30px;
+}
+
+img#btn__close:hover {
+  cursor: pointer;
+}
+
+
+/* style user name*/
+.user-text h2 {  
+  position: absolute;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #f4f7fa;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  bottom: 20px; 
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+/* style desk location of user */
+.desk-text {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  bottom: 18px; 
+}
+
+/* align desk location central*/
+.desk-text ul {
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.desk-text ul li {
+  display: inline;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #1e212a;
+  padding:1px;
+  background-color: #03ffb7;
+  margin: 8px;
+}
+
+/* LOCATION NAVIGATION */
+
+/*style location navigation*/
+.nav {
+  position: relative;
+  width: 100%;
+  background-color: #f4f7fa;
+}
+
+/* Define styles for all links*/
+.nav__locations a {
+  display: block;
+  text-decoration: none;
+  line-height: 60px;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  font-weight: bold;
+  color: #1e212a;
+  text-align: center;
+}
+
+ul.nav__locations li {
+  border-bottom: solid 2px #1e212a;
+}
+
+/* invert colors of parent active routes,*/
+.active > a {
+  color: #f4f7fa;
+}
+
+.active > a:link {
+  background-color: #1e212a;
+}
+
+/* Hide submenu by default*/
+ul.submenu {
+  display:none;
+}
+
+ul.submenu-visible.submenu {
+  display:flex;
+}
+
+ul.submenu li {
+  border: 2px #1e212a;
+  border-style: none solid solid none;
+  width: 50%;
+}
+
+.submenu li:nth-child(2) {
+  border-right: 0px;
+}
+
+/* STYLE FEEDBACK BOX*/
+.menu__feedback {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  border-bottom: solid 2px #1e212a;
+  text-align: center;
+  padding-bottom: 10px;
+  /*overflow: hidden;*/
+}
+
+/*Style feedback link*/
+[href="mailto:marie.klaus@code.berlin?subject= Move App user feedback"] {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1e212a;
+}
+
+.menu__feedback p, .menu__feedback a {
+  display: inline;
+  font-size: 16px;
+}
+
+/*add some whitespace between feedback link and impressum*/
+.menu__feedback p {
+  padding-left: 12px; 
+}
+
+/*TRANSITIONS*/
+
+/* Set initial state of submenu.
+  Set it to max-height: 0, and hide the overflowing content.
+  Use a transition to fade-in content.
+*/
+/*.submenu-visible {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: all 3s ease-out;
+}
+
+.menu-visible {
+  overflow: hidden;
+  max-height: 0;
+    -webkit-transition: width 1s;
+  transition-timing-function: ease-in;
+      -webkit-transition-delay: 1s; 
+    transition-delay: 1s;
+}*/

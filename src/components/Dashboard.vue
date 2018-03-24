@@ -3,6 +3,7 @@
 		<div>
 			<app-header></app-header>
 		</div>
+
 			<app-profile></app-profile>
 	</div>
 </template>
@@ -14,10 +15,10 @@ import Profile from "./Profile.vue"
 
 
 export default {
-	name: "appDashboard",
+	name: 'Dashboard',
 	components: {
 		"appHeader": Header,
-		"appProfile": Profile
+		"appProfile": Profile,
 	}
 }
 
