@@ -124,6 +124,14 @@ img {
   z-index: 1;
 }
 
+img#btn__close {
+  position: absolute;
+  margin: initial;
+  width: 30px;
+  height: 30px;
+}
+
+
 
 /* style user name*/
 .user-text h2 {  

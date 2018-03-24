@@ -21,6 +21,9 @@
       <img src="../assets/icons/default-user-icon.png" alt="default user image">
       <!-- user data image -->
       <img :src="user.image" alt="user profile picture">
+
+      <img id="btn__close" src="../assets/icons/close-black-icon.png" @click="closeMenu()">
+
     </div>
 
 <!-- NAVIGATION MENU -->
@@ -104,7 +107,7 @@
     </div>
   </div>
 
-  <div class="menu__toggle"></div>
+  <div class="menu__toggle" @click="closeMenu()"></div>
 
 </div>
 
@@ -130,7 +133,7 @@ export default {
     closeMenu () {
       this.showSubmenu = false;
       this.showMenu = !this.hideMenu;
-      return this.$emit('closedMenu', this.showMenu);
+      this.$emit('closedMenu', this.showMenu);
     }
   },
   created () {
