@@ -8,9 +8,31 @@
   box-sizing: border-box;
 }
 
-/*div.app-header {
-  position: absolute;
-  width: 100%;
-  height: 60px;
-  background-color: #1e212a;
+/*@media (min-width: 414px) {
+  .menu__toggle  {
+  display: none;
+  }
 }*/
+
+div.app-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 65px;
+  background-color: #1e212a;
+  color: #ff0354;
+  /*text-align: center;*/
+
+}
+
+img#s2-logo {
+  position: relative;
+  float: left;
+  width: 60px;
+  height: 60px;
+}
+
+p.app-header {
+  position: relative;
+}

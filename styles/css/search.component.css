@@ -7,14 +7,13 @@ body {
 }
 
 .search {
-  position: relative;
+  position: absolute;
+  top: 8px;
   float: right;
   right: 10px;
   height: 50px;
   width: 500px;
   border: none;
-  margin-top: 1%;
-  margin-left: 5px;
   background-color: #f4f7fa;
   z-index: 0;
   background-image: url('../../src/assets/icons/search-icon.png');
@@ -24,7 +23,7 @@ body {
 
 .search__input {
   position: absolute;
-  left: 35px;
+  left: 40px;
   top: 5px;
   width: 80%;
   height: 40px;
@@ -65,51 +64,6 @@ body {
 
 }
 
-  .email {
-    width: 100%;
-  }
-
-
-
-
-
-@media (max-width: 650px) {
-  .search {
-  width: 100%;
-  }
-}
-
-.search__list {
-  position: absolute;
-  width: 100%;
-  background-color: #4502da;
-  top: 50px;
-  color: white;
-}
-.search__item {
-  padding: 10px;
-}
-
-a {
-  color: white;
-  text-decoration: none;
-  border: 2px solid white;
-  padding: 10px;
-  margin: 10px;
-  display: inline-block;
-}
-
-a:hover {
-  text-decoration: none;
-  background-color: #020249 ;
-}
-
-app-menu {
-  position: absolute;
-  float: right;
-  z-index: 100;
-}
-
 /* burger menu icon*/
 div.btn {
   position: absolute;
@@ -123,6 +77,48 @@ div.btn {
 
 div.btn:hover {
   cursor: pointer;
+}
+
+  .email {
+    width: 100%;
+  }
+
+@media (max-width: 650px) {
+  .search {
+  width: 100%;
+  }
+}
+
+.search__list {
+  position: absolute;
+  width: 100%;
+  background-color: #f4f7fa;
+  top: 50px;
+  color: #1e212a;
+}
+
+.search__item {
+  padding: 10px;
+}
+
+.search__item  a {
+  color: #1e212a;
+  text-decoration: none;
+  border: 2px solid #1e212a;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+}
+
+.search__item a:hover {
+  text-decoration: none;
+  background-color: #03ffb7;
+}
+
+app-menu {
+  position: absolute;
+  float: right;
+  z-index: 100;
 }
 
 .menu-visible {

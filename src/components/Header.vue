@@ -1,5 +1,7 @@
 <template>
 	<div class="app-header">
+    <img id="s2-logo" src="../assets/images/s2-black-logo.png" alt="Sinnerschrader Logo">
+    <!-- <p>MOVE</p> -->
 		<app-search></app-search>
 	</div>
 </template>
