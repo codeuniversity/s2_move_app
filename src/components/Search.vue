@@ -1,10 +1,12 @@
 <template>
   <div>
     <div class="search">
+
+<!-- SEARCH INPUT FORM -->
       <form name="myForm">
         <input v-on:submit.prevent
             autocomplete="off"
-            class="search__input" 
+            class="search__input"
             name="mySearch"
             v-model="searchTerm"
             type="text" 
@@ -12,6 +14,17 @@
         />
       </form>
 
+<!-- MENU TOGGLE BUTTON -->
+    <div class="btn" @click="hideMenu=!hideMenu"></div>
+
+<!-- LOAD MENU COMPONENT -->
+    <app-menu
+      :class="{'menu-visible':hideMenu}"
+      :hideMenu="hideMenu"
+      @closedMenu="hideMenu = $event" >
+    </app-menu>
+
+<!-- SEARCH RESULT LIST -->
       <div class="search__list" v-if="isListVisible">  
         <div class="search__item" v-for="user in filteredList">
           <p @click="showDetails(user)"> 
@@ -23,16 +36,12 @@
           </p>   
         </div>
       </div>
-      <app-profile :selectedUser="selectedUser"></app-profile> 
+
+<!-- SELECTED USER PROFILE -->
+      <app-profile :selectedUser="selectedUser"></app-profile>
     </div>
 
-    <div class="btn" @click="hideMenu=!hideMenu"></div>
 
-    <app-menu
-      :class="{'menu-visible':hideMenu}"
-      :hideMenu="hideMenu"
-      @closedMenu="hideMenu = $event" >
-    </app-menu>
   </div>
 
 </template>

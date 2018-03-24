@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/*include padding and border into total width and height of elements*/
+*{
+  box-sizing: border-box;
+}
+
+/*div.app-header {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  background-color: #1e212a;
+}*/

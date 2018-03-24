@@ -16,3 +16,9 @@ export default {
 }
 </script>
 
+<style lang="css">
+
+@import "../../styles/css/header.component.css"
+
+</style>
+

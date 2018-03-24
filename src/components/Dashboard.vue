@@ -1,10 +1,8 @@
 <template>
-	<div>
 		<div>
 			<app-header></app-header>
 			<!-- <app-search-result></app-search-result> -->
 		</div>
-	</div>
 </template>
 
 <script>
