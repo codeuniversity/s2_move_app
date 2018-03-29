@@ -1,7 +1,6 @@
 <template>
 		<div>
 			<app-header></app-header>
-			<!-- <app-search-result></app-search-result> -->
 		</div>
 </template>
 

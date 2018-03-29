@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="124px" height="124px" viewBox="0 0 124 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>Outlines</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="🖥-Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Desktop---Login" transform="translate(-658.000000, -148.000000)" stroke="#03FFB7" stroke-width="4">
+            <g id="Outlines" transform="translate(660.000000, 150.000000)">
+                <polyline id="Shape" points="120 120 120 0 0 0 0 34.373625 0 60 120 60"></polyline>
+                <polyline id="Shape" points="120 120 60 120 60 0"></polyline>
+                <path d="M0,105.454545 L0,60" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                <path d="M30,60 L30,90" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                <path d="M90,15.4545455 L90,45.4545455" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                <path d="M30,0 L30,22.7272727" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                <path d="M20,37.2727273 L20,60" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                <path d="M40,37.2727273 L40,60" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                <path d="M120,80 L90,80" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                <path d="M90,100 L120,100" id="Shape" fill="#000000" fill-rule="nonzero"></path>
+                <polyline id="Shape" points="59.0909091 106.363636 44.5454545 120 15.4545455 120 0.943863416 107.469346"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
