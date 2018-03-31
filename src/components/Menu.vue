@@ -1,5 +1,5 @@
 <template>
-  <div  class="menu__wrapper" :class="{'menu-visible':hideMenu}">
+  <div  class="menu__wrapper" :class="{'menu-visible':showMenu}">
   <div  class="burger-menu">
 
     <!-- USER INFO -->
@@ -118,21 +118,20 @@ import axios from 'axios';
 
 export default {
 	name: 'Menu',
-  props: ['hideMenu'],
   data () {
     return {
       user: {},
       desk: {},
-      showSubmenu: false,
-      showMenu: ''
+      showSubmenu: false
     }
   },
 
   methods: {
     closeMenu () {
+      // always close submenu when menu is closed
       this.showSubmenu = false;
-      this.showMenu = !this.hideMenu;
-      this.$emit('closedMenu', this.showMenu);
+      // hide the menu, refer to global state
+      return this.$store.state.hideMenu = !this.$store.state.hideMenu;
     }
   },
   created () {

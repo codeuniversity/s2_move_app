@@ -15,14 +15,7 @@
       </form>
 
 <!-- MENU TOGGLE BUTTON -->
-    <div class="btn" @click="hideMenu=!hideMenu"></div>
-
-<!-- LOAD MENU COMPONENT -->
-    <app-menu
-      :class="{'menu-visible':hideMenu}"
-      :hideMenu="hideMenu"
-      @closedMenu="hideMenu = $event" >
-    </app-menu>
+    <div class="btn" @click="toggleMenu()"></div>
 
 <!-- SEARCH RESULT LIST -->
       <div class="search__list" v-if="isListVisible">  
@@ -59,8 +52,7 @@ export default {
     return {
 	    searchTerm: '',
 	    selectedUser: {},
-	    userList: [],
-      hideMenu: true  // hideMenu by default
+	    userList: []
     }
   },
   components: {
@@ -85,6 +77,10 @@ export default {
   methods: {
     showDetails(user) {
       this.selectedUser = user;
+    },
+    // refers to global menu state
+    toggleMenu() {
+      return this.$store.commit('toggleMenu');
     }  
    }, 
   computed: {

@@ -6,7 +6,7 @@ import { config } from "../helpers/firebaseconfig.js"
 import firebase from "firebase";
 import firebaseui from "firebaseui";
 import axios from 'axios';
-
+import { store } from './store/store';
 
 Vue.use(VueRouter);
 
@@ -26,6 +26,7 @@ new Vue({
   	})
   },
   el: "#app",
+  store: store,
   render: h => h(App)
 });
  
