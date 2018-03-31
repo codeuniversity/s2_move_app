@@ -1,7 +1,6 @@
 <template>
-  <div>
     <div class="search">
-
+      
 <!-- SEARCH INPUT FORM -->
       <form name="myForm">
         <input v-on:submit.prevent
@@ -33,9 +32,6 @@
 <!-- SELECTED USER PROFILE -->
       <app-profile :selectedUser="selectedUser"></app-profile>
     </div>
-
-
-  </div>
 
 </template>
 
