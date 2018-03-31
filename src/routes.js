@@ -8,6 +8,7 @@ import Login from "./components/Login.vue"
 import Header from "./components/Header.vue"
 import Profile from "./components/Profile.vue"
 import Search from "./components/Search.vue"
+import Menu from "./components/Menu.vue"
 
 
 //## Maps

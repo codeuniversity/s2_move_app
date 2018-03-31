@@ -1,0 +1,113 @@
+f*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'MaisonNeue', sans-serif;
+}
+
+.search {
+  position: absolute;
+  top: 8px;
+  float: right;
+  right: 10px;
+  height: 50px;
+  width: 450px;
+  border: none;
+  background-color: #f4f7fa;
+  z-index: 0;
+  background-image: url('../../src/assets/icons/search-icon.png');
+  background-repeat: no-repeat;
+  background-position: 2% 50%;
+}
+
+.search__input {
+  position: absolute;
+  left: 40px;
+  top: 5px;
+  width: 80%;
+  height: 40px;
+  background-color: #f4f7fa;
+  border: none;
+  font-family: 'MaisonNeue', sans-serif;
+  font-size: 16px;
+}
+
+/* Placeholder text search input*/
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */  
+  color: #1e212a;
+  opacity: 0.8;
+  font-family: 'MaisonNeue', sans-serif;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #1e212a;
+  opacity: 0.8;
+  font-family: 'MaisonNeue', sans-serif;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  color: #1e212a;
+  opacity: 0.8;
+  font-family: 'MaisonNeue', sans-serif;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  color: #1e212a;
+  opacity: 0.8;
+  font-family: 'MaisonNeue', sans-serif;
+}
+
+#search-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* burger menu icon*/
+div.btn {
+  position: absolute;
+  right:20px;
+  float: right;
+  width: 40px;
+  height: 40px;
+  background-image: url("../../src/assets/icons/menu-black-icon.png");
+}
+
+div.btn:hover {
+  cursor: pointer;
+}
+
+  .email {
+    width: 100%;
+  }
+
+@media (max-width: 450px) {
+  .search {
+  width: 100%;
+  }
+}
+
+.search__list {
+  position: absolute;
+  width: 100%;
+  background-color: #f4f7fa;
+  top: 50px;
+  color: #1e212a;
+}
+
+.search__item {
+  padding: 10px;
+}
+
+.search__item  a {
+  color: #1e212a;
+  text-decoration: none;
+  border: 2px solid #1e212a;
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+}
+
+.search__item a:hover {
+  text-decoration: none;
+  background-color: #03ffb7;
+}

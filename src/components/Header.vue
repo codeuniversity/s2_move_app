@@ -1,11 +1,11 @@
 <template>
-	<div>
-		<div>
-			<app-search></app-search>
-		</div>
-
-		<h1> I am the header and I only show up together with my siblings (Profile, Search and Maps) whenever you sign in. If you don't, then you;'re not to be trusted</h1>
-	</div>	
+	<div class="app-header">
+    <div class="app-header__logos">
+      <img id="s2-logo" src="../assets/images/s2-logo-small.png" alt="Sinnerschrader Logo">
+      <img id="move-logo" src="../assets/images/move-logo.png" alt="Sinnerschrader Logo">
+    </div>
+		<app-search></app-search>
+	</div>
 </template>
 
 <script>
@@ -13,13 +13,16 @@
 import Search from "./Search.vue"
 
 export default {
-	name: "appHeader",
+	name: "Header",
 	components: {
-		
-		"appSearch": Search
-
-	}	
+		'appSearch': Search
+	}
 }
-
 </script>
+
+<style lang="css">
+
+@import "../../styles/css/header.component.css"
+
+</style>
 
