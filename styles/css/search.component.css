@@ -69,7 +69,6 @@ div.btn {
   position: absolute;
   right:20px;
   float: right;
-  /*z-index: -1;*/
   width: 40px;
   height: 40px;
   background-image: url("../../src/assets/icons/menu-black-icon.png");
@@ -113,14 +112,4 @@ div.btn:hover {
 .search__item a:hover {
   text-decoration: none;
   background-color: #03ffb7;
-}
-
-app-menu {
-  position: absolute;
-  float: right;
-  z-index: 100;
-}
-
-.menu-visible {
-  /*put transition here should*/ 
 }

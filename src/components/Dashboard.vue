@@ -1,8 +1,9 @@
 <template>
-		<div>
-			<app-header></app-header>
+		<div class="dashboard">
       <!-- App menu -->
       <app-menu :class="{'menu-visible':hideMenu}"></app-menu>
+			<app-header></app-header>
+
 
 		</div>
 </template>
@@ -20,7 +21,7 @@ export default {
     "appSearchResult": SearchResult,
     "appMenu": Menu
   },
-  
+
   data() {
     return {
       // hideMenu: this.$store.state.hideMenu
@@ -36,11 +37,8 @@ export default {
 
 </script>
 
+<style lang="css">
 
-<style scoped>
-  
-.menu-visible {
-  /*put transition here*/ 
-}
+@import "../../styles/css/dashboard.component.css"
 
 </style>

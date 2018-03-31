@@ -1,10 +1,14 @@
 <template>
-  <div  class="menu__wrapper" :class="{'menu-visible':showMenu}">
+  <div  class="menu__wrapper">
+
+  <!-- OVERLAY TO TOGGLE MENU -->
+  <div class="menu__toggle" @click="closeMenu()"></div>
+
+  <!-- BURGER MENU -->
   <div  class="burger-menu">
 
     <!-- USER INFO -->
     <div class="user-info">
-
       <div class="user-text">
         <h2>{{user.fName}} {{user.lName}}</h2>
       </div>
@@ -106,8 +110,6 @@
     </div>
   </div>
 
-  <div class="menu__toggle" @click="closeMenu()"></div>
-
 </div>
 
 </template>
@@ -125,7 +127,6 @@ export default {
       showSubmenu: false
     }
   },
-
   methods: {
     closeMenu () {
       // always close submenu when menu is closed
