@@ -1,8 +1,5 @@
 <template>
     <div class="search" v-click-outside="resetForm">
-      
-<!-- SEARCH INPUT FORM -->
-
       <form name="myForm">
         <input v-on:submit.prevent
             autocomplete="off"
@@ -14,13 +11,6 @@
             :value="getSearchTerm"
         />
       </form>
-
-<!-- MENU TOGGLE BUTTON -->
-
-    <div class="btn" @click="toggleMenu"></div>
-
-<!-- SEARCH RESULT LIST -->
-
       <div class="search__list" v-if="getListVisibility">  
         <div class="search__item" v-for="user in getFilteredUsers">
           <p @click="action(user)"> 
@@ -32,13 +22,8 @@
           </p>   
         </div>
       </div>
-
-<!-- SELECTED USER PROFILE -->
-
     <slot></slot>
-
     </div>
-
 </template>
 
 <script>
@@ -61,9 +46,6 @@ export default {
   methods: {
     ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser"]),
     // refers to global menu state
-    toggleMenu() {
-      return this.$store.commit('toggleMenu');
-    },
     dispatchSearchTerm(event) {
       this.updateTerm(event.target.value)
       this.selectUser({});

@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import users from "@/api/users"
+import users from "@/api/users";
 
 
 Vue.use(Vuex);
@@ -9,8 +9,7 @@ export const store = new Vuex.Store({
 	state: {
 		users: [],
 		searchTerm: '',
-		selectedUser: {},
-		hideMenu: true
+		selectedUser: {}
 	},
 	getters: {
 		getFilteredUsers(state, getters) {
@@ -46,9 +45,6 @@ export const store = new Vuex.Store({
 		}
 	},
 	mutations: {
-		toggleMenu: state => {
-      		state.hideMenu=!state.hideMenu;
-    	},
 		setUsers(state, users) {
 			//update users
 			state.users = users;
