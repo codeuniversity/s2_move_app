@@ -3,21 +3,21 @@
 		<div>
 			<app-header></app-header>
 		</div>
-			<app-profile></app-profile>
+		<app-hamburg-ottensen></app-hamburg-ottensen>
 	</div>
 </template>
 
 <script>
 
 import Header from "./Header.vue"
-import Profile from "./Profile.vue"
+import HamburgOttensen from "./maps/HamburgOttensen"
 
 
 export default {
 	name: "appDashboard",
 	components: {
 		"appHeader": Header,
-		"appProfile": Profile
+		"appHamburgOttensen": HamburgOttensen
 	}
 }
 

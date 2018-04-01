@@ -25,6 +25,8 @@ export default {
         callbacks: {
           signInSuccess: function(currentUser, credential, redirectUrl) {
             // Return type determines whether we continue the redirect automatically or whether we leave that to developer to handle.
+            var user = signInSucces.currentUser;
+            console.log("hello", user)
             return true;
           },
           signInFailure: function(error) {

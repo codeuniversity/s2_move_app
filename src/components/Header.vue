@@ -1,23 +1,31 @@
 <template>
 	<div>
 		<div>
-			<app-search></app-search>
+			<app-search :action="selectUser">
+				<app-profile :selectedUser="getSelectedUser"></app-profile>
+			</app-search>		
 		</div>
-
-		<h1> I am the header and I only show up together with my siblings (Profile, Search and Maps) whenever you sign in. If you don't, then you;'re not to be trusted</h1>
 	</div>	
 </template>
 
 <script>
 
 import Search from "./Search.vue"
+import Profile from "./Profile.vue"
+import { mapGetters, mapActions } from "vuex"
+
 
 export default {
-	name: "appHeader",
-	components: {
-		
-		"appSearch": Search
-
+	name: "Header",
+	components: {		
+		"appSearch": Search,
+		"appProfile": Profile
+	},
+	computed: {
+		...mapGetters(["getSelectedUser"])			
+	},
+	methods: {
+		...mapActions(["selectUser"])
 	}	
 }
 
