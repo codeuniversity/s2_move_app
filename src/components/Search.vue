@@ -1,16 +1,22 @@
 <template>
-  <div>
     <div class="search">
+      
+<!-- SEARCH INPUT FORM -->
       <form name="myForm">
         <input v-on:submit.prevent
             autocomplete="off"
-            class="search__input" 
+            class="search__input"
             name="mySearch"
             v-model="searchTerm"
             type="text" 
             placeholder="Who are you looking for?"
         />
       </form>
+
+<!-- MENU TOGGLE BUTTON -->
+    <div class="btn" @click="toggleMenu()"></div>
+
+<!-- SEARCH RESULT LIST -->
       <div class="search__list" v-if="isListVisible">  
         <div class="search__item" v-for="user in filteredList">
           <p @click="showDetails(user)"> 
@@ -22,28 +28,29 @@
           </p>   
         </div>
       </div>
-      <profile :selectedUser="selectedUser"></profile> 
+
+<!-- SELECTED USER PROFILE -->
+      <app-profile :selectedUser="selectedUser"></app-profile>
     </div>
-  </div>
-</body>  
 
 </template>
 
 <script>
-
+import Menu from "./Menu.vue"
 import Profile from "./Profile.vue"
 import axios from "axios"
-
-
 export default {
-
   name: 'Search',
    data() {
     return {
-	    searchTerm: '',
-	    selectedUser: {},
-	    userList: [],
-    }   
+      searchTerm: '',
+      selectedUser: {},
+      userList: []
+    }
+  },
+  components: {
+    "appMenu": Menu,
+      "appProfile": Profile
   },
   created() {
     axios.get("https://s2-move.firebaseio.com/users.json")
@@ -60,17 +67,18 @@ export default {
           })
       .catch(error => console.log(error))
   },
-  components: {
-    profile: Profile
-  },
   methods: {
     showDetails(user) {
       this.selectedUser = user;
+    },
+    // refers to global menu state
+    toggleMenu() {
+      return this.$store.commit('toggleMenu');
     }  
    }, 
   computed: {
     filteredList() {
-      	return this.userList.filter(user => {
+        return this.userList.filter(user => {
           var fullName = `${user.fName} ${user.lName}`;
             return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
             || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
@@ -86,11 +94,8 @@ export default {
     },
   }
 }
-
 </script>
 
 <style lang="css">
-
 @import "../../styles/css/search.component.css"
-
 </style>
