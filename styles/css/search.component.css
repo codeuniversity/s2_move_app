@@ -2,20 +2,25 @@ f*, *:before, *:after {
   box-sizing: border-box;
 }
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 /*Set max width for search for non-smartphone devices.*/
 @media (min-width: 450px) {
   .search {
-  max-width: 450px;
+  max-width: 350px;
   }
 }
 
 /*style search box*/
 .search {
   position: absolute;
-  top: 8px;
+  top: 12px;
   float: right;
   right: calc(10px);
-  height: 50px;
+  height: 45px;
   width: calc(100% - 20px);
   border: none;
   background-color: #f4f7fa;
@@ -25,10 +30,9 @@ f*, *:before, *:after {
   background-position: 2% 50%;
 }
 
-/*
 /* Placeholder text search input*/
- /* Chrome/Opera/Safari */  
 
+ /* Chrome/Opera/Safari */  
 ::-webkit-input-placeholder {
   color: #1e212a;
   font-family: 'MaisonNeue', sans-serif;
@@ -100,7 +104,6 @@ div.btn:hover {
 
 .search__item {
   position: relative;
-  display: flex;
   padding: 10px;
 }
 
