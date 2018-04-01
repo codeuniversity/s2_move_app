@@ -2,6 +2,7 @@
     <div class="search">
       
 <!-- SEARCH INPUT FORM -->
+
       <form name="myForm">
         <input v-on:submit.prevent
             autocomplete="off"
@@ -14,12 +15,14 @@
       </form>
 
 <!-- MENU TOGGLE BUTTON -->
-    <div class="btn" @click="toggleMenu()"></div>
+
+    <div class="btn" @click="toggleMenu"></div>
 
 <!-- SEARCH RESULT LIST -->
-      <div class="search__list" v-if="isListVisible">  
-        <div class="search__item" v-for="user in userList">
-          <p @click="showDetails(user)"> 
+
+      <div class="search__list" v-if="getListVisibility">  
+        <div class="search__item" v-for="user in getFilteredUsers">
+          <p @click="action(user)"> 
             <a href="#">
               {{ user.fName }} 
               {{ user.lName }} 
@@ -30,13 +33,14 @@
       </div>
 
 <!-- SELECTED USER PROFILE -->
-      <app-profile :selectedUser="getSelectedUser"></app-profile>
+
+    <slot></slot>
+
     </div>
 
 </template>
 
 <script>
-import Menu from "./Menu.vue"
 import Profile from "./Profile.vue"
 import axios from "axios"
 import { mapGetters, mapActions } from 'vuex'
@@ -45,14 +49,16 @@ import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'Search',
   components: {
-    "appMenu": Menu,
       "appProfile": Profile
+  },
+  props: {
+    action: Function
   },
   created() {
       this.fetchUsers();
   },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm"]),
+    ...mapActions(["fetchUsers","updateTerm", "selectUser"]),
     
     showDetails(user) {
       this.selectedUser = user;
@@ -67,26 +73,7 @@ export default {
    }, 
   computed: {
     ...mapGetters([
-      "ListFilteredUsers", "getSelectedUser", "getUsers"]),
-    // filteredList() {
-    //     return this.userList.filter(user => {
-    //       var fullName = `${user.fName} ${user.lName}`;
-    //         return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
-    //         || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
-    //   })
-    // },
-    isListVisible() {
-      return this.$store.dispatch('isListVisible');
-    },
-    // userList() {
-    //   return this.$store.getters.ListFilteredUsers
-    // },
-
-  },
-  watch: {
-    // searchTerm () {
-    //   this.selectedUser = { };
-    // },
+      "getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility"])
   }
 }
 </script>
