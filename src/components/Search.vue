@@ -1,5 +1,5 @@
 <template>
-    <div class="search">
+    <div class="search" v-click-outside="resetForm">
       
 <!-- SEARCH INPUT FORM -->
 
@@ -11,6 +11,7 @@
             @input="dispatchSearchTerm"
             type="text" 
             placeholder="Who are you looking for?"
+            :value="getSearchTerm"
         />
       </form>
 
@@ -58,22 +59,23 @@ export default {
       this.fetchUsers();
   },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser"]),
-    
-    showDetails(user) {
-      this.selectedUser = user;
-    },
+    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser"]),
     // refers to global menu state
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     },
     dispatchSearchTerm(event) {
       this.updateTerm(event.target.value)
+      this.selectUser({});
+    },
+    resetForm() {
+      this.updateTerm('')
+      this.selectUser({});
     }
    }, 
   computed: {
     ...mapGetters([
-      "getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility"])
+      "getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm"])
   }
 }
 </script>

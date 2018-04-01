@@ -30,7 +30,7 @@ export const store = new Vuex.Store({
 			return state.users;
 		},
 		getListVisibility(state) {
-      		return state.searchTerm.length >=2;
+      		return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
     	}
 	},
 	actions: {
@@ -41,6 +41,7 @@ export const store = new Vuex.Store({
     		commit("updateTerm", searchTerm);	
 		},
 		selectUser({ commit }, selectedUser) {
+			console.log("Yo soy una acción")
 			commit("selectUser", selectedUser);	
 		}
 	},

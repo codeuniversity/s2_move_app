@@ -1,6 +1,6 @@
 /* Fetching users from the API (Firebase) --> to mock client-server processing */
 
-const _users = []
+const users = []
 
 import axios from "axios";
 export default {

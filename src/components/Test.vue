@@ -8,7 +8,7 @@
           @click="handler(desk.id)"
           />                            
       <div>        
-         <ul class="dropdown-menu"  v-if="showList" v-click-outside="hideList"> Check In
+         <ul class="dropdown-menu" v-if="showList" v-click-outside="hideList"> Check In
             <li v-for="option in options">
               <input type="button" @click="showModal" :value="option.item">
             </li>
