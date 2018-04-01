@@ -60,20 +60,6 @@ a:hover {
 
 /* MEDIA QUERIES 
 
-/* Show menu toggle for smartphones only */
-/*@media (max-width: 414px) {
-  .menu__toggle  {
-  display: block;
-  }
-}*/
-
-/* Limit width of menu for non-smartphone devices.*/
-/*@media (min-width: 415px) {
-  .menu__wrapper {
-  max-width: 300px;
-  }
-}*/
-
 /* Define max width for mobile devices */
 @media (min-width: 415px) {
   .burger-menu  {
@@ -82,13 +68,11 @@ a:hover {
 }
 
 /*Hide feedback if screen height is insufficient */
-
 @media (max-height: 558px) {
   .feedback-visible {
   display: none;
   }
 }
-
 
 /* USER INFORMATION */
   .user-info {
@@ -103,7 +87,6 @@ a:hover {
   content: '';
   display: block;
   padding-bottom: 75%;
-
 }
 
 /* style user image*/

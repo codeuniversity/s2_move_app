@@ -2,7 +2,7 @@ f*, *:before, *:after {
   box-sizing: border-box;
 }
 
-/*make search width take up full width for smartphones. untol 450px*/
+/*Set max width for search for non-smartphone devices.*/
 @media (min-width: 450px) {
   .search {
   max-width: 450px;
@@ -29,31 +29,27 @@ f*, *:before, *:after {
 /* Placeholder text search input*/
  /* Chrome/Opera/Safari */  
 
-/*::-webkit-input-placeholder {
+::-webkit-input-placeholder {
   color: #1e212a;
-  opacity: 0.8;
   font-family: 'MaisonNeue', sans-serif;
-}*/
+}
 /* Firefox 19+ */
-/*::-moz-placeholder { 
+::-moz-placeholder { 
   color: #1e212a;
-  opacity: 0.8;
   font-family: 'MaisonNeue', sans-serif;
-}*/
+}
 
 /* IE 10+ */
-/*:-ms-input-placeholder { 
+:-ms-input-placeholder { 
   color: #1e212a;
-  opacity: 0.8;
   font-family: 'MaisonNeue', sans-serif;
-}*/
+}
 
 /* Firefox 18- */
-/*:-moz-placeholder { 
+:-moz-placeholder { 
   color: #1e212a;
-  opacity: 0.8;
   font-family: 'MaisonNeue', sans-serif;
-}*/
+}
 
 /*style search input*/
 .search__input {
@@ -93,41 +89,62 @@ div.btn:hover {
   cursor: pointer;
 }
 
-/* Search list */
-.search__item {
-  position: absolute;
-  top: 15px;
-  width: inherit;
-  height: 500px;
-  padding: 10px;
-  background-color: yellow;
-
-}
-
-.search__item  a {
-  color: #1e212a;
-  text-decoration: none;
-  border: 2px solid #1e212a;
-  padding: 10px;
-  margin: 10px;
-  display: inline-block;
-}
-
-.search__item a:hover {
-  text-decoration: none;
-  background-color: #03ffb7;
-}
-
-  .search__email {
-    width: 100%;
-  }
-
-
+/* Search result list */
 .search__list {
   position: absolute;
+  top: 65px;
   width: 100%;
-  background-color: #f4f7fa;
-  top: 50px;
+  border: 2px solid #1e212a;
   color: #1e212a;
 }
+
+.search__item {
+  position: relative;
+  display: flex;
+  padding: 10px;
+}
+
+.search__list__thumbnail {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #1e212a;
+  overflow: hidden;
+}
+
+/*make picture width slighty bigger to make 4x3 pics fit into square*/
+.search__list__thumbnail img {
+  position: absolute;
+  width: 120%;
+  height: auto;
+}
+
+.search__list__name {
+  position: absolute;
+  left: 80px;
+  top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #1e212a;
+}
+
+/* display desk location*/
+.search__list__desk {
+  position: absolute;
+  left: 80px;
+  top: 42px;
+}
+
+.search__list__desk ul li {
+  display: inline;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #1e212a;
+  background-color: #03ffb7;
+  margin-right: 4px;
+}
+
+
 

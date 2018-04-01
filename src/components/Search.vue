@@ -19,14 +19,28 @@
 <!-- SEARCH RESULT LIST -->
       <div class="search__list" v-if="isListVisible">  
         <div class="search__item" v-for="user in filteredList">
-          <p @click="showDetails(user)"> 
-            <!-- <img :src="user.image" alt="user profile picture"> -->
-            <a href="#">
+          <p @click="showDetails(user)">
+          
+          <a href="#">
+            <!-- display search list thumbnail -->
+            <div class="search__list__thumbnail">
+              <img :src="user.image">
+            </div>
+              <!-- display search list name-->
+            <div class="search__list__name">
               {{ user.fName }} 
-              {{ user.lName }} 
+              {{ user.lName }}
+            </div>
+            <!-- display desk location -->
+            <!-- MAKE FIREBASE REQUEST DEPENDING ON USER-->
+            <div class="search__list__desk">
+              <ul>
+                <li>HAM</li>
+                <li>S2</li>
+                <li>A-3</li>
+              </ul>
+          </div>
             </a> 
-            <p class="search__email"> {{ user.gmailAcc }} </p>
-
           </p>   
         </div>
       </div>
@@ -58,6 +72,7 @@ export default {
     "appProfile": Profile
   },
   created() {
+    // request userList from firebase  
     axios.get("https://s2-move.firebaseio.com/users.json")
       .then(res => {
           const data = res.data
@@ -68,9 +83,7 @@ export default {
             users.push(user)
           }
           this.userList = users
-            // console.log(users)
           })
-      .catch(error => console.log(error))
   },
   methods: {
     showDetails(user) {
