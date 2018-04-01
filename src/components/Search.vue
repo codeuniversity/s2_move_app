@@ -1,5 +1,7 @@
 <template>
-    <div class="search" v-click-outside="resetForm">
+  <div class="search" v-click-outside="resetForm">
+      
+<!-- SEARCH INPUT FORM -->
       <form name="myForm">
         <input v-on:submit.prevent
             autocomplete="off"
@@ -13,29 +15,32 @@
       </form>
       <div class="search__list" v-if="getListVisibility">  
         <div class="search__item" v-for="user in getFilteredUsers">
-          <p @click="action(user)"> 
-            <a href="#">
+          <a href="#" @click="action(user)">
               {{ user.fName }} 
               {{ user.lName }} 
             </a> 
             <p class="email"> {{ user.gmailAcc }} </p>
-          </p>   
         </div>
-      </div>
+      </div>         
+
+  <!-- MENU TOGGLE BUTTON -->
+    <div class="btn" @click="toggleMenu()"></div>
+      <!-- SELECTED USER PROFILE -->
     <slot></slot>
-    </div>
+  </div>
 </template>
 
+
 <script>
-import Profile from "./Profile.vue"
+
+import Menu from "./Menu.vue"
 import axios from "axios"
 import { mapGetters, mapActions } from 'vuex'
-
 
 export default {
   name: 'Search',
   components: {
-      "appProfile": Profile
+    "appMenu": Menu
   },
   props: {
     action: Function
@@ -45,16 +50,22 @@ export default {
   },
   methods: {
     ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser"]),
+    toggleMenu() {
+      return this.$store.commit('toggleMenu');
     // refers to global menu state
+    },
     dispatchSearchTerm(event) {
       this.updateTerm(event.target.value)
       this.selectUser({});
     },
+    toggleMenu() {
+      return this.$store.commit('toggleMenu');
+    },
     resetForm() {
       this.updateTerm('')
       this.selectUser({});
-    }
-   }, 
+     } 
+  },   
   computed: {
     ...mapGetters([
       "getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm"])
@@ -63,5 +74,8 @@ export default {
 </script>
 
 <style lang="css">
+
 @import "../../styles/css/search.component.css"
+
 </style>
+

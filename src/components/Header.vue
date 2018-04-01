@@ -1,11 +1,13 @@
 <template>
-	<div>
-		<div>
-			<app-search :action="selectUser">
+	<div class="app-header">
+    <div class="app-header__logos">
+      <img id="s2-logo" src="../assets/images/s2-logo-small.png" alt="Sinnerschrader Logo">
+      <img id="move-logo" src="../assets/images/move-logo.png" alt="Sinnerschrader Logo">
+    </div>
+		<app-search :action="selectUser">
 				<app-profile :selectedUser="getSelectedUser"></app-profile>
-			</app-search>		
-		</div>
-	</div>	
+			</app-search>
+	</div>
 </template>
 
 <script>
@@ -28,6 +30,11 @@ export default {
 		...mapActions(["selectUser"])
 	}	
 }
-
 </script>
+
+<style lang="css">
+
+@import "../../styles/css/header.component.css"
+
+</style>
 

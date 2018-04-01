@@ -13,7 +13,7 @@ export default {
   components: {
   	"appDashboard": Dashboard
   }
-}  
+}
 </script>
 
 <style>
@@ -33,11 +33,14 @@ body {
 .body__text {
   font-size: 20px;
 }
+
 .header {
   margin-top: 180px;
 }
+
 h1 {
 font size: 45px;
 }
+
 
 </style>

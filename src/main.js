@@ -9,13 +9,14 @@ import { store } from "./store/store"
 import firebase from "firebase"; 
 import firebaseui from "firebaseui"; 
 
+
 Vue.use(VueRouter);
 Vue.use(vClickOutside);
 Vue.use(VModal);
 
 
 // routes will always returns index.html
-// history mode allows us not display the # before a path(outcome will be localhost:8080/user, rather than localhost:8080/#/user)
+// history mode allows us note display the # before a path(outcome will be localhost:8080/user, rather than localhost:8080/#/user)
 
 new Vue({
   router,
@@ -34,6 +35,7 @@ new Vue({
   	})
   },
   el: "#app",
+  store: store,
   render: h => h(App)
 });
  

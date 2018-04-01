@@ -16,6 +16,7 @@
         <a :href="selectedUser.wiki"> Wiki</a>
     </div>
   </div>  
+
 </template>
 
 <script>
@@ -27,6 +28,7 @@ export default {
     selectedUser: Object
   }
 }
+
 </script>
 
 <style lang="css">

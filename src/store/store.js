@@ -9,7 +9,9 @@ export const store = new Vuex.Store({
 	state: {
 		users: [],
 		searchTerm: '',
-		selectedUser: {}
+		selectedUser: {},
+		hideMenu: true
+
 	},
 	getters: {
 		getFilteredUsers(state, getters) {
@@ -57,6 +59,9 @@ export const store = new Vuex.Store({
 		},
 		selectUser(state, selectedUser) {
 			state.selectedUser = selectedUser;
-		}
+		},
+		toggleMenu(state) {
+		   state.hideMenu=!state.hideMenu;
+    	}
 	}
-});
+  })
