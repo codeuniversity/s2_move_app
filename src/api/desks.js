@@ -1,3 +1,5 @@
+/* Fetching desks from the API (Firebase) --> to mock client-server processing */
+
 const desks = []
 
 import axios from "axios";

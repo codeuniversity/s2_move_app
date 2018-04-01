@@ -63,7 +63,7 @@ export default {
             desks.push(desk)
           }
           this.deskList = desks
-            console.log(desks)
+            // console.log(desks)
           })
       .catch(error => console.log(error))
   },

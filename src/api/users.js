@@ -1,23 +1,23 @@
 /* Fetching users from the API (Firebase) --> to mock client-server processing */
 
-const users = []
+const _users = []
 
 import axios from "axios";
 export default {
-	fetchUsers() {
+	getUsers(users, {commit}) {
 	axios.get("https://s2-move.firebaseio.com/users.json")
     .then(res => {
       const data = res.data
-      const userList = []
+      let users = []
       for (let key in data) {
         const user = data[key]
         user.id = key
-        userList.push(user)
+        users.push(user)
       }
-      this.users = userList
-        console.log(userList)
+      // this.users = userList
+      commit("setUsers",users)
+        console.log("I'm the user List being called from an external file!", users)
       })
       .catch(error => console.log(error))
 	}
-
 }
