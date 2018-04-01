@@ -21,6 +21,8 @@ new Vue({
   		if(!user) {
         this.$router.push("/login")
   		} else if (user) {
+        var userEmail = user.email;
+        console.log(userEmail)
         this.$router.push("/dashboard")
       }
   	})

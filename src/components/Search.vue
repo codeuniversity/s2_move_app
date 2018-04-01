@@ -20,11 +20,13 @@
       <div class="search__list" v-if="isListVisible">  
         <div class="search__item" v-for="user in filteredList">
           <p @click="showDetails(user)"> 
+            <!-- <img :src="user.image" alt="user profile picture"> -->
             <a href="#">
               {{ user.fName }} 
               {{ user.lName }} 
             </a> 
-            <p class="email"> {{ user.gmailAcc }} </p>
+            <p class="search__email"> {{ user.gmailAcc }} </p>
+
           </p>   
         </div>
       </div>
@@ -53,7 +55,7 @@ export default {
   },
   components: {
     "appMenu": Menu,
-      "appProfile": Profile
+    "appProfile": Profile
   },
   created() {
     axios.get("https://s2-move.firebaseio.com/users.json")

@@ -1,4 +1,8 @@
+body {
+  font-family: 'MaisonNeue', sans-serif;
+}
 
 .menu-visible {
   /*put transition here*/ 
 }
+
