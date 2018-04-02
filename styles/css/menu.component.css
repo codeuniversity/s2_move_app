@@ -13,7 +13,7 @@
 /* Define max width for mobile devices */
 @media (min-width: 415px) {
   .burger-menu  {
-    width: 300px;
+    max-width: 300px;
   }
 }
 
