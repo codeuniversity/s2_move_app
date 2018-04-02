@@ -99,7 +99,7 @@ export default {
       	return this.userList.filter(user => {
           var fullName = `${user.fName} ${user.lName}`;
             return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
-            || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
+            || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase()) || user.team.toLowerCase().includes(this.searchTerm.toLowerCase())
       })
     },
     isListVisible() {
