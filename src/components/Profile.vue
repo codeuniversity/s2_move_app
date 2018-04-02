@@ -41,7 +41,7 @@
       </table>
       <!-- flexible container to adjust height -->
       <div class="profile__flex-container"></div>
-
+      <!-- display deep link icons -->
       <div class="profile__user-deep-links">
         <a><img src="../assets/icons/ic-date-range-black-24.png"></a>
         <a><img src="../assets/icons/slack-mark-monochrome-black.png"></a>

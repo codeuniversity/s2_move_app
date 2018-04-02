@@ -12,15 +12,22 @@ f*, *:before, *:after {
   max-width: 350px;
   }
 }
+/* Shrink icons for very small sreens*/
+@media (max-width: 330px) {
+.profile__user-deep-links img {
+  max-width: 25px;
+  height: auto;
+  }
+}
 
 /*PROFILE BOX*/
 .profile {
   position: absolute;
-  top: 65px;
+  top: 60px;
   width: 100%;
-  height: calc(100vh - 90px); 
+  height: calc(100vh - 80px); 
   /* Made to fit iPhone X as biggest smartphone screen*/
-  max-height: 722px;
+  max-height: 727px;
   background-color: #f4f7fa;
   color: #1e212a;
   border: 2px solid #1e212a;
@@ -30,19 +37,19 @@ f*, *:before, *:after {
 .profile__img {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 190px;
   overflow: hidden;
 }
 
 /* POSITION USER INFO*/
 .profile__user-info {
   position: relative;
-  top: 12px;
+  top: 10px;
   text-align: center; 
 }
 
 .profile__user-info h1 {
-  font-size: 25px;
+  font-size: 24px;
   padding-bottom: 5px;
 }
 
@@ -62,14 +69,15 @@ f*, *:before, *:after {
 .profile__user-info h2 {
   position: relative;
   top: 10px;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
+  letter-spacing: 0.8px;
 }
 
 /* LINE SEPARATOR*/
 .profile__line-separator {
   position: relative;
-  top: 25px;
+  top: 30px;
   height: 2px;
   width: 75%;
   margin: 0 auto;
@@ -78,11 +86,10 @@ f*, *:before, *:after {
 
 /*USER CONTACT INFO*/
 .profile__user-contact {
-  position: absolute;
-  top: 360px;
-  width:100%;
+  position: relative;
+  top: 35px;
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -102,9 +109,9 @@ f*, *:before, *:after {
 
 /* USER DEEP LINK ICONS */
 .profile__user-deep-links {
-  position: absolute;
+  position: relative;
   display: inline;
-  top: 500px;
+  top: 40px;
   margin-left: 20%;
 }
 
@@ -112,5 +119,5 @@ f*, *:before, *:after {
   position: relative;
   width: 40px;
   height: auto;
-  margin-right: 35px; 
+  margin-right: 40px; 
 }

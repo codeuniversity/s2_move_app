@@ -8,6 +8,21 @@
   box-sizing: border-box;
 }
 
+/* MEDIA QUERIES 
+
+/* Define max width for mobile devices */
+@media (min-width: 415px) {
+  .burger-menu  {
+    width: 300px;
+  }
+}
+
+/*Hide feedback if screen height is insufficient */
+@media (max-height: 558px) {
+  .feedback-visible {
+  display: none;
+  }
+}
 
 /*Make menu cover anything else on page*/
 .menu__wrapper {  
@@ -56,22 +71,6 @@ li {
 /*Underline links*/
 a:hover {
     text-decoration: underline;
-}
-
-/* MEDIA QUERIES 
-
-/* Define max width for mobile devices */
-@media (min-width: 415px) {
-  .burger-menu  {
-    width: 300px;
-  }
-}
-
-/*Hide feedback if screen height is insufficient */
-@media (max-height: 558px) {
-  .feedback-visible {
-  display: none;
-  }
 }
 
 /* USER INFORMATION */
