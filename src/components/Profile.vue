@@ -28,24 +28,26 @@
       <table class="profile__user-contact">
         <tr>
           <td><img id="mobile-icon" src="../assets/icons/mobile-icon.png"></td>
-          <td>{{ selectedUser.gmailAcc }}</td> 
+          <td><a :href="`mailto:${selectedUser.gmailAcc}`">{{ selectedUser.gmailAcc }}</a></td> 
         </tr>
         <tr>
           <td><img src="../assets/icons/phone-icon.png"></td>
-          <td>{{ selectedUser.mobile }}</td> 
+          <td><a :href="`tel:${selectedUser.mobile}`">{{ selectedUser.mobile }}</a></td> 
         </tr>
         <tr>
           <td><img src="../assets/icons/mail-icon.png"></td>
-          <td>{{ selectedUser.landline }}</td> 
+          <td><a :href="`tel:${selectedUser.landline}`">{{ selectedUser.landline }}</a></td> 
         </tr>
       </table>
       <!-- flexible container to adjust height -->
       <div class="profile__flex-container"></div>
       <!-- display deep link icons -->
       <div class="profile__user-deep-links">
-        <a><img src="../assets/icons/ic-date-range-black-24.png"></a>
-        <a><img src="../assets/icons/slack-mark-monochrome-black.png"></a>
-        <a><img src="../assets/icons/skillwill.png"></a>
+        <a :href="selectedUser.wiki" target="_blank"><img id="wiki-icon" src="../assets/icons/wikipedia.png"></a>
+        <a :href="selectedUser.googleCal" target="_blank"><img src="../assets/icons/ic-date-range-black-24.png"></a>
+        <a href="https://codeuniversity.slack.com/messages/C53K4L88M/" target="_blank"><img src="../assets/icons/slack-mark-monochrome-black.png" target="_blank"></a>
+        <a :href="selectedUser.skillWill" target="_blank"><img src="../assets/icons/skillwill.png"></a>
+
       </div>
 
 <!--       <p class="profile__text">
