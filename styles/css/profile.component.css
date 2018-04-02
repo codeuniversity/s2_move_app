@@ -13,6 +13,12 @@ f*, *:before, *:after {
   }
 }
 
+.profile__flex-container{
+  max-height: calc();
+}
+
+
+
 /*PROFILE BOX*/
 .profile {
   position: absolute;

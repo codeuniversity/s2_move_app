@@ -144,7 +144,7 @@ export default {
       self.user = response.data;
     })
     //request desk info
-    axios.get('https://s2-move.firebaseio.com/desks/desk0008.json')
+    axios.get('https://s2-move.firebaseio.com/desks/desk0006.json')
       .then(function (response) {
       console.log(response);
       self.desk = response.data;
