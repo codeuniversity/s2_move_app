@@ -19,11 +19,6 @@ import Menu from "./Menu.vue"
 
 export default {
 	name: "appDashboard",
-    data() {
-    return {
-      // hideMenu: this.$store.state.hideMenu
-    }
-  },
 	components: {
 		"appHeader": Header,
 		"appHamburgOttensen": HamburgOttensen,

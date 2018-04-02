@@ -1,11 +1,20 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+*{
+  box-sizing: border-box;
+}
+
 .dropdown {
-  position: relative;
 }
 
 .dropdown-toggle {
   background-color: white;
   width: 48px;
   height: 60px;
+
 }
 
 .dropdown-menu {
@@ -26,6 +35,8 @@
   line-height: 2em;
   word-spacing: 0;
   margin-top: 2px;
+  top: 140px;
+  left: 48px;
 }
 
 .dropdown-menu a {
@@ -56,6 +67,16 @@
 .dropdown-menu a:hover {
   background: #00C;
   color: white;
+}
+
+.seat {
+  width: 35px;
+  height: 56px;
+  background-image: url("../../src/assets/images/SeatDesk.svg");
+  color: transparent;
+  position: relative;
+  cursor: pointer;
+  border: none;
 }
 
 .v--modal-overlay {

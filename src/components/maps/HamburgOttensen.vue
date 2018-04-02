@@ -2,12 +2,12 @@
   <div>
     <div class="dropdown">
           <input type="button" 
-          class="dropdown-toggle" 
+          class="dropdown-toggle seat" 
           v-for="desk in deskList" 
           :value="desk.id"
           @click="handler(desk.id)"
-          />                            
-      <div>        
+          :style="calculatePosition(desk.xCoord, desk.yCoord, desk.angle)" 
+          />  
          <ul class="dropdown-menu" v-if="showList" v-click-outside="hideList"> Check In
             <li v-for="option in options">
               <input type="button" @click="showModal" :value="option.item">
@@ -17,8 +17,7 @@
       <modal name="search">
         <app-search :action="checkIn"></app-search>
       </modal>
-    </div>
-</div>
+  </div>
 </body>  
 
 </template>
@@ -59,11 +58,11 @@ export default {
           const desks = []
           for (let key in data) {
             const desk = data[key]
-            desk.id = key
+            // desk.id = key
             desks.push(desk)
           }
           this.deskList = desks
-            // console.log(desks)
+            console.log(desks)
           })
       .catch(error => console.log(error))
   },
@@ -87,6 +86,13 @@ export default {
     },
     checkIn(selectedUser) {
       console.log("I'm the check in")
+    },
+    calculatePosition(xCoord, yCoord, angle) {
+      return {
+        top: yCoord + "px",
+        left: xCoord + "px",
+        transform: "rotate("+ angle + "deg)"
+      }
     }
   }
 }
@@ -98,3 +104,4 @@ export default {
 @import "../../../styles/css/ottensen.component.css"
 
 </style>
+

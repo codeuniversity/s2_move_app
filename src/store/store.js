@@ -11,7 +11,6 @@ export const store = new Vuex.Store({
 		searchTerm: '',
 		selectedUser: {},
 		hideMenu: true
-
 	},
 	getters: {
 		getFilteredUsers(state, getters) {
@@ -42,7 +41,6 @@ export const store = new Vuex.Store({
     		commit("updateTerm", searchTerm);	
 		},
 		selectUser({ commit }, selectedUser) {
-			console.log("Yo soy una acción")
 			commit("selectUser", selectedUser);	
 		}
 	},
