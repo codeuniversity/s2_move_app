@@ -13,19 +13,14 @@ f*, *:before, *:after {
   }
 }
 
-.profile__flex-container{
-  max-height: calc();
-}
-
-
-
 /*PROFILE BOX*/
 .profile {
   position: absolute;
   top: 65px;
   width: 100%;
-  /* optimized for iphone 7*/
-  height: 560px; 
+  height: calc(100vh - 90px); 
+  /* Made to fit iPhone X as biggest smartphone screen*/
+  max-height: 722px;
   background-color: #f4f7fa;
   color: #1e212a;
   border: 2px solid #1e212a;
