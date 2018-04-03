@@ -1,19 +1,22 @@
 <template>
-  <div>
-    <div class="dropdown">
-          <input type="button" 
+  <div class="map">
+    <div>
+          <a
+          href="#"
           class="dropdown-toggle seat" 
           v-for="desk in deskList" 
-          :value="desk.id"
           @click="handler(desk.id)"
-          :style="calculatePosition(desk.xCoord, desk.yCoord, desk.angle)" 
-          />  
-         <ul class="dropdown-menu" v-if="showList" v-click-outside="hideList"> Check In
-            <li v-for="option in options">
-              <input type="button" @click="showModal" :value="option.item">
-            </li>
-          </ul>
-      </div>
+          :style="calculatePosition(desk.xCoord, desk.yCoord, desk.angle)">
+          </a> 
+          <div class="dropdown"> 
+            <ul class="dropdown-menu" v-if="showList"             
+                v-click-outside="hideList">Check In
+              <li v-for="option in options">
+                <input type="button" @click="showModal" :value="option.item">
+              </li>
+            </ul>
+          </div> 
+    </div>
       <modal name="search">
         <app-search :action="checkIn"></app-search>
       </modal>
@@ -69,7 +72,7 @@ export default {
   methods: {
     selectDesk(deskId) {
       this.selectedDesk = deskId;
-      console.log(this.selectedDesk);
+      // console.log(this.selectedDesk);
     },
     handler(deskId) {
       this.selectDesk(deskId)

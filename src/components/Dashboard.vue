@@ -4,7 +4,6 @@
       <app-menu :class="{'menu-visible':hideMenu}"></app-menu>
 			<app-header></app-header>
       <app-hamburg-ottensen></app-hamburg-ottensen>
-
 		</div>
 
 </template>
