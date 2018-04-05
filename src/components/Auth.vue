@@ -26,7 +26,7 @@ export default {
           signInSuccess: function(currentUser, credential, redirectUrl) {
             // Return type determines whether we continue the redirect automatically or whether we leave that to developer to handle.
             return true;
-            console.log("Hello", currentUser.email)
+            // console.log("Hello", currentUser.email)
           },
           signInFailure: function(error) {
             // Some unrecoverable error occurred during sign-in.

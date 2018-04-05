@@ -17,7 +17,9 @@
     <div class="btn" @click="toggleMenu()"></div>
 
 <!-- SEARCH RESULT LIST -->
+      <div v-if="isListEmpty"><p>NO USER FOUND</p></div>
       <div class="search__list" v-if="isListVisible">  
+
         <div class="search__item" v-for="user in filteredList">
           <p @click="showDetails(user)">
           
@@ -31,6 +33,7 @@
               {{ user.fName }} 
               {{ user.lName }}
             </div>
+
             <!-- display desk location -->
             <!-- MAKE FIREBASE REQUEST DEPENDING ON USER-->
             <div class="search__list__desk">
@@ -99,11 +102,16 @@ export default {
       	return this.userList.filter(user => {
           var fullName = `${user.fName} ${user.lName}`;
             return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
-            || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase()) || user.team.toLowerCase().includes(this.searchTerm.toLowerCase())
+            || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase()) 
+            || user.team.toLowerCase().includes(this.searchTerm.toLowerCase())
+      
       })
     },
     isListVisible() {
       return this.searchTerm.length >=2 && Object.keys(this.selectedUser).length == 0;
+    },
+    isListEmpty(){
+      return this.searchTerm.length >=2;
     }
   },
   watch: {
