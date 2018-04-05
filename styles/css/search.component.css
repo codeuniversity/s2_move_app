@@ -154,13 +154,25 @@ div.btn:hover {
   top:70px;
   width: 100%;
   text-align: center;
-  color: red;
+  border: 2px #1e212a;
+  border-style: none solid solid solid;
+}
+
+.search__no-user p {
+  margin: 3px;
 }
 
 .search__no-user img {
   position: relative;
   width: 100%;
   height: auto;
+  top: 3px;
 }
 
+#btn__clear-search {
+position: relative;
+width: 30px;
+height: auto;
+float: right;
+}
 

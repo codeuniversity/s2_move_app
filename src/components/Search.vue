@@ -1,7 +1,7 @@
 <template>
     <div class="search">
       
-<!-- SEARCH INPUT FORM -->
+      <!-- SEARCH INPUT FORM -->
       <form name="myForm">
         <input v-on:submit.prevent
             autocomplete="off"
@@ -10,16 +10,19 @@
             v-model="searchTerm"
             type="text" 
             placeholder="Who are you looking for?"
+            id="clearSearch"
         />
       </form>
 
-<!-- MENU TOGGLE BUTTON -->
+    <!-- MENU TOGGLE BUTTON -->
     <div class="btn" @click="toggleMenu()"></div>
 
-<!-- SEARCH RESULT LIST -->
-      <div class="search__list" v-if="isListVisible">  
-
+      <!-- SEARCH RESULT LIST -->
+      <div class="search__list" v-if="isListVisible">
+      <!-- CLEAR SEARCH BUTTON -->
+      <img id="btn__clear-search" src="../assets/icons/close-black-icon.png" @click="clearSearch()">
         <div class="search__item" v-for="user in filteredList">
+
           <p @click="showDetails(user)">
           
           <a href="#">
@@ -47,13 +50,14 @@
         </div>
       </div>
 
-<!-- NO USER FOUND -->
+      <!-- NO USER FOUND -->
       <div class="search__no-user" v-if="isListEmpty">
+        <p>NO USER FOUND. Retry. </p>
         <img src="https://thumbs.gfycat.com/FeistyLastingKilldeer-size_restricted.gif">
-        <p>No user found. Retry. </p>
+
       </div>
 
-<!-- SELECTED USER PROFILE -->
+      <!-- SELECTED USER PROFILE -->
       <app-profile :selectedUser="selectedUser"></app-profile>
     </div>
 
@@ -72,7 +76,8 @@ export default {
     return {
 	    searchTerm: '',
 	    selectedUser: {},
-	    userList: []
+	    userList: [],
+      deskList: []
     }
   },
   components: {
@@ -92,6 +97,18 @@ export default {
           }
           this.userList = users
           })
+      // request deskList from firebase
+      axios.get("https://s2-move.firebaseio.com/desks.json")
+        .then(res => {
+          const data = res.data
+          const desks = []
+          for (let key in data) {
+            const desk = data[key]
+            desk.id = key
+            desks.push(desk)
+          }
+          this.deskList = desks
+          })
   },
   methods: {
     showDetails(user) {
@@ -100,16 +117,22 @@ export default {
     // refers to global menu state
     toggleMenu() {
       return this.$store.commit('toggleMenu');
-    }  
-   }, 
+    },
+    clearSearch() {
+      document.getElementById('clearSearch').value = '';
+      this.searchTerm = '';
+    } 
+  }, 
   computed: {
     filteredList() {
-      	return this.userList.filter(user => {
-          var fullName = `${user.fName} ${user.lName}`;
-            return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
-            || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase()) 
-            || user.team.toLowerCase().includes(this.searchTerm.toLowerCase())
-      
+      return this.userList.filter(user => {
+        var fullName = `${user.fName} ${user.lName}`;
+        //search by name
+        return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
+        //search by email
+        || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
+        // search by team
+        || user.team.toLowerCase().includes(this.searchTerm.toLowerCase())
       })
     },
     isListVisible() {

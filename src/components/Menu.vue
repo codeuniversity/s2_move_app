@@ -124,7 +124,8 @@ export default {
     return {
       user: {},
       desk: {},
-      showSubmenu: false
+      showSubmenu: false,
+      authUser: {}
     }
   },
   methods: {
