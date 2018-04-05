@@ -20,6 +20,12 @@ f*, *:before, *:after {
   }
 }
 
+@media(min-height: 700px) {
+  .profile {
+    max-height: 300px;
+  }
+}
+
 /*PROFILE BOX*/
 .profile {
   position: absolute;
@@ -39,6 +45,7 @@ f*, *:before, *:after {
   width: 100%;
   height: 190px;
   overflow: hidden;
+
 }
 
 /* POSITION USER INFO*/

@@ -169,10 +169,18 @@ div.btn:hover {
   top: 3px;
 }
 
-#btn__clear-search {
+.btn__clear-search {
 position: relative;
 width: 30px;
 height: auto;
 float: right;
+z-index: 10;
 }
 
+.btn__clear-search:hover {
+  cursor: pointer;
+}
+
+#btn__clear-search-profile {
+  top: 60px;
+}
