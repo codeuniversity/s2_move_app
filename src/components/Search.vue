@@ -17,7 +17,6 @@
     <div class="btn" @click="toggleMenu()"></div>
 
 <!-- SEARCH RESULT LIST -->
-      <div v-if="isListEmpty"><p>NO USER FOUND</p></div>
       <div class="search__list" v-if="isListVisible">  
 
         <div class="search__item" v-for="user in filteredList">
@@ -46,6 +45,12 @@
             </a> 
           </p>   
         </div>
+      </div>
+
+<!-- NO USER FOUND -->
+      <div class="search__no-user" v-if="isListEmpty">
+        <img src="https://thumbs.gfycat.com/FeistyLastingKilldeer-size_restricted.gif">
+        <p>No user found. Retry. </p>
       </div>
 
 <!-- SELECTED USER PROFILE -->
@@ -111,13 +116,13 @@ export default {
       return this.searchTerm.length >=2 && Object.keys(this.selectedUser).length == 0;
     },
     isListEmpty(){
-      return this.searchTerm.length >=2;
+      return this.searchTerm.length >=2 && Object.keys(this.filteredList).length == 0;
     }
   },
   watch: {
     searchTerm () {
       this.selectedUser = { };
-    },
+    }
   }
 }
 

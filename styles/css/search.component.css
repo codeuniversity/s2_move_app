@@ -149,5 +149,18 @@ div.btn:hover {
   margin-right: 4px;
 }
 
+.search__no-user {
+  position: absolute;
+  top:70px;
+  width: 100%;
+  text-align: center;
+  color: red;
+}
+
+.search__no-user img {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
 
 

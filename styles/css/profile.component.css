@@ -129,6 +129,9 @@ f*, *:before, *:after {
 }
 
 #wiki-icon {
-  width: 60px;
+  position: relative;
+  top: 10px;
+  left: 5px;
+  width: 65px;
   height: auto;
 }

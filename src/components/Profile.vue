@@ -49,16 +49,7 @@
         <a :href="selectedUser.skillWill" target="_blank"><img src="../assets/icons/skillwill.png"></a>
 
       </div>
-
-<!--       <p class="profile__text">
-        {{ selectedUser.team }} - Phone: {{ selectedUser.mobile }}
-      </p>
-      <br> 
-      <div class="profile__social">
-        <a :href="selectedUser.googleCal"> Google Calendar</a> 
-        <a :href="selectedUser.wiki"> Wiki</a>
-    </div> -->
-  </div>  
+  </div>
 
 </template>
 
