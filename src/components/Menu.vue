@@ -115,11 +115,9 @@
 </template>
 
 <script>
-
 import axios from 'axios';
-
 export default {
-	name: 'Menu',
+  name: 'Menu',
   data () {
     return {
       user: {},
@@ -153,14 +151,9 @@ export default {
     .catch(error => console.log(error))
   }
 }
-
 // Create a computed property for the click listener
 </script>
 
 <style lang="css">
-
 @import "../../styles/css/menu.component.css"
-
 </style>
-
-
