@@ -72,7 +72,7 @@ export default {
   methods: {
     selectDesk(deskId) {
       this.selectedDesk = deskId;
-      // console.log(this.selectedDesk);
+      console.log(this.selectedDesk);
     },
     handler(deskId) {
       this.selectDesk(deskId)

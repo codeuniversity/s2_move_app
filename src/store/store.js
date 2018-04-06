@@ -15,7 +15,7 @@ export const store = new Vuex.Store({
 	},
 	getters: {
 		getFilteredUsers(state) {
-			return  state.filteredUsers = state.users.filter(user => {
+			return state.filteredUsers = state.users.filter(user => {
           		var fullName = `${user.fName} ${user.lName}`;
           		//search by name
 	            return fullName.toLowerCase().includes(state.searchTerm.toLowerCase())
