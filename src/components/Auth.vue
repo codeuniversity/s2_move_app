@@ -28,6 +28,7 @@ export default {
             var user = signInSucces.currentUser;
             console.log("hello", user)
             return true;
+            // console.log("Hello", currentUser.email)
           },
           signInFailure: function(error) {
             // Some unrecoverable error occurred during sign-in.

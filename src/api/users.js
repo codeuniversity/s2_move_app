@@ -16,7 +16,7 @@ export default {
       }
       // this.users = userList
       commit("setUsers",users)
-        console.log("I'm the user List being called from an external file!", users)
+        // console.log("I'm the user List being called from an external file!", users)
       })
       .catch(error => console.log(error))
 	}

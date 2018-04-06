@@ -10,14 +10,19 @@ export const store = new Vuex.Store({
 		users: [],
 		searchTerm: '',
 		selectedUser: {},
-		hideMenu: true
+		hideMenu: true,
+		filteredUsers: []
 	},
 	getters: {
-		getFilteredUsers(state, getters) {
-			return state.users.filter(user => {
+		getFilteredUsers(state) {
+			return  state.filteredUsers = state.users.filter(user => {
           		var fullName = `${user.fName} ${user.lName}`;
+          		//search by name
 	            return fullName.toLowerCase().includes(state.searchTerm.toLowerCase())
+	            //search by email
 	            || user.gmailAcc.toLowerCase().includes(state.searchTerm.toLowerCase())
+	            // search by team
+        		|| user.team.toLowerCase().includes(state.searchTerm.toLowerCase())
       		})
 		},
 		getSearchTerm(state) {
@@ -31,7 +36,7 @@ export const store = new Vuex.Store({
 		},
 		getListVisibility(state) {
       		return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
-    	}
+      	}
 	},
 	actions: {
 		fetchUsers({commit}) {
@@ -42,6 +47,9 @@ export const store = new Vuex.Store({
 		},
 		selectUser({ commit }, selectedUser) {
 			commit("selectUser", selectedUser);	
+		},
+		fetchFilteredUsers({commit}, filteredUsers) {
+			commit("fetchFilteredUsers", filteredUsers);
 		}
 	},
 	mutations: {
@@ -60,6 +68,10 @@ export const store = new Vuex.Store({
 		},
 		toggleMenu(state) {
 		   state.hideMenu=!state.hideMenu;
+    	},
+    	fetchFilteredUsers(state, filteredUsers) {
+    		state.filteredUsers = fetchFilteredUsers;
     	}
+
 	}
   })

@@ -30,7 +30,6 @@ new Vue({
         var userEmail = user.email;
         // console.log(userEmail)
         this.$router.push("/dashboard")
-
       }
   	})
   },

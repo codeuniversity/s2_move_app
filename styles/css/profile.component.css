@@ -1,34 +1,144 @@
+f*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+/*Set max width for search for non-smartphone devices.*/
+@media (min-width: 450px) {
+  .profile {
+  max-width: 350px;
+  }
+}
+/* Shrink icons for very small sreens*/
+@media (max-width: 330px) {
+.profile__user-deep-links img {
+  max-width: 25px;
+  height: auto;
+  }
+}
+
+@media(min-height: 700px) {
+  .profile {
+    max-height: 300px;
+  }
+}
+
+/*PROFILE BOX*/
 .profile {
-  background-color: rgb(76, 19, 209);
-  color: white;
   position: absolute;
+  top: 60px;
   width: 100%;
-  top: 50px;
-  padding: 10px;
+  height: calc(100vh - 80px); 
+  /* Made to fit iPhone X as biggest smartphone screen*/
+  max-height: 727px;
+  background-color: #f4f7fa;
+  color: #1e212a;
+  border: 2px solid #1e212a;
 }
 
-.profile__header {
-  width: 100%;
-  float: left;
-}
-
+/* position user image*/
 .profile__img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  float: right;
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+
 }
 
-.profile__name {
-  width: calc(100% - 100px);
-  float: left;
-}
-.profile__text {
-  float: left;
-  width: 100%;
+/* POSITION USER INFO*/
+.profile__user-info {
+  position: relative;
+  top: 10px;
+  text-align: center; 
 }
 
-.profile__social {
-  width: 100%;
-  float: left;
+.profile__user-info h1 {
+  font-size: 24px;
+  padding-bottom: 5px;
+}
+
+/* STYLE DESK INFO*/
+.profile__user-info ul li {
+  position: relative;
+  display: inline;
+  top: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color: #03ffb7;
+  margin-right: 4px;
+}
+
+/* JOB TITLE AND TEAM INFO*/
+.profile__user-info h2 {
+  position: relative;
+  top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+}
+
+/* LINE SEPARATOR*/
+.profile__line-separator {
+  position: relative;
+  top: 30px;
+  height: 2px;
+  width: 75%;
+  margin: 0 auto;
+  border-bottom: 2px solid #1e212a;
+}
+
+/*USER CONTACT INFO*/
+.profile__user-contact {
+  position: relative;
+  top: 35px;
+  margin: 0 auto;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.profile__user-contact img {
+  position: relative;
+  width: 15px;
+  height: auto;
+}
+
+/*remove styles from links*/
+.profile__user-contact a {
+  text-decoration: none;
+  color: #1e212a;
+}
+
+#mobile-icon {
+  width: 13px;
+}
+
+.profile__user-contact td {
+  padding: 5px;
+}
+
+/* USER DEEP LINK ICONS */
+.profile__user-deep-links {
+  position: relative;
+  display: inline;
+  top: 40px;
+  margin-left: 10%;
+}
+
+.profile__user-deep-links img {
+  position: relative;
+  width: 40px;
+  height: auto;
+  margin-right: 20px; 
+}
+
+#wiki-icon {
+  position: relative;
+  top: 10px;
+  left: 5px;
+  width: 65px;
+  height: auto;
 }
