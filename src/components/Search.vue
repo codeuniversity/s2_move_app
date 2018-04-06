@@ -7,10 +7,10 @@
             autocomplete="off"
             class="search__input"
             name="mySearch"
-            @input="dispatchSearchTerm"
             type="text" 
-            placeholder="Who are you looking for?"
+            @input="dispatchSearchTerm"
             :value="getSearchTerm"
+            placeholder="Who are you looking for?"
         />
       </form>
       <div class="search__list" v-if="getListVisibility">  
@@ -22,7 +22,6 @@
             <p class="email"> {{ user.gmailAcc }} </p>
         </div>
       </div>         
-
   <!-- MENU TOGGLE BUTTON -->
     <div class="btn" @click="toggleMenu()"></div>
       <!-- SELECTED USER PROFILE -->

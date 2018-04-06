@@ -6,7 +6,7 @@
     </div>
 		<app-search :action="selectUser">
 				<app-profile :selectedUser="getSelectedUser"></app-profile>
-			</app-search>
+		</app-search>
 	</div>
 </template>
 
