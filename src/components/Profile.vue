@@ -27,15 +27,15 @@
       <!-- display user contact info -->
       <table class="profile__user-contact">
         <tr>
-          <td><img id="mobile-icon" src="../assets/icons/mobile-icon.png"></td>
+          <td><img src="../assets/icons/mail-icon.png"></td>
           <td><a :href="`mailto:${selectedUser.gmailAcc}`">{{ selectedUser.gmailAcc }}</a></td> 
         </tr>
         <tr>
-          <td><img src="../assets/icons/phone-icon.png"></td>
+          <td><img id="mobile-icon" src="../assets/icons/mobile-icon.png"></td>
           <td><a :href="`tel:${selectedUser.mobile}`">{{ selectedUser.mobile }}</a></td> 
         </tr>
         <tr>
-          <td><img src="../assets/icons/mail-icon.png"></td>
+          <td><img src="../assets/icons/phone-icon.png"></td>
           <td><a :href="`tel:${selectedUser.landline}`">{{ selectedUser.landline }}</a></td> 
         </tr>
       </table>

@@ -11,7 +11,6 @@
         v-model="searchTerm"
         type="text" 
         placeholder="Who are you looking for?"
-        id="clearSearch"
         />
       </form>
 
@@ -125,7 +124,7 @@ export default {
       return this.$store.commit('toggleMenu');
     },
     clearSearch() {
-      document.getElementById('clearSearch').value = '';
+      // document.getElementById('clearSearch').value = '';
       this.searchTerm = '';
     } 
   }, 
