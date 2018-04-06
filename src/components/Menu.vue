@@ -115,11 +115,9 @@
 </template>
 
 <script>
-
 import axios from 'axios';
-
 export default {
-	name: 'Menu',
+  name: 'Menu',
   data () {
     return {
       user: {},
@@ -144,7 +142,7 @@ export default {
       self.user = response.data;
     })
     //request desk info
-    axios.get('https://s2-move.firebaseio.com/desks/desk0008.json')
+    axios.get('https://s2-move.firebaseio.com/desks/desk0006.json')
       .then(function (response) {
       console.log(response);
       self.desk = response.data;
@@ -153,14 +151,9 @@ export default {
     .catch(error => console.log(error))
   }
 }
-
 // Create a computed property for the click listener
 </script>
 
 <style lang="css">
-
 @import "../../styles/css/menu.component.css"
-
 </style>
-
-

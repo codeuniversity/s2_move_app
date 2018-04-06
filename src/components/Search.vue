@@ -1,5 +1,5 @@
 <template>
-    <div class="search">
+  <div class="search" v-click-outside="resetForm">
       
 <!-- SEARCH INPUT FORM -->
       <form name="myForm">
@@ -7,97 +7,69 @@
             autocomplete="off"
             class="search__input"
             name="mySearch"
-            v-model="searchTerm"
             type="text" 
+            @input="dispatchSearchTerm"
+            :value="getSearchTerm"
             placeholder="Who are you looking for?"
         />
       </form>
-
-<!-- MENU TOGGLE BUTTON -->
-    <div class="btn" @click="toggleMenu()"></div>
-
-<!-- SEARCH RESULT LIST -->
-      <div class="search__list" v-if="isListVisible">  
-        <div class="search__item" v-for="user in filteredList">
-          <p @click="showDetails(user)"> 
-            <a href="#">
+      <div class="search__list" v-if="getListVisibility">  
+        <div class="search__item" v-for="user in getFilteredUsers">
+          <a href="#" @click="action(user)">
               {{ user.fName }} 
               {{ user.lName }} 
             </a> 
             <p class="email"> {{ user.gmailAcc }} </p>
-          </p>   
         </div>
-      </div>
-
-<!-- SELECTED USER PROFILE -->
-      <app-profile :selectedUser="selectedUser"></app-profile>
-    </div>
-
+      </div>         
+  <!-- MENU TOGGLE BUTTON -->
+    <div class="btn" @click="toggleMenu()"></div>
+      <!-- SELECTED USER PROFILE -->
+    <slot></slot>
+  </div>
 </template>
+
 
 <script>
 
 import Menu from "./Menu.vue"
-import Profile from "./Profile.vue"
 import axios from "axios"
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
-
   name: 'Search',
-   data() {
-    return {
-	    searchTerm: '',
-	    selectedUser: {},
-	    userList: []
-    }
-  },
   components: {
-    "appMenu": Menu,
-      "appProfile": Profile
+    "appMenu": Menu
+  },
+  props: {
+    action: Function
   },
   created() {
-    axios.get("https://s2-move.firebaseio.com/users.json")
-      .then(res => {
-          const data = res.data
-          const users = []
-          for (let key in data) {
-            const user = data[key]
-            user.id = key
-            users.push(user)
-          }
-          this.userList = users
-            // console.log(users)
-          })
-      .catch(error => console.log(error))
+      this.fetchUsers();
   },
   methods: {
-    showDetails(user) {
-      this.selectedUser = user;
-    },
-    // refers to global menu state
+    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser"]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
-    }  
-   }, 
+    // refers to global menu state
+    },
+    dispatchSearchTerm(event) {
+      this.updateTerm(event.target.value)
+      this.selectUser({});
+    },
+    toggleMenu() {
+      return this.$store.commit('toggleMenu');
+    },
+    resetForm() {
+      this.updateTerm('')
+      this.selectUser({});
+     } 
+  },   
   computed: {
-    filteredList() {
-      	return this.userList.filter(user => {
-          var fullName = `${user.fName} ${user.lName}`;
-            return fullName.toLowerCase().includes(this.searchTerm.toLowerCase())
-            || user.gmailAcc.toLowerCase().includes(this.searchTerm.toLowerCase())
-      })
-    },
-    isListVisible() {
-      return this.searchTerm.length >=2 && Object.keys(this.selectedUser).length == 0;
-    }
-  },
-  watch: {
-    searchTerm () {
-      this.selectedUser = { };
-    },
+    ...mapGetters([
+      "getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm"])
   }
 }
-
 </script>
 
 <style lang="css">
@@ -105,3 +77,4 @@ export default {
 @import "../../styles/css/search.component.css"
 
 </style>
+

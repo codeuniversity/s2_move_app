@@ -4,19 +4,31 @@
       <img id="s2-logo" src="../assets/images/s2-logo-small.png" alt="Sinnerschrader Logo">
       <img id="move-logo" src="../assets/images/move-logo.png" alt="Sinnerschrader Logo">
     </div>
-		<app-search></app-search>
+		<app-search :action="selectUser">
+				<app-profile :selectedUser="getSelectedUser"></app-profile>
+		</app-search>
 	</div>
 </template>
 
 <script>
 
 import Search from "./Search.vue"
+import Profile from "./Profile.vue"
+import { mapGetters, mapActions } from "vuex"
+
 
 export default {
 	name: "Header",
-	components: {
-		'appSearch': Search
-	}
+	components: {		
+		"appSearch": Search,
+		"appProfile": Profile
+	},
+	computed: {
+		...mapGetters(["getSelectedUser"])			
+	},
+	methods: {
+		...mapActions(["selectUser"])
+	}	
 }
 </script>
 
