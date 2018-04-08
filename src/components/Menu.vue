@@ -116,6 +116,7 @@
 
 <script>
 import axios from 'axios';
+import { mapActions, mapGetters } from "vuex";
 export default {
   name: 'Menu',
   data () {
@@ -136,20 +137,6 @@ export default {
   },
   created () {
     //request user info
-    var self = this;
-    axios.get('https://s2-move.firebaseio.com/users/user0008.json')
-    .then(function (response) {
-      console.log(response);
-      self.user = response.data;
-    })
-    //request desk info
-    axios.get('https://s2-move.firebaseio.com/desks/desk0006.json')
-      .then(function (response) {
-      console.log(response);
-      self.desk = response.data;
-      })
-      //logs an error
-    .catch(error => console.log(error))
   }
 }
 // Create a computed property for the click listener

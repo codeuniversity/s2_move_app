@@ -80,12 +80,16 @@ export default {
   },
   created() {
       this.fetchUsers();
+      this.fetchDesks();
   },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers"]),
+    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "fetchDeskInfo"]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     // refers to global menu state
+    },
+    fetchDesk() {
+      this.fetchDeskInfo();
     },
     dispatchSearchTerm(event) {
       this.updateTerm(event.target.value)

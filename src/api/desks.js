@@ -5,20 +5,20 @@ const desks = []
 import axios from "axios";
 export default {
 
-  fetchDesks(desks, {commit}) {
+  getDesks(desks, {commit}) {
       axios.get("https://s2-move.firebaseio.com/desks.json")
         .then(res => {
             const data = res.data
-            const deskList = []
+            let desks =[]
             for (let key in data) {
               const desk = data[key]
-              // desk.id = key
-              deskList.push(desk)
+              desk.id = key
+              desks.push(desk)
             }
-            this.desks = deskList
-              console.log(deskList)
-              commit("setDesks",desks)
+            this.desks = desks
+              // console.log(deskList)
+              commit("setDesks", desks)
             })
-        .catch(error => console.log(error))
+        	.catch(error => console.log(error))
   } 
 }  
