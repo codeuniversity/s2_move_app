@@ -8,16 +8,16 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
 	state: {
-		users: [],
+		users: {},
 		searchTerm: '',
 		selectedUser: {},
 		hideMenu: true,
 		filteredUsers: [],
-		desks:[]
+		desks: {}
 	},
 	getters: {
 		getFilteredUsers(state) {
-			return state.filteredUsers = state.users.filter(user => {
+			return state.filteredUsers = Object.values(state.users).filter(user => {
           		var fullName = `${user.fName} ${user.lName}`;
           		//search by name
 	            return fullName.toLowerCase().includes(state.searchTerm.toLowerCase())
@@ -60,17 +60,9 @@ export const store = new Vuex.Store({
 		fetchDesks({commit}) {
 			desks.getDesks(desks, {commit});
 		},
-		fetchDeskInfo({commit}) {
-			commit("fetchDeskInfo")
+    	addDeskRef({commit}) {
+    		commit('updateUser', desks);
     	}
-    	// getDeskInfo(state) {
-	    //  for (let key in state.users) {
-	    //     for(let index in state.desks) {
-	    //       if(user[key].desk == desk[index]) {
-	    //           return state.users.push(desk[index].acronym)
-	    //     	}
-	    //  	}
-     	// }
 	},
 	mutations: {
 		setUsers(state, users) {
@@ -96,14 +88,23 @@ export const store = new Vuex.Store({
     	},
     	fetchFilteredUsers(state, filteredUsers) {
     		state.filteredUsers = fetchFilteredUsers;
+    	},
+    	updateUser(state) {
+	      // console.log("found desk", state.user.desk);	
+	       Object.values(state.desks).forEach(desk =>  {
+	          if(desk.user) {
+	            let user = state.users[desk.user];
+	            console.log("found user", user)
+	            if (user) {
+		            user.deskref = desk;
+	            	console.log("found desk", user, user.deskref.acronym);	
+	            } else {
+	            	console.log('invalid desk for user ')
+	            }
+	          } else {
+	            console.log("no desk")
+	          }
+	      });
     	}
-    	// getDeskInfo(state) {
-	    //  for (let key in state.users) {
-	    //     for(let index in state.desks) {
-	    //       if(user[key].desk == desk[index]) {
-	    //           return state.users.push(desk[index].acronym)
-	    //     	}
-	    //  	}
-     // 	}
 	}
   })
