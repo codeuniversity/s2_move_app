@@ -22,7 +22,7 @@ export const store = new Vuex.Store({
 	            //search by email
 	            || user.gmailAcc.toLowerCase().includes(state.searchTerm.toLowerCase())
 	            // search by team
-        		|| user.team.toLowerCase().includes(state.searchTerm.toLowerCase())
+        		  || user.team.toLowerCase().includes(state.searchTerm.toLowerCase())
       		})
 		},
 		getSearchTerm(state) {
@@ -43,7 +43,7 @@ export const store = new Vuex.Store({
 			users.getUsers(users, {commit}) 
 		},
 		updateTerm({ commit }, searchTerm) {
-    		commit("updateTerm", searchTerm);	
+    	commit("updateTerm", searchTerm);	
 		},
 		selectUser({ commit }, selectedUser) {
 			commit("selectUser", selectedUser);	
@@ -60,18 +60,18 @@ export const store = new Vuex.Store({
 		setSearchTerm(state) {
       		state.selectedUser = { };
     	},
-    	updateTerm(state, searchTerm) {
-    		state.searchTerm = searchTerm;
+    updateTerm(state, searchTerm) {
+    	state.searchTerm = searchTerm;
 		},
 		selectUser(state, selectedUser) {
 			state.selectedUser = selectedUser;
 		},
 		toggleMenu(state) {
-		   state.hideMenu=!state.hideMenu;
-    	},
-    	fetchFilteredUsers(state, filteredUsers) {
-    		state.filteredUsers = fetchFilteredUsers;
-    	}
+		  state.hideMenu=!state.hideMenu;
+    },
+    fetchFilteredUsers(state, filteredUsers) {
+    	state.filteredUsers = fetchFilteredUsers;
+    }
 
 	}
   })
