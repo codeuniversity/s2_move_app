@@ -1,5 +1,6 @@
 <template>
   <div class="search" v-click-outside="resetForm">
+    <button @click="updateDeskRef">LALA</button>
       
 <!-- SEARCH INPUT FORM -->
       <form name="myForm">
@@ -80,12 +81,16 @@ export default {
   },
   created() {
       this.fetchUsers();
+      this.fetchDesks();
   },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers"]),
+    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "fetchDeskInfo", "addDeskRef"]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     // refers to global menu state
+    },
+    updateDeskRef() {
+      this.addDeskRef();
     },
     dispatchSearchTerm(event) {
       this.updateTerm(event.target.value)
