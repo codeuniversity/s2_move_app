@@ -1,8 +1,12 @@
 <template>
 	<div class="login">
-		<h3> Sign In </h3>
+    <img id="s2-logo" src="../assets/images/s-2-logo.png" alt="Sinnerschrader Logo">
+    <img id="move-logo" src="../assets/images/move-logo.png" alt="Sinnerschrader Logo">
+		<h1 class="login__headline"> Login via Google </h1>
+    <p class="login__text">Are you looking for a colleague, meeting room or space for a new team at SinnerSchrader?</p>
 		<div id="firebaseui-auth-container">
-		</div>		
+      <h1 class="button-text">Let's go!</h1>
+    </div>
 		<div id="loader">Loading...</div>
 	</div>	
 
@@ -63,35 +67,9 @@ export default {
 
 </script>
 
-<style>
+<style lang="css">
 
+@import "../../styles/css/auth.component.css"
 
-span.firebaseui-idp-text.firebaseui-idp-text-short {
-	display: none;
-}
-li.firebaseui-list-item {
-	list-style-type: none;
-	margin-top: -50px;
-}
-
-button.firebaseui-idp-button.mdl-button.mdl-js-button.mdl-button--raised.firebaseui-idp-google.firebaseui-id-idp-button {
-	margin:0, auto;
-}
-
-ul.firebaseui-idp-list {
-
-}
-
-div#firebaseui-auth-container {
-	width: 300px;
-	margin-left: 500px;
-	margin-top: 100px;
-}
-
-h3 {
-	width: 300px;
-	margin-left: 615px;
-	margin-top: 30px;
-}
-</style> 
+</style>
 
