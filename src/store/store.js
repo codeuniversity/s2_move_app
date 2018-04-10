@@ -52,7 +52,7 @@ export const store = new Vuex.Store({
 		},
 		selectUser({ commit }, selectedUser) {
 			commit("selectUser", selectedUser);	
-			console.log("Hello", selectedUser)
+			console.log("Hello, this is selectUser", selectedUser)
 		},
 		fetchFilteredUsers({commit}, filteredUsers) {
 			commit("fetchFilteredUsers", filteredUsers);
@@ -68,11 +68,11 @@ export const store = new Vuex.Store({
 		setUsers(state, users) {
 			//update users
 			state.users = users;
-			console.log(users, "LALALA")
+			console.log("This is setUsers", users)
 		},
 		setDesks(state, desks) {
 			state.desks = desks;
-			// console.log(desks)
+			console.log("This is setDesks", desks)
 		},
 		setSearchTerm(state) {
       		state.selectedUser = { };
@@ -90,22 +90,23 @@ export const store = new Vuex.Store({
     	fetchFilteredUsers(state, filteredUsers) {
     		state.filteredUsers = fetchFilteredUsers;
     	},
-    	updateUser(state) {
-	      // console.log("found desk", state.user.desk);	
-	       Object.values(state.desks).forEach(desk =>  {
-	          if(desk.user) {
-	            let user = state.users[desk.user];
-	            console.log("found user", user)
-	            if (user) {
+    	updateUser(state, users) {
+	      Object.values(state.users).forEach(user =>  {
+	          if(user.desk) {
+	            let desk = state.desks[user.desk];
+	            console.log("found desk in user", user)
+	            if (desk) {
 		            user.deskref = desk;
-	            	console.log("found desk", user, user.deskref.acronym);	
+	            	console.log("found desk", user.deskref.acronym, user.deskref.division, user.deskref.building, user.deskref.level);	
 	            } else {
 	            	console.log('invalid desk for user ')
 	            }
 	          } else {
 	            console.log("no desk")
 	          }
-	      });
+	      },
+      console.log("This is updateUser", users)
+        );
     	}
 	}
   })

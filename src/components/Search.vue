@@ -1,6 +1,5 @@
 <template>
-  <div class="search" v-click-outside="resetForm">
-    <button @click="updateDeskRef">LALA</button>
+  <div class="search" v-click-outside="resetForm" @click="updateDeskRef()" >
       
 <!-- SEARCH INPUT FORM -->
       <form name="myForm">
@@ -16,7 +15,7 @@
       </form>
       <!-- SEARCH RESULTS -->
 
-      <div class="search__list" v-if="getListVisibility"> 
+      <div class="search__list" v-if="getListVisibility" > 
       <!-- CLEAR SEARCH BUTTON -->
         <img class="btn__clear-search" src="../assets/icons/close-black-icon.png" @click="resetForm"> 
       <!-- FILTERED LIST -->
@@ -36,6 +35,7 @@
             <div class="search__list__desk">
               <ul>
                 <li>HAM</li>
+                <!-- <li v-if="user.deskref.building">{{user.deskref.building}}</li> -->
                 <li>S2</li>
                 <li>A-3</li>
               </ul>
@@ -68,7 +68,7 @@
 <script>
 
 import Menu from "./Menu.vue"
-import axios from "axios"
+// import axios from "axios"
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
@@ -82,9 +82,10 @@ export default {
   created() {
       this.fetchUsers();
       this.fetchDesks();
+      this.addDeskRef();
   },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "fetchDeskInfo", "addDeskRef"]),
+    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "addDeskRef"]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     // refers to global menu state
