@@ -60,6 +60,7 @@
       id="btn__clear-search-profile" 
       src="../assets/icons/close-black-icon.png" 
       @click="resetForm"/>
+
   </div>
 
 </template>

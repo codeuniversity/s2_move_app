@@ -45,7 +45,7 @@
       <div class="profile__user-deep-links">
         <a :href="selectedUser.wiki" target="_blank"><img id="wiki-icon" src="../assets/icons/wikipedia.png"></a>
         <a :href="selectedUser.googleCal" target="_blank"><img src="../assets/icons/ic-date-range-black-24.png"></a>
-        <a href="https://codeuniversity.slack.com/messages/C53K4L88M/" target="_blank"><img src="../assets/icons/slack-mark-monochrome-black.png" target="_blank"></a>
+        <a :href="selectedUser.slack" target="_blank"><img src="../assets/icons/slack-mark-monochrome-black.png" target="_blank"></a>
         <a :href="selectedUser.skillWill" target="_blank"><img src="../assets/icons/skillwill.png"></a>
 
       </div>
