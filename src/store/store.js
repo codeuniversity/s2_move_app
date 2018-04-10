@@ -40,8 +40,8 @@ export const store = new Vuex.Store({
 			return state.desks;
 		},
 		getListVisibility(state) {
-      		return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
-      	}
+      	return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
+    }
  	},
 	actions: {
 		fetchUsers({commit}) {
@@ -60,8 +60,8 @@ export const store = new Vuex.Store({
 		fetchDesks({commit}) {
 			desks.getDesks(desks, {commit});
 		},
-    	addDeskRef({commit}) {
-    		commit('updateUser', desks);
+    addDeskRef({commit}) {
+    	commit('updateUser', desks);
     	}
 	},
 	mutations: {
