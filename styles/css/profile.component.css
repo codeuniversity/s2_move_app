@@ -40,12 +40,22 @@ f*, *:before, *:after {
 }
 
 /* position user image*/
-.profile__img {
+.profile__img{
   position: relative;
   width: 100%;
   height: 190px;
   overflow: hidden;
+}
 
+.profile__img img {
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  top: 0; 
+  left: 0; 
+  bottom: 0; 
+  right: 0;
+  z-index: 1;
 }
 
 /* POSITION USER INFO*/

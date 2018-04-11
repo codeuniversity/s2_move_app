@@ -1,15 +1,11 @@
 *{
   margin: 0;
   padding: 0;
-}
-
-/*include padding and border into total width and height of elements*/
-*{
   box-sizing: border-box;
 }
 
 /*hide logo for small screens*/
-@media (max-width: 1050px) {
+@media (max-width: 850px) {
   .app-header__logos {
   display: none;
   }
@@ -28,24 +24,19 @@
 }
 
 .app-header #s2-logo {
-  position: absolute;
-  display: block;  
   float: left;
   margin-left: 10px;
+  margin-top: 20px;
   bottom: 0px;
   width: 130px;
   height: auto;
 }
 
-/*  max-height:60%;
-  width: auto;
-}*/
-
 .app-header #move-logo {
   position: absolute;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  left: 50%;
+  transform: translate(-50%, 0);
   max-height:100%;
   width: auto;
 }

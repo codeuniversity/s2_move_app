@@ -31,27 +31,30 @@ f*, *:before, *:after {
 }
 
 /* Placeholder text search input*/
-
  /* Chrome/Opera/Safari */  
 ::-webkit-input-placeholder {
   color: #1e212a;
+  opacity: 0.6;
   font-family: 'MaisonNeue', sans-serif;
 }
 /* Firefox 19+ */
 ::-moz-placeholder { 
   color: #1e212a;
+  opacity: 0.6;
   font-family: 'MaisonNeue', sans-serif;
 }
 
 /* IE 10+ */
 :-ms-input-placeholder { 
   color: #1e212a;
+  opacity: 0.6;
   font-family: 'MaisonNeue', sans-serif;
 }
 
 /* Firefox 18- */
 :-moz-placeholder { 
   color: #1e212a;
+  opacity: 0.6;
   font-family: 'MaisonNeue', sans-serif;
 }
 
