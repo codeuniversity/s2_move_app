@@ -105,7 +105,13 @@
       <div class="menu__feedback">
         <div class="feedback-visible">
         <a href="mailto:marie.klaus@code.berlin?subject= Move App user feedback" id="feedback"><b>Feedback</b></a>
-        <p> <b>Logout</b> </p>
+        <router-link 
+          to="/login"
+          tag="li"
+          active-class="active"
+          @click.native="logout()">
+          <a id="menu__logout"><b>Logout</b></a>
+        </router-link>
       </div>
     </div>
   </div>
@@ -116,7 +122,10 @@
 
 <script>
 // import axios from 'axios';
+
+import firebase from 'firebase';
 import { mapActions, mapGetters } from "vuex";
+
 export default {
   name: 'Menu',
   data () {
@@ -133,6 +142,11 @@ export default {
       this.showSubmenu = false;
       // hide the menu, refer to global state
       return this.$store.state.hideMenu = !this.$store.state.hideMenu;
+    },
+    logout () {
+      firebase.auth().signOut().then(()=>{
+        this.$router.replace('login')
+        alert("Your about to log out. Come back soon.")})
     }
   },
   created () {

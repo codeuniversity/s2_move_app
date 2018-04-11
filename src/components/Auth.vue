@@ -30,6 +30,7 @@ export default {
           signInSuccess: function(currentUser, credential, redirectUrl) {
             // Return type determines whether we continue the redirect automatically or whether we leave that to developer to handle.
             var user = signInSucces.currentUser;
+            alert("Great. Let's move it!");
             console.log("hello", user)
             return true;
             // console.log("Hello", currentUser.email)

@@ -206,31 +206,52 @@ ul.submenu li {
   border-right: 0px;
 }
 
-/* STYLE FEEDBACK BOX*/
+/* STYLE FEEDBACK/LOGOUT Container*/
 .menu__feedback {
   position: absolute;
+  display: inline;
   bottom: 0px;
   width: 100%;
   border-bottom: solid 2px #1e212a;
-  text-align: center;
+  /*/text-align: center;*/
   padding-bottom: 10px;
+  font-size: 16px;
 }
 
 /*Style feedback link*/
 [href="mailto:marie.klaus@code.berlin?subject= Move App user feedback"] {
+    position: relative;
+    float: left;
+    padding-left: 20%;
+    display: inline;
     text-decoration: none;
     font-weight: bold;
     color: #1e212a;
 }
 
-.menu__feedback p, .menu__feedback a {
+/*.menu__feedback p,  {
   display: inline;
   font-size: 16px;
-}
+}*/
 
 /*add some whitespace between feedback link and impressum*/
 .menu__feedback p {
-  padding-left: 12px; 
+  /*padding-left: 12px; */
+}
+
+
+a#menu__logout {
+  position: relative;
+  float: right;
+  padding-right: 20%; 
+  text-decoration: none;
+  display: inline;
+  font-weight: bold;
+  color: #1e212a;
+}
+
+a#menu__logout:hover {
+  text-decoration: underline;
 }
 
 /*TRANSITIONS*/
