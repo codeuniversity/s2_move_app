@@ -1,5 +1,5 @@
 <template>
-  <div class="search" v-click-outside="resetForm" @click="updateDeskRef()" >
+  <div class="search" v-click-outside="resetForm" >
       
 <!-- SEARCH INPUT FORM -->
       <form name="myForm">
@@ -34,10 +34,10 @@
             <!-- MAKE FIREBASE REQUEST DEPENDING ON USER-->
             <div class="search__list__desk">
               <ul>
-                <li>HAM</li>
-                <!-- <li v-if="user.deskref.building">{{user.deskref.building}}</li> -->
-                <li>S2</li>
-                <li>A-3</li>
+                <li v-if="user.deskref">{{ user.deskref.acronym }}</li>
+                <li>{{ user.division }}</li>
+                <li v-if="user.deskref">{{ user.deskref.building }} {{ user.deskref.level }}</li>
+                <li v-else>Not checked in.</li>
               </ul>
             </div> 
             </a>
@@ -83,16 +83,13 @@ export default {
   created() {
       this.fetchUsers();
       this.fetchDesks();
-      this.addDeskRef();
+      // this.addDeskRef();
   },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "addDeskRef"]),
+    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks"]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     // refers to global menu state
-    },
-    updateDeskRef() {
-      this.addDeskRef();
     },
     dispatchSearchTerm(event) {
       this.updateTerm(event.target.value)

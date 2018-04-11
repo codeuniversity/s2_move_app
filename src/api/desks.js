@@ -6,11 +6,12 @@ import axios from "axios";
 export default {
 
   getDesks(desks, {commit}) {
-      axios.get("https://s2-move.firebaseio.com/desks.json")
+      return axios.get("https://s2-move.firebaseio.com/desks.json")
         .then(res => {
               this.desks = res.data
-              // console.log(deskList)
               commit("setDesks", this.desks)
+              // promise to update user
+              commit('updateUser');
             })
         	.catch(error => console.log(error))
   } 

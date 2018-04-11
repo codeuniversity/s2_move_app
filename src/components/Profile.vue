@@ -11,11 +11,15 @@
           {{ selectedUser.lName }}
         </h1> 
         <!-- display desk location -->
-        <ul>
-          <li>HAM</li>
-          <li>S2</li>
-          <li>A-3</li>
-        </ul>
+        <div>
+          <ul>
+            <li v-if="selectedUser.deskref">{{ selectedUser.deskref.acronym }}</li>
+            <li>{{ selectedUser.division }}</li>
+            <li v-if="selectedUser.deskref">{{ selectedUser.deskref.building }} {{ selectedUser.deskref.level }}</li>
+            <li v-else>Not checked in.</li>
+          </ul>
+        </div> 
+
         <!-- display jobtitle and team info  -->
         <h2>
           {{ selectedUser.jobTitle }}
