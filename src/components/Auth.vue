@@ -4,10 +4,11 @@
     <img id="move-logo" src="../assets/images/move-logo.png" alt="Sinnerschrader Logo">
 		<h1 class="login__headline"> Login via Google </h1>
     <p class="login__text">Are you looking for a colleague, meeting room or space for a new team at SinnerSchrader?</p>
-		<div id="firebaseui-auth-container">
-      <h1 class="button-text">Let's go!</h1>
-      <div id="loader">Loading...</div>
-    </div>
+    <div id="loader">Loading...</div>
+		<div id="firebaseui-auth-container"></div>
+    <h1 class="button__text">Let's go!</h1>
+    <br>
+    
 		
 	</div>	
 
@@ -31,8 +32,7 @@ export default {
           signInSuccess: function(currentUser, credential, redirectUrl) {
             // Return type determines whether we continue the redirect automatically or whether we leave that to developer to handle.
             var user = signInSucces.currentUser;
-            alert("Great. Let's move it!");
-            console.log("hello", user)
+            console.log("Successfully logged in.", user)
             return true;
             // console.log("Hello", currentUser.email)
           },

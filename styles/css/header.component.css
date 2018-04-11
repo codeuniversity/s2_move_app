@@ -27,7 +27,7 @@
   height: 100%;
 }
 
-#s2-logo {
+.app-header #s2-logo {
   position: absolute;
   display: block;  
   float: left;
@@ -41,7 +41,7 @@
   width: auto;
 }*/
 
-#move-logo {
+.app-header #move-logo {
   position: absolute;
   display: block;
   margin-left: auto;

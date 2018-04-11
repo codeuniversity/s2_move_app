@@ -158,6 +158,6 @@ export default {
 // Create a computed property for the click listener
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 @import "../../styles/css/menu.component.css"
 </style>

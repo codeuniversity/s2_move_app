@@ -1,109 +1,101 @@
 *{
   margin: 0;
   padding: 0;
-}
-/*include padding and border into total width and height of elements*/
-*{
   box-sizing: border-box;
 }
 
 .login {
   position: absolute;
   width: 100%;
-  height:100vh;
+  min-height:100vh;
   background-color: #1e212a;
   color: #f4f7fa;
   text-align: center;
+  z-index: -2;
 }
 
-#s2-logo {
-  position: relative;
+.login #s2-logo {
+  position: absolute;
   top: 10px;
-  float: left;
-  margin-left: 10px;
+  left: 10px;
   max-height:60%;
   width: auto;
+  height: 30px;
 }
 
-#move-logo {
-  position: absolute;
-  top: 100px;
-   margin: initial;
-   right: 50%;
-    /*display: block;*/
-  /*margin: 0 auto;*/
-  /*left: 41%;*/
+.login #move-logo {
+  display: block;
+  margin: 0 auto;
+  margin-top: 110px;
   max-height:20%;
   width: auto;
 }
 
-h1.login__headline {
-  position: absolute;
-  top: 250px;
-  margin:initial;
-  /*right: 50%;*/
-  left: 38%;
+.login h1.login__headline {
+  margin-top: 60px;
   font-size: 24px;
   letter-spacing: 1.3px;
 }
-
-p.login__text {
-  position: absolute;
-  top: 310px;
+/*Login text*/
+.login p.login__text {
+  margin-top: 30px;
   font-size: 18px;
   letter-spacing: 0.8px;
-  margin: initial;
-  left: 15%;
 }
 
-span.firebaseui-idp-text.firebaseui-idp-text-short {
+.login #loader {
+  margin-top: 30px;
+}
+
+/* Hide firebase text*/
+.login span.firebaseui-idp-text.firebaseui-idp-text-short {
   display: none;
 }
 
 /* Hide text within button*/
-span.firebaseui-idp-text.firebaseui-idp-text-long
-{
+.login span.firebaseui-idp-text.firebaseui-idp-text-long {
   display: none;
 }
 
-li.firebaseui-list-item {
-  position: absolute;
-  left: 40%;
-  top: 400px;
+/* Login button container*/
+.login div#firebaseui-auth-container {
+  margin-top: 80px;
+}
+
+/* Google button list item*/
+.login li.firebaseui-list-item {
   list-style-type: none;
 }
 
-button.firebaseui-idp-button.mdl-button.mdl-js-button.mdl-button--raised.firebaseui-idp-google.firebaseui-id-idp-button {
-  position: relative;
-  width: 150px;
+/* Login button */
+.login button.firebaseui-idp-button.mdl-button.mdl-js-button.mdl-button--raised.firebaseui-idp-google.firebaseui-id-idp-button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 460px;
+  width: 170px;
   height: 60px;
-  margin:0, auto;
   background-color: transparent;
   border: 2px solid #f4f7fa;
   padding: 10px;
-  padding-left: 100px;
   cursor: pointer;
+  z-index: 1;
 }
 
 /*Style Google logo*/
-img.firebaseui-idp-icon {
+.login img.firebaseui-idp-icon {
   display: none;
 }
-
-h1.button-text {
+/* lays underneath */
+.login h1.button__text {
   position: absolute;
-  top: 417px;
-  left: 42%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 475px;
+  /*margin-top: 15px;*/
   font-size: 22px;
+  z-index: -1;
 }
 
-ul.firebaseui-idp-list {
 
-}
-
-div#firebaseui-auth-container {
-  width: 300px;
-  margin-left: 500px;
-  margin-top: 100px;
-}
 

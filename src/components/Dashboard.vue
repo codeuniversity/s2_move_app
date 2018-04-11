@@ -33,7 +33,7 @@ export default {
 
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 
 @import "../../styles/css/dashboard.component.css"
 
