@@ -34,10 +34,10 @@
             <!-- MAKE FIREBASE REQUEST DEPENDING ON USER-->
             <div class="search__list__desk">
               <ul>
-                <li>HAM</li>
-                <li v-if="user.deskref && user.deskref.building">!!!{{user.deskref.building}}</li>
-                <li>S2</li>
-                <li>A-3</li>
+                <li v-if="user.deskref">{{ user.deskref.acronym }}</li>
+                <li>{{ user.division }}</li>
+                <li v-if="user.deskref">{{ user.deskref.building }} {{ user.deskref.level }}</li>
+                <li v-else>Not checked in.</li>
               </ul>
             </div> 
             </a>
@@ -80,12 +80,8 @@ export default {
     action: Function
   },
   created() {
-      let a = this.fetchUsers();
-      let b = this.fetchDesks();
-      Promise.all([a, b])
-             .then(function() {
-                console.log("a, b fertig");
-             })
+      this.fetchUsers();
+      this.fetchDesks();
       // this.addDeskRef();
   },
   methods: {

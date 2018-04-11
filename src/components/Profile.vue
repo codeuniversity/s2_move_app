@@ -11,6 +11,14 @@
           {{ selectedUser.lName }}
         </h1> 
         <!-- display desk location -->
+<!--                     <div class="search__list__desk">
+              <ul>
+                <li v-if="user.deskref">{{ user.deskref.acronym }}</li>
+                <li>{{ user.division }}</li>
+                <li v-if="user.deskref">{{ user.deskref.building }} {{ user.deskref.level }}</li>
+                <li v-else>Not checked in.</li>
+              </ul>
+            </div>  -->
         <ul>
           <li>HAM</li>
           <li>S2</li>
