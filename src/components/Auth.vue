@@ -6,8 +6,9 @@
     <p class="login__text">Are you looking for a colleague, meeting room or space for a new team at SinnerSchrader?</p>
 		<div id="firebaseui-auth-container">
       <h1 class="button-text">Let's go!</h1>
+      <div id="loader">Loading...</div>
     </div>
-		<div id="loader">Loading...</div>
+		
 	</div>	
 
 </template>

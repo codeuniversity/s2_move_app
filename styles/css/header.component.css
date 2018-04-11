@@ -33,12 +33,16 @@
   float: left;
   margin-left: 10px;
   bottom: 0px;
-  max-height:60%;
-  width: auto;
+  width: 130px;
+  height: auto;
 }
 
+/*  max-height:60%;
+  width: auto;
+}*/
+
 #move-logo {
-  position: relative;
+  position: absolute;
   display: block;
   margin-left: auto;
   margin-right: auto;

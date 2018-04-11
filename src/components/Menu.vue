@@ -145,8 +145,9 @@ export default {
     },
     logout () {
       firebase.auth().signOut().then(()=>{
-        this.$router.replace('login')
-        closeMenu()
+        this.$router.replace('login');
+        this.closeMenu();
+        alert("You're about to sign out.")
         })
     }
   },
