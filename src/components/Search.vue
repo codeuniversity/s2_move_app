@@ -1,5 +1,5 @@
 <template>
-  <div class="search" v-click-outside="resetForm" @click="updateDeskRef()" >
+  <div class="search" v-click-outside="resetForm" >
       
 <!-- SEARCH INPUT FORM -->
       <form name="myForm">
@@ -35,7 +35,7 @@
             <div class="search__list__desk">
               <ul>
                 <li>HAM</li>
-                <!-- <li v-if="user.deskref.building">{{user.deskref.building}}</li> -->
+                <li v-if="user.deskref && user.deskref.building">!!!{{user.deskref.building}}</li>
                 <li>S2</li>
                 <li>A-3</li>
               </ul>
@@ -80,18 +80,19 @@ export default {
     action: Function
   },
   created() {
-      this.fetchUsers();
-      this.fetchDesks();
-      this.addDeskRef();
+      let a = this.fetchUsers();
+      let b = this.fetchDesks();
+      Promise.all([a, b])
+             .then(function() {
+                console.log("a, b fertig");
+             })
+      // this.addDeskRef();
   },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "addDeskRef"]),
+    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks"]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     // refers to global menu state
-    },
-    updateDeskRef() {
-      this.addDeskRef();
     },
     dispatchSearchTerm(event) {
       this.updateTerm(event.target.value)

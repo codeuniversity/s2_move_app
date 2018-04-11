@@ -45,7 +45,7 @@ export const store = new Vuex.Store({
  	},
 	actions: {
 		fetchUsers({commit}) {
-			users.getUsers(users, {commit}); 
+			return users.getUsers(users, {commit}); 
 		},
 		updateTerm({ commit }, searchTerm) {
     	commit("updateTerm", searchTerm);	
@@ -58,11 +58,8 @@ export const store = new Vuex.Store({
 			commit("fetchFilteredUsers", filteredUsers);
 		},
 		fetchDesks({commit}) {
-			desks.getDesks(desks, {commit});
-		},
-    addDeskRef({commit}) {
-    	commit('updateUser', desks);
-    	}
+			return desks.getDesks(desks, {commit});
+		}
 	},
 	mutations: {
 		setUsers(state, users) {
@@ -88,16 +85,16 @@ export const store = new Vuex.Store({
     	},
 
     	fetchFilteredUsers(state, filteredUsers) {
-    		state.filteredUsers = fetchFilteredUsers;
+    		state.filteredUsers = fetchFilteredUsers; // ???
     	},
-    	updateUser(state, users) {
+    	updateUser(state) {
 	      Object.values(state.users).forEach(user =>  {
 	          if(user.desk) {
 	            let desk = state.desks[user.desk];
 	            console.log("found desk in user", user)
 	            if (desk) {
 		            user.deskref = desk;
-	            	console.log("found desk", user.deskref.acronym, user.deskref.division, user.deskref.building, user.deskref.level);	
+	            	console.log("found desk", desk.acronym, user.deskref.division, user.deskref.building, user.deskref.level);	
 	            } else {
 	            	console.log('invalid desk for user ')
 	            }
