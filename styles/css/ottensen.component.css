@@ -69,7 +69,7 @@
 @media (min-width: 900px) {
     .dropdown-menu {
       width: 20%;
-      min-height: 20vh;
+      min-height: 30vh;
     }
      .dropdown-menu input {
       position: relative;
