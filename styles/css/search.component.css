@@ -24,10 +24,10 @@ f*, *:before, *:after {
   width: calc(100% - 20px);
   border: none;
   background-color: #f4f7fa;
-  z-index: 0;
+  z-index: 200;
   background-image: url('../../src/assets/icons/search-icon.png');
   background-repeat: no-repeat;
-  background-position: 2% 50%;
+  background-position: 2% 50%;  
 }
 
 /* Placeholder text search input*/
@@ -103,6 +103,8 @@ div.btn:hover {
   width: 100%;
   border: 2px solid #1e212a;
   color: #1e212a;
+  z-index: 2;
+  background-color: white;
 }
 
 .search__item {

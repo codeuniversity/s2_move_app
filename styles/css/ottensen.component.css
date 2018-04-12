@@ -9,7 +9,7 @@
 
 .map {
   width: 100%;
-  height: calc(100vh - 65px);
+  z-index: 1;
 }
 
 .dropdown {
@@ -115,7 +115,6 @@
   background-position: center;
   color: transparent;
   position: absolute;
-  z-index: -1;
   cursor: pointer;
   border: none;
 }
