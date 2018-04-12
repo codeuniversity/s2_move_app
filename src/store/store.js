@@ -48,7 +48,7 @@ export const store = new Vuex.Store({
 			return users.getUsers(users, {commit}); 
 		},
 		updateTerm({ commit }, searchTerm) {
-    	commit("updateTerm", searchTerm);	
+    		commit("updateTerm", searchTerm);	
 		},
 		selectUser({ commit }, selectedUser) {
 			commit("selectUser", selectedUser);	

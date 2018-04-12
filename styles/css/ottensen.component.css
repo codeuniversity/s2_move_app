@@ -44,7 +44,7 @@
   font-weight: 700;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 890px) {
     .dropdown-menu {
       width: 35%;
       min-height: 30vh;
@@ -57,7 +57,7 @@
 
 @media (max-width: 600px) and (min-width: 300px) {
     .dropdown-menu {
-      width: 40%;
+      width: 45%;
       min-height: 30vh;
     }
     .dropdown-menu input {
@@ -69,7 +69,7 @@
 @media (min-width: 900px) {
     .dropdown-menu {
       width: 20%;
-      min-height: 30vh;
+      min-height: 25vh;
     }
      .dropdown-menu input {
       position: relative;
@@ -135,4 +135,3 @@
   border-radius: 5px;
 
 }
-
