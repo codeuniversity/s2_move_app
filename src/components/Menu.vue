@@ -10,7 +10,7 @@
     <!-- USER INFO -->
     <div class="user-info">
       <div class="user-text">
-        <h2>{{user.fName}} {{user.lName}}</h2>
+        <h2>{{name}}</h2>
       </div>
 
       <div class="desk-text">
@@ -24,7 +24,7 @@
       <!-- default user image -->
       <img src="../assets/icons/default-user-icon.png" alt="default user image">
       <!-- user data image -->
-      <img :src="user.image" alt="user profile picture">
+      <img :src="photo" alt="user profile picture">
 
       <img id="btn__close" src="../assets/icons/close-black-icon.png" @click="closeMenu()">
 
@@ -133,7 +133,11 @@ export default {
       user: {},
       desk: {},
       showSubmenu: false,
-      authUser: {}
+      authUser: {},
+      userId: "",
+      name: "",
+      email: "",
+      photo: ""
     }
   },
   methods: {
