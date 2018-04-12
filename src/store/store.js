@@ -18,14 +18,14 @@ export const store = new Vuex.Store({
 	getters: {
 		getFilteredUsers(state) {
 			return state.filteredUsers = Object.values(state.users).filter(user => {
-      var fullName = `${user.fName} ${user.lName}`;
-      //search by name
-	    return fullName.toLowerCase().includes(state.searchTerm.toLowerCase())
-	    //search by email
-	    || user.gmailAcc.toLowerCase().includes(state.searchTerm.toLowerCase())
-	    // search by team
-      || user.team.toLowerCase().includes(state.searchTerm.toLowerCase())
-      })
+		      var fullName = `${user.fName} ${user.lName}`;
+		      //search by name
+			  return fullName.toLowerCase().includes(state.searchTerm.toLowerCase())
+			    //search by email
+			  || user.gmailAcc.toLowerCase().includes(state.searchTerm.toLowerCase())
+			    // search by team
+		      || user.team.toLowerCase().includes(state.searchTerm.toLowerCase())
+		      })
 		},
 		getSearchTerm(state) {
 			return state.searchTerm;
@@ -40,8 +40,8 @@ export const store = new Vuex.Store({
 			return state.desks;
 		},
 		getListVisibility(state) {
-      	return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
-    }
+      		return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
+    	}
  	},
 	actions: {
 		fetchUsers({commit}) {
@@ -72,8 +72,8 @@ export const store = new Vuex.Store({
 		setSearchTerm(state) {
       		state.selectedUser = { };
     	},
-    updateTerm(state, searchTerm) {
-    	state.searchTerm = searchTerm;
+    	updateTerm(state, searchTerm) {
+    		state.searchTerm = searchTerm;
 		},
 		selectUser(state, selectedUser) {
 			state.selectedUser = selectedUser;
@@ -81,19 +81,19 @@ export const store = new Vuex.Store({
 		toggleMenu(state) {
 		   state.hideMenu=!state.hideMenu;
     	},
-    fetchFilteredUsers(state) {
-    	state.filteredUsers = fetchFilteredUsers;
-    },
-    updateUser(state) {
-      //assign deskref to user object. Waits for desks and users axios request
-      Object.values(state.users).forEach(user =>  {
-	      if(user.desk) {
-	        let desk = state.desks[user.desk];
-	        if (desk) {
-		        user.deskref = desk;
-	        }
-	      }
-	    });
-    }
+    	fetchFilteredUsers(state) {
+    		state.filteredUsers = fetchFilteredUsers;
+    	},
+    	updateUser(state) {
+      	//assign deskref to user object. Waits for desks and users axios request
+	      	Object.values(state.users).forEach(user =>  {
+		      if(user.desk) {
+		        let desk = state.desks[user.desk];
+		        if (desk) {
+			        user.deskref = desk;
+		        }
+		      }
+		    });
+    	}
 	}
 })

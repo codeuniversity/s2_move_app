@@ -22,30 +22,61 @@
   background-color: white;
   width: 48px;
   height: 60px;
-
 }
 
 .dropdown-menu {
   position: absolute;
+  color: white;
+  background-color: #1e212a;
   border-radius: 5px;
-  border-top-color: #C9D7F1;
-  border-right-color: #36C;
-  border-bottom-color: #36C;
-  border-left-color: #A2BAE7;
-  border-style: solid;
-  border-width: 1px;
+  border:1px solid black;
   z-index: 900;
   padding: 0;
-  background-color: white;
   overflow: hidden;
   font-size: small;
   font-family: Arial;
   line-height: 2em;
   word-spacing: 0;
-  top: 10px;
-  left: 10px;
+  top: 112px;
+  left: 125px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
 }
 
+@media (max-width: 550px) {
+    .dropdown-menu {
+      width: 35%;
+      min-height: 30vh;
+    }
+    .dropdown-menu input {
+      position: relative;
+      top: 20px;
+    }
+}
+
+@media (max-width: 600px) and (min-width: 300px) {
+    .dropdown-menu {
+      width: 40%;
+      min-height: 30vh;
+    }
+    .dropdown-menu input {
+      position: relative;
+      top: 20px;
+    }
+}
+
+@media (min-width: 900px) {
+    .dropdown-menu {
+      width: 20%;
+      min-height: 20vh;
+    }
+     .dropdown-menu input {
+      position: relative;
+      top: 5px;
+    }
+}
+   
 .dropdown-menu a {
   font-size: 1.25em;
   color: #00C;
@@ -92,3 +123,16 @@
 .v--modal-overlay {
   background: black;
 }
+
+#menu-button {
+  color: black;
+  background-color:#03ffb7;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  width: 120px;
+  border: 1px solid black;
+  border-radius: 5px;
+
+}
+

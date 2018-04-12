@@ -11,8 +11,8 @@
           <div class="dropdown"> 
             <ul class="dropdown-menu" v-if="showList"             
                 v-click-outside="hideList">Check In
-              <li v-for="option in options">
-                <input type="button" @click="showModal" :value="option.item">
+              <li id="menu-options" v-for="option in options">
+                <input id="menu-button"type="button" @click="showModal" :value="option.item">
               </li>
             </ul>
           </div> 
