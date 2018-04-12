@@ -29,6 +29,8 @@
 
 import axios from "axios"
 import Search from "../Search.vue"
+import { mapActions } from 'vuex'
+
 
 export default {
 
@@ -70,6 +72,7 @@ export default {
       .catch(error => console.log(error))
   },
   methods: {
+    ...mapActions(["selectUser", "updateTerm"]),
     selectDesk(deskId) {
       this.selectedDesk = deskId;
       console.log(this.selectedDesk);
@@ -77,6 +80,7 @@ export default {
     handler(deskId) {
       this.selectDesk(deskId)
       this.showList = !this.showList
+      this.resetForm();
     },
     hideList() {
       this.showList = false;
@@ -86,6 +90,10 @@ export default {
     },
     hideModal () {
       this.$modal.hide('search');
+    },
+    resetForm() {
+      this.updateTerm('')
+      this.selectUser({});
     },
     checkIn(selectedUser) {
       console.log("I'm the check in")

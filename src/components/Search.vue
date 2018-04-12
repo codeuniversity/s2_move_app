@@ -1,5 +1,5 @@
 <template>
-  <div class="search" v-click-outside="resetForm" >
+  <div class="search">
       
 <!-- SEARCH INPUT FORM -->
       <form name="myForm">
