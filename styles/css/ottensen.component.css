@@ -22,6 +22,7 @@
   background-color: white;
   width: 48px;
   height: 60px;
+  z-index: -2;
 }
 
 .dropdown-menu {

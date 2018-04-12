@@ -72,7 +72,7 @@ export default {
       .catch(error => console.log(error))
   },
   methods: {
-    ...mapActions(["updateTerm"]),
+    ...mapActions(["updateTerm", "selectUser"]),
     selectDesk(deskId) {
       this.selectedDesk = deskId;
       console.log(this.selectedDesk);
