@@ -72,7 +72,7 @@ export default {
       .catch(error => console.log(error))
   },
   methods: {
-    ...mapActions(["selectUser", "updateTerm"]),
+    ...mapActions(["updateTerm"]),
     selectDesk(deskId) {
       this.selectedDesk = deskId;
       console.log(this.selectedDesk);
@@ -93,7 +93,7 @@ export default {
     },
     resetForm() {
       this.updateTerm('')
-      this.selectUser({});
+      // this.selectUser({});
     },
     checkIn(selectedUser) {
       console.log("I'm the check in")
