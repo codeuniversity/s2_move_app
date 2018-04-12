@@ -24,7 +24,6 @@ f*, *:before, *:after {
   width: calc(100% - 20px);
   border: none;
   background-color: #f4f7fa;
-  z-index: 200;
   background-image: url('../../src/assets/icons/search-icon.png');
   background-repeat: no-repeat;
   background-position: 2% 50%;  
