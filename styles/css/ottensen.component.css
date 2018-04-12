@@ -44,7 +44,7 @@
   font-weight: 700;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 850px) {
     .dropdown-menu {
       width: 35%;
       min-height: 30vh;
