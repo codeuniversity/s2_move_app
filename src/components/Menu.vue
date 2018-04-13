@@ -10,21 +10,21 @@
     <!-- USER INFO -->
     <div class="user-info">
       <div class="user-text">
-        <h2>{{name}}</h2>
+        <h2>{{authUser.displayName}}</h2>
       </div>
 
-      <div class="desk-text">
+<!--       <div class="desk-text">
         <ul>
           <li>{{desk.acronym }}</li>
           <li>{{desk.division}}</li>
           <li>{{desk.building}}{{desk.level}}</li>
         </ul>
-      </div>
+      </div> -->
 
       <!-- default user image -->
       <img src="../assets/icons/default-user-icon.png" alt="default user image">
       <!-- user data image -->
-      <img :src="photo" alt="user profile picture">
+      <img :src="authUser.photoURL" alt="user profile picture">
 
       <img id="btn__close" src="../assets/icons/close-black-icon.png" @click="closeMenu()">
 
@@ -123,22 +123,20 @@
 <script>
 // import axios from 'axios';
 
-import firebase from 'firebase';
-import { mapActions, mapGetters } from "vuex";
+//import firebase from 'firebase';
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   name: 'Menu',
   data () {
     return {
-      user: {},
-      desk: {},
-      showSubmenu: false,
-      authUser: {},
-      userId: "",
-      name: "",
-      email: "",
-      photo: ""
+      showSubmenu: false
     }
+  },
+  computed:{
+  ...mapState({authUser: state => state.authUser})
+  },
+  created () {
   },
   methods: {
     closeMenu () {
@@ -155,18 +153,7 @@ export default {
         })
     }
   },
-  created () {
-    this.user = firebase.auth().currentUser; 
-        if(this.user) { 
-        this.name = this.user.displayName; 
-        this.email = this.user.email; 
-        this.photo = this.user.photoURL; 
-        this.userId = this.user.uid; 
-        }
-    //request user info
-  }
 }
-// Create a computed property for the click listener
 </script>
 
 <style lang="css" scoped>
