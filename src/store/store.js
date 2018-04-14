@@ -45,7 +45,7 @@ export const store = new Vuex.Store({
 			return state.currentUser;
 		},
 		getListVisibility(state) {
-      return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
+      		return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
     }
  	},
 	actions: {
@@ -96,56 +96,56 @@ export const store = new Vuex.Store({
 			console.log("This is setDesks", desks)
 		},
 		setSearchTerm(state) {
-      state.selectedUser = { };
-    },
-    updateTerm(state, searchTerm) {
-    	state.searchTerm = searchTerm;
+      		state.selectedUser = { };
+    	},
+    	updateTerm(state, searchTerm) {
+    		state.searchTerm = searchTerm;
 		},
 		selectUser(state, selectedUser) {
 			state.selectedUser = selectedUser;
 		},
 		toggleMenu(state) {
 		   state.hideMenu=!state.hideMenu;
-    },
-    fetchFilteredUsers(state) {
-    	state.filteredUsers = fetchFilteredUsers;
-    },
-    updateUser(state) {
-      //assign deskref to user object. Waits for desks and users axios request
-	    return Object.values(state.users).forEach(user =>  {
-		  	if(user.desk) {
-		      let desk = state.desks[user.desk];
-		      if (desk) {
-			      user.deskref = desk;
-		      }
-		    }
-		    // if authent. user, add reference to users
-		    if (state.authUser.email == user.gmailAcc){
-		    	user.authUserRef = state.authUser;
-		    }
-		  })
-    },
-    setAuthUser( state, authUser ){
-    	state.authUser = authUser;
-    	console.log("setAuthUser", authUser)
-    },
-    //to add authuser reference to auth user 
-    fetchAuthUser(state){
-    	return Object.values(state.users).forEach(user => {
-    		if(user.authUserRef){
-    			let userRef = state.users[user];
-    			authUser.userRef = userRef;
-    		}
-    	})
-    	console.log("updateAuthUser", authUser)
-    },
-    fetchCurrentUser(state) {
-    	return state.currentUser = Object.values(state.users).filter(user => {
-				if (state.authUser.email == user.gmailAcc){
-					state.currentUser = user;
-				}
-    	})
-    	console.log("fetchCurrentUser mutation", currentUser)
-    },
+    	},
+    	fetchFilteredUsers(state) {
+    		state.filteredUsers = fetchFilteredUsers;
+    	},
+	    updateUser(state) {
+	      //assign deskref to user object. Waits for desks and users axios request
+		    return Object.values(state.users).forEach(user =>  {
+			  	if(user.desk) {
+			      let desk = state.desks[user.desk];
+			      if (desk) {
+				      user.deskref = desk;
+			      }
+			    }
+			    // if authent. user, add reference to users
+			    if (state.authUser.email == user.gmailAcc){
+			    	user.authUserRef = state.authUser;
+			    }
+			  })
+	    },
+	    setAuthUser(state, authUser){
+	    	state.authUser = authUser;
+	    	console.log("setAuthUser", authUser)
+	    },
+    	//to add authuser reference to auth user 
+	    fetchAuthUser(state){
+	    	return Object.values(state.users).forEach(user => {
+	    		if(user.authUserRef){
+	    			let userRef = state.users[user];
+	    			authUser.userRef = userRef;
+	    		}
+	    	})
+    		console.log("updateAuthUser", authUser)
+   		},
+    	fetchCurrentUser(state) {
+	    	return state.currentUser = Object.values(state.users).filter(user => {
+					if (state.authUser.email == user.gmailAcc){
+						state.currentUser = user;
+					}
+	    	})
+    		console.log("fetchCurrentUser mutation", currentUser)
+    	},
   }
 })

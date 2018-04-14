@@ -2,16 +2,13 @@
 	<div class="login">
     <img id="s2-logo" src="../assets/images/s-2-logo.png" alt="Sinnerschrader Logo">
     <img id="move-logo" src="../assets/images/move-logo.png" alt="Sinnerschrader Logo">
-		<h1 class="login__headline"> Login via Google </h1>
+		<h1 class="login__headline">Login via Google</h1>
     <p class="login__text">Are you looking for a colleague, meeting room or space for a new team at SinnerSchrader?</p>
     <div id="loader">Loading...</div>
 		<div id="firebaseui-auth-container"></div>
     <h1 class="button__text">Let's go!</h1>
     <br>
-    
-		
 	</div>	
-
 </template>
 
 <script>
@@ -62,8 +59,8 @@ export default {
       	};
 
         let ui = firebaseui.auth.AuthUI.getInstance();
-        if (!ui) {
-        ui = new firebaseui.auth.AuthUI(firebase.auth());
+        if(!ui) {
+          ui = new firebaseui.auth.AuthUI(firebase.auth());
         }
         ui.start('#firebaseui-auth-container', uiConfig);
         //This is what it was like before and it won"t work because it says the AuthUI instance is duplicated
@@ -71,7 +68,6 @@ export default {
         // ui.start('#firebaseui-auth-container', uiConfig);
 	}
 }
-
 </script>
 
 <style lang="css">
@@ -79,4 +75,3 @@ export default {
 @import "../../styles/css/auth.component.css"
 
 </style>
-
