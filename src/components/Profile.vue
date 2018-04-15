@@ -2,11 +2,17 @@
 	  <div class="profile" v-if="Object.keys(selectedUser).length !== 0">
       <!-- display user image -->
       <div class="profile__img">
-      <img :src="selectedUser.image"> <br>
+        <!-- display google image if auth user -->
+      <img v-if="authUser.email == selectedUser.gmailAcc" :src="authUser.photoURL">
+      <img v-else :src="selectedUser.image"> 
+      <br>
       </div>
       <div class="profile__user-info">
         <!-- display user name -->
-        <h1> 
+        <h1 v-if="authUser.email == selectedUser.gmailAcc">
+          {{authUser.displayName }}
+        </h1>
+        <h1 v-else> 
           {{ selectedUser.fName }} 
           {{ selectedUser.lName }}
         </h1> 
@@ -59,12 +65,19 @@
 
 <script>
 
+import { mapState } from 'vuex';
+
 export default {
+
 
   name: "Profile",
   props: {
     selectedUser: Object
+  },
+  computed: {
+    ...mapState({authUser: state => state.authUser})
   }
+
 }
 
 </script>
