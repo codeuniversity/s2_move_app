@@ -15,7 +15,6 @@ export const store = new Vuex.Store({
 		filteredUsers: {},
 		desks: {},
 		authUser:{} // firebase user object
-		// currentUser: {} // filter users by email, depending on auth email
 	},
 	getters: {
 		getFilteredUsers(state) {

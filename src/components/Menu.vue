@@ -126,7 +126,7 @@
 // import axios from 'axios';
 
 //import firebase from 'firebase';
-import { mapState, mapActions, mapGetters } from "vuex";
+import { mapState } from "vuex";
 
 export default {
   name: 'Menu',

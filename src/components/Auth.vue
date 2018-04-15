@@ -60,7 +60,6 @@ export default {
 	         firebase.auth.GoogleAuthProvider.PROVIDER_ID
 	      ]
       	};
-
         let ui = firebaseui.auth.AuthUI.getInstance();
         if (!ui) {
         ui = new firebaseui.auth.AuthUI(firebase.auth());

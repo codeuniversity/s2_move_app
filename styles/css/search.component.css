@@ -122,7 +122,7 @@ div.btn:hover {
 /*make picture width slighty bigger to make 4x3 pics fit into square*/
 .search__list__thumbnail img {
   position: absolute;
-  width: 120%;
+  width: 100%;
   height: auto;
 }
 
@@ -163,7 +163,9 @@ div.btn:hover {
 }
 
 .search__no-user p {
+  position: relative;
   margin: 3px;
+  z-index: 10;
 }
 
 .search__no-user img {
