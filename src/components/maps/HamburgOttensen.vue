@@ -74,7 +74,7 @@ export default {
       .catch(error => console.log(error))
   },
   methods: {
-    ...mapActions(["updateTerm", "selectUser"]),
+    ...mapActions(["updateTerm", "selectUser", "fetchUsers"]),
     selectDesk(deskId) {
       this.selectedDesk = deskId;
       console.log(this.selectedDesk);
@@ -104,6 +104,7 @@ export default {
       axios.patch(`https://s2-move.firebaseio.com/desks/${this.selectedDesk}.json`,
       {user: selectedUser.idRef})
       console.log(selectedUser.idRef)
+      // this.fetchUsers()
     },
     calculatePosition(xCoord, yCoord, angle) {
       return {
