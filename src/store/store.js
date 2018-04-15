@@ -57,7 +57,7 @@ export const store = new Vuex.Store({
 		},
 		selectUser({ commit }, selectedUser) {
 			commit("selectUser", selectedUser);	
-			console.log("Hello, this is selectUser", selectedUser)
+			// console.log("Hello, this is selectUser", selectedUser)
 		},
 		fetchFilteredUsers({commit}, filteredUsers) {
 			commit("fetchFilteredUsers", filteredUsers);
@@ -83,17 +83,17 @@ export const store = new Vuex.Store({
 		// },
 		fetchCurrentUser({commit}, currentUser){
 			commit("fetchCurrentUser", currentUser);
-			console.log("this is fetchCurrentUser action", currentUser)
+			// console.log("this is fetchCurrentUser action", currentUser)
 		}
 	},
 	mutations: {
 		setUsers(state, users) {
 			state.users = users;
-			console.log("This is setUsers", users)
+			// console.log("This is setUsers", users)
 		},
 		setDesks(state, desks) {
 			state.desks = desks;
-			console.log("This is setDesks", desks)
+			// console.log("This is setDesks", desks)
 		},
 		setSearchTerm(state) {
       		state.selectedUser = { };
@@ -127,7 +127,7 @@ export const store = new Vuex.Store({
 	    },
 	    setAuthUser(state, authUser){
 	    	state.authUser = authUser;
-	    	console.log("setAuthUser", authUser)
+	    	// console.log("setAuthUser", authUser)
 	    },
     	//to add authuser reference to auth user 
 	    fetchAuthUser(state){
@@ -137,7 +137,7 @@ export const store = new Vuex.Store({
 	    			authUser.userRef = userRef;
 	    		}
 	    	})
-    		console.log("updateAuthUser", authUser)
+    		// console.log("updateAuthUser", authUser)
    		},
     	fetchCurrentUser(state) {
 	    	return state.currentUser = Object.values(state.users).filter(user => {
@@ -145,7 +145,7 @@ export const store = new Vuex.Store({
 						state.currentUser = user;
 					}
 	    	})
-    		console.log("fetchCurrentUser mutation", currentUser)
+    		// console.log("fetchCurrentUser mutation", currentUser)
     	},
   }
 })

@@ -1,12 +1,14 @@
 <template>
   <div class="map">
-    <div>
+    <div v-if="getUsers.length">
           <a
           href="#"
           class="dropdown-toggle seat" 
           v-for="desk in deskList" 
           @click="handler(desk.id)"
-          :style="calculatePosition(desk.xCoord, desk.yCoord, desk.angle)"><img/>
+          :style="calculatePosition(desk.xCoord, desk.yCoord, desk.angle)">
+            <img class="seat__image" :src="findUserImage(desk.user)" 
+            :style="`transform: rotate(-${desk.angle}deg)`"/>
           </a> 
           <div class="dropdown"> 
             <ul class="dropdown-menu" v-if="showList"             
@@ -67,7 +69,7 @@ export default {
             desks.push(desk)
           }
           this.deskList = desks
-            console.log(desks)
+            // console.log(desks)
           })
       .catch(error => console.log(error))
   },
@@ -93,13 +95,15 @@ export default {
     },
     resetForm() {
       this.updateTerm('')
-      // this.selectUser({});
+      this.selectUser({});
     },
     checkIn(selectedUser) {
       console.log("I'm the check in")
       axios.patch(`https://s2-move.firebaseio.com/users/${selectedUser.idRef}.json`,
       {desk: this.selectedDesk})
-
+      axios.patch(`https://s2-move.firebaseio.com/desks/${this.selectedDesk}.json`,
+      {user: selectedUser.idRef})
+      console.log(selectedUser.idRef)
     },
     calculatePosition(xCoord, yCoord, angle) {
       return {
@@ -107,10 +111,18 @@ export default {
         left: xCoord + "px",
         transform: "rotate("+ angle + "deg)"
       }
+    },
+    findUserImage(deskUser) {
+      // console.log(deskUser)
+      var found = this.getUsers.find(function(element) {
+        // console.log(element)
+        return element.idRef == deskUser
+      });
+      return found.image;
     }
   },
   computed: {
-    ...mapGetters(["getSelectedUser"])
+    ...mapGetters(["getSelectedUser", "getUsers"])
   }
 }
 

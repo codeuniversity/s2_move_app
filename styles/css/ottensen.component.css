@@ -120,6 +120,12 @@
   border: none;
 }
 
+.seat__image {
+  position: absolute;
+  width: 20px;
+  left: 15px;
+}
+
 .v--modal-overlay {
   background: black;
 }
