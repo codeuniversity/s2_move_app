@@ -6,7 +6,7 @@
           class="dropdown-toggle seat" 
           v-for="desk in deskList" 
           @click="handler(desk.id)"
-          :style="calculatePosition(desk.xCoord, desk.yCoord, desk.angle)">
+          :style="calculatePosition(desk.xCoord, desk.yCoord, desk.angle)"><img/>
           </a> 
           <div class="dropdown"> 
             <ul class="dropdown-menu" v-if="showList"             
@@ -29,7 +29,7 @@
 
 import axios from "axios"
 import Search from "../Search.vue"
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 
 export default {
@@ -63,7 +63,7 @@ export default {
           const desks = []
           for (let key in data) {
             const desk = data[key]
-            // desk.id = key
+            desk.id = key
             desks.push(desk)
           }
           this.deskList = desks
@@ -97,6 +97,9 @@ export default {
     },
     checkIn(selectedUser) {
       console.log("I'm the check in")
+      axios.patch(`https://s2-move.firebaseio.com/users/${selectedUser.idRef}.json`,
+      {desk: this.selectedDesk})
+
     },
     calculatePosition(xCoord, yCoord, angle) {
       return {
@@ -105,6 +108,9 @@ export default {
         transform: "rotate("+ angle + "deg)"
       }
     }
+  },
+  computed: {
+    ...mapGetters(["getSelectedUser"])
   }
 }
 

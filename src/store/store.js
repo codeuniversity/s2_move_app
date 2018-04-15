@@ -22,10 +22,10 @@ export const store = new Vuex.Store({
 			return state.filteredUsers = Object.values(state.users).filter(user => {
 		    var fullName = `${user.fName} ${user.lName}`;
 		    //search by name
-			  return fullName.toLowerCase().includes(state.searchTerm.toLowerCase())
-			  //search by email
-			  || user.gmailAcc.toLowerCase().includes(state.searchTerm.toLowerCase())
-			  // search by team
+			return fullName.toLowerCase().includes(state.searchTerm.toLowerCase())
+			//search by email
+			|| user.gmailAcc.toLowerCase().includes(state.searchTerm.toLowerCase())
+			// search by team
 		    || user.team.toLowerCase().includes(state.searchTerm.toLowerCase())
 		  })
 		},
@@ -46,7 +46,7 @@ export const store = new Vuex.Store({
 		},
 		getListVisibility(state) {
       		return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
-    }
+    	}
  	},
 	actions: {
 		fetchUsers({commit}) {
@@ -67,7 +67,7 @@ export const store = new Vuex.Store({
 		},
 		checkUserStatus({ commit, state }){
 			return new Promise((resolve, reject) => {
-				firebase.auth().onAuthStateChanged((user) =>{
+				firebase.auth().onAuthStateChanged((user) => {
 					if(user){
 						commit("setAuthUser", user);
 						commit("updateUser", user); //only after auth user is caught, get users from database
@@ -116,7 +116,7 @@ export const store = new Vuex.Store({
 			  	if(user.desk) {
 			      let desk = state.desks[user.desk];
 			      if (desk) {
-				      user.deskref = desk;
+				    user.deskref = desk;
 			      }
 			    }
 			    // if authent. user, add reference to users

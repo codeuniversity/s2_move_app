@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 
 import Header from "./Header.vue"
 import HamburgOttensen from "./maps/HamburgOttensen"
@@ -28,7 +29,21 @@ export default {
     hideMenu() { 
       return this.$store.state.hideMenu;
     }
-  }
+  },
+  methods: {
+    ...mapActions([
+      "fetchUsers", 
+      "fetchDesks", 
+      "checkUserStatus",
+      "fetchCurrentUser"
+    ]),
+  },
+  mounted() {
+    this.fetchUsers();
+    this.fetchDesks();
+    this.checkUserStatus();
+    this.fetchCurrentUser();
+  },
 }  
 
 </script>
