@@ -123,9 +123,7 @@
 </template>
 
 <script>
-// import axios from 'axios';
 
-//import firebase from 'firebase';
 import { mapState } from "vuex";
 
 export default {

@@ -64,27 +64,17 @@ export const store = new Vuex.Store({
 		fetchDesks({commit}) {
 			return desks.getDesks(desks, {commit});
 		},
-		// fetchUpdatedAuthUser({commit},state){
-		// 	return new Promise((resolve, reject) => {
-		// 		 Object.values(state.authUser).forEach(value =>  {
-		// 			if(userref){
-		// 			commit("updateAuthUser");
-		// 		} else {
-		// 			console.log("user was not updated");
-		// 		}
-		// 	});
-		// });
-		// },
-		// checkUpdatedUser({commit, state}){
-		// 	return new Promise((resolve, reject) => {
-		//  		Object.keys(state.users).forEach(user =>{
-		//  			if(user.deskref){
-		//  		 		commit("setAuthUser");
-		//  		 	}
-		//  		});
-		//  	}); 
-		// },
-
+		checkUpdatedUser({commit, state}){
+			return new Promise((resolve, reject) => {
+		 		Object.keys(state.users).forEach(user =>{
+		 			if(user.deskref){
+		 		 		commit("updateAuthUser");
+		 		 	} else {
+		 		 		reject("No desk assigned.")
+		 		 	}
+		 		});
+		 	}); 
+		},
 		checkUserStatus({ commit, state }){
 			return new Promise((resolve, reject) => {
 				firebase.auth().onAuthStateChanged((user) =>{
@@ -98,16 +88,6 @@ export const store = new Vuex.Store({
 					}
 				});
 			});
-		// },
-		// fetchAuthUser({commit, state}){
-		// 	//promise to wait until authUser is set up, before updating authUser
-		// 	return new Promise((resolve, reject) => {
-		// 		if (state.authUser) {
-		// 			commit("updateAuthUser", state.authUser);
-		// 		} else {
-		// 			reject("auth user not set up")
-		// 		}
-			// });
 		}
 	},
 	mutations: {

@@ -90,9 +90,6 @@ export default {
     this.fetchUsers();
     this.fetchDesks();
     this.checkUserStatus();
-    // this.checkUpdatedUser();
-    // this.fetchUpdatedAuthUser();
-    // this.fetchAuthUser();
   },
   methods: {
     ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "checkUserStatus"]),
