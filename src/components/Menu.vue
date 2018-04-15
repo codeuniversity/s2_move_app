@@ -13,13 +13,15 @@
         <h2>{{authUser.displayName}}</h2>
       </div>
 
-<!--       <div class="desk-text">
-        <ul>
-          <li>{{desk.acronym }}</li>
-          <li>{{desk.division}}</li>
-          <li>{{desk.building}}{{desk.level}}</li>
+      <div class="desk-text">
+        <ul >
+          <li v-if="authUser.userref.deskref">{{authUser.userref.deskref.acronym}}</li>
+          <li>{{authUser.userref.division }}</li>
+          <li v-if="authUser.userref.deskref.building">{{authUser.userref.deskref.building}}</li>
+          <li v-if="authUser.userref.deskref">{{authUser.userref.deskref.level}}</li>
+          <li v-else>Not checked in.</li>
         </ul>
-      </div> -->
+      </div>
 
       <!-- default user image -->
       <img src="../assets/icons/default-user-icon.png" alt="default user image">
@@ -157,5 +159,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-@import "../../styles/css/menu.component.css"
+  @import "../../styles/css/menu.component.css"
 </style>

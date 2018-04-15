@@ -13,8 +13,6 @@ export default {
       commit("setUsers", users)
       //promise to update users
       commit('updateUser');
-      //promise to current user
-      commit('fetchCurrentUser');
       })
       .catch(error => console.log(error))
 	   }  

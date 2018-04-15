@@ -85,10 +85,10 @@ export default {
     this.fetchUsers();
     this.fetchDesks();
     this.checkUserStatus();
-    this.fetchCurrentUser();
+    this.fetchAuthUser();
   },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "checkUserStatus","fetchCurrentUser"]),
+    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "checkUserStatus","fetchAuthUser"]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     // refers to global menu state
@@ -106,7 +106,7 @@ export default {
      } 
   },   
   computed: {
-    ...mapGetters(["getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm","getAuthUser", "getCurrentUser"]),
+    ...mapGetters(["getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm","getAuthUser"]),
 
       isListEmpty() {
         return this.getSearchTerm.length >=2 && Object.keys(this.$store.state.filteredUsers).length == 0;

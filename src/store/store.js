@@ -14,8 +14,8 @@ export const store = new Vuex.Store({
 		hideMenu: true,
 		filteredUsers: {},
 		desks: {},
-		authUser:{}, // firebase user object
-		currentUser: {} // filter users by email, depending on auth email
+		authUser:{} // firebase user object
+		// currentUser: {} // filter users by email, depending on auth email
 	},
 	getters: {
 		getFilteredUsers(state) {
@@ -41,9 +41,6 @@ export const store = new Vuex.Store({
 		getDesks(state) {
 			return state.desks;
 		},
-		getCurrentUser(state){
-			return state.currentUser;
-		},
 		getListVisibility(state) {
       return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
     }
@@ -65,12 +62,24 @@ export const store = new Vuex.Store({
 		fetchDesks({commit}) {
 			return desks.getDesks(desks, {commit});
 		},
+		// fetchUpdatedAuthUser({commit},state){
+		// 	return new Promise((resolve, reject) => {
+		// 		 Object.values(state.users).forEach(user =>  {
+		// 			if(state.users.userref){
+		// 			commit("updateAuthUser");
+		// 		} else {
+		// 			console.log("user was not updated");
+		// 		}
+		// 	});
+		// });
+		// },
 		checkUserStatus({ commit, state }){
 			return new Promise((resolve, reject) => {
 				firebase.auth().onAuthStateChanged((user) =>{
 					if(user){
 						commit("setAuthUser", user);
 						commit("updateUser", user); //only after auth user is caught, get users from database
+						commit("updateAuthUser", user);
 						resolve(user);
 					} else {
 						reject("User not logged in")
@@ -78,12 +87,15 @@ export const store = new Vuex.Store({
 				});
 			});
 		},
-		// fetchAuthUser({commit, state}){
-		// 	return currentUser.getCurrentUser({users, commit});
-		// },
-		fetchCurrentUser({commit}, currentUser){
-			commit("fetchCurrentUser", currentUser);
-			console.log("this is fetchCurrentUser action", currentUser)
+		fetchAuthUser({commit, state}){
+			//promise to wait until authUser is set up, before updating authUser
+			return new Promise((resolve, reject) => {
+				if (state.authUser) {
+					commit("updateAuthUser", state.authUser);
+				} else {
+					reject("auth user not set up")
+				}
+			});
 		}
 	},
 	mutations: {
@@ -119,33 +131,21 @@ export const store = new Vuex.Store({
 			      user.deskref = desk;
 		      }
 		    }
-		    // if authent. user, add reference to users
-		    if (state.authUser.email == user.gmailAcc){
-		    	user.authUserRef = state.authUser;
-		    }
 		  })
     },
     setAuthUser( state, authUser ){
     	state.authUser = authUser;
     	console.log("setAuthUser", authUser)
     },
-    //to add authuser reference to auth user 
-    fetchAuthUser(state){
-    	return Object.values(state.users).forEach(user => {
-    		if(user.authUserRef){
-    			let userRef = state.users[user];
-    			authUser.userRef = userRef;
-    		}
-    	})
-    	console.log("updateAuthUser", authUser)
-    },
-    fetchCurrentUser(state) {
-    	return state.currentUser = Object.values(state.users).filter(user => {
-				if (state.authUser.email == user.gmailAcc){
-					state.currentUser = user;
-				}
-    	})
-    	console.log("fetchCurrentUser mutation", currentUser)
-    },
+    //integrates the current user database info into authUser object
+    updateAuthUser(state){
+    	return Object.values(state.users).forEach(user =>  {
+     		if (state.authUser.email == user.gmailAcc){
+     			state.authUser.userref = user;
+     		}
+		  })
+		  console.log("update Auth User", authUser)
+    }
   }
 })
+
