@@ -23,27 +23,32 @@
           <p><a href="#" @click="action(user)">
             <!-- display search list thumbnail -->
             <div class="search__list__thumbnail">
-              <img :src="user.image">
+              <!-- if auth user, show google picture -->
+              <img v-if="authUser.email == user.gmailAcc" :src="authUser.photoURL">
+              <img v-else :src="user.image">
             </div>
             <!-- display search list name-->
             <div class="search__list__name">
-              {{ user.fName }} 
-              {{ user.lName }}
+              <!-- if auth user, show Google name -->
+              <p v-if="authUser.email == user.gmailAcc">{{authUser.displayName }}</p>
+              <p v-else>{{ user.fName }} {{ user.lName }} </p>
             </div>
             <!-- display desk location -->
             <!-- MAKE FIREBASE REQUEST DEPENDING ON USER-->
             <div class="search__list__desk">
+              
               <ul>
                 <li v-if="user.deskref">{{ user.deskref.acronym }}</li>
                 <li>{{ user.division }}</li>
-                <li v-if="user.deskref">{{ user.deskref.building }} {{ user.deskref.level }}</li>
+                <li v-if="user.deskref">{{ user.deskref.building }}</li> 
+                <li v-if="user.deskref">{{ user.deskref.level }}</li>
                 <li v-else>Not checked in.</li>
               </ul>
             </div> 
             </a>
           </p>   
         </div>
-      </div>         
+      </div>
   <!-- MENU TOGGLE BUTTON -->
     <div class="btn" @click="toggleMenu()"></div>
     <!-- NO USER FOUND -->
@@ -71,7 +76,7 @@
 //import firebase from 'firebase';
 import Menu from "./Menu.vue"
 // import axios from "axios"
-import { mapGetters, mapActions } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Search',
@@ -85,10 +90,12 @@ export default {
     this.fetchUsers();
     this.fetchDesks();
     this.checkUserStatus();
-    this.fetchAuthUser();
+    // this.checkUpdatedUser();
+    // this.fetchUpdatedAuthUser();
+    // this.fetchAuthUser();
   },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "checkUserStatus","fetchAuthUser"]),
+    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "checkUserStatus"]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     // refers to global menu state
@@ -106,6 +113,7 @@ export default {
      } 
   },   
   computed: {
+    ...mapState({authUser: state => state.authUser}),
     ...mapGetters(["getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm","getAuthUser"]),
 
       isListEmpty() {

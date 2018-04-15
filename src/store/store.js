@@ -43,6 +43,9 @@ export const store = new Vuex.Store({
 		},
 		getListVisibility(state) {
       return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
+    },
+    getAuthUser(state){
+    	return state.authUser;
     }
  	},
 	actions: {
@@ -64,8 +67,8 @@ export const store = new Vuex.Store({
 		},
 		// fetchUpdatedAuthUser({commit},state){
 		// 	return new Promise((resolve, reject) => {
-		// 		 Object.values(state.users).forEach(user =>  {
-		// 			if(state.users.userref){
+		// 		 Object.values(state.authUser).forEach(value =>  {
+		// 			if(userref){
 		// 			commit("updateAuthUser");
 		// 		} else {
 		// 			console.log("user was not updated");
@@ -73,12 +76,22 @@ export const store = new Vuex.Store({
 		// 	});
 		// });
 		// },
+		// checkUpdatedUser({commit, state}){
+		// 	return new Promise((resolve, reject) => {
+		//  		Object.keys(state.users).forEach(user =>{
+		//  			if(user.deskref){
+		//  		 		commit("setAuthUser");
+		//  		 	}
+		//  		});
+		//  	}); 
+		// },
+
 		checkUserStatus({ commit, state }){
 			return new Promise((resolve, reject) => {
 				firebase.auth().onAuthStateChanged((user) =>{
 					if(user){
 						commit("setAuthUser", user);
-						commit("updateUser", user); //only after auth user is caught, get users from database
+						commit("updateUser", user); //only after auth user is caught, update users from database
 						commit("updateAuthUser", user);
 						resolve(user);
 					} else {
@@ -86,16 +99,16 @@ export const store = new Vuex.Store({
 					}
 				});
 			});
-		},
-		fetchAuthUser({commit, state}){
-			//promise to wait until authUser is set up, before updating authUser
-			return new Promise((resolve, reject) => {
-				if (state.authUser) {
-					commit("updateAuthUser", state.authUser);
-				} else {
-					reject("auth user not set up")
-				}
-			});
+		// },
+		// fetchAuthUser({commit, state}){
+		// 	//promise to wait until authUser is set up, before updating authUser
+		// 	return new Promise((resolve, reject) => {
+		// 		if (state.authUser) {
+		// 			commit("updateAuthUser", state.authUser);
+		// 		} else {
+		// 			reject("auth user not set up")
+		// 		}
+			// });
 		}
 	},
 	mutations: {
@@ -144,7 +157,6 @@ export const store = new Vuex.Store({
      			state.authUser.userref = user;
      		}
 		  })
-		  console.log("update Auth User", authUser)
     }
   }
 })

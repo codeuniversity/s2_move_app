@@ -9,7 +9,7 @@ export default {
       return axios.get("https://s2-move.firebaseio.com/desks.json")
         .then(res => {
               this.desks = res.data
-              commit("setDesks", this.desks)
+              commit("setDesks", this.desks);
               // promise to update user
               commit('updateUser');
             })
