@@ -1,0 +1,41 @@
+.map--wrapper svg {
+  position: relative;
+
+  /*width: 100%;*/
+  height: calc(100vh - 70px);
+  width: auto; 
+}
+/*
+    .mapHB {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        z-index: 0;
+        top: 250px;
+    }
+
+    .myMap {
+        position: relative;
+    }
+
+    .svg-pan-zoom_viewport {
+        max-width: 100%;
+    }
+
+    #svg-pan-zoom-controls {
+        display: none;
+    }
+
+    .floorNavigation {
+        z-index: 200;
+        position:fixed;
+        top: 50%;
+        right:10%;
+    }
+
+    .floorList {
+        position: absolute;
+        width: 30px;
+        z-index: 200;
+    }*/

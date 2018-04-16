@@ -20,7 +20,7 @@ export default {
 
 @font-face {
 font-family: 'MaisonNeue';
-src: url('./assets/fonts/MaisonWEB-Regular.woff2') format('woff2');
+src: url('../static/fonts/maison/MaisonWEB-Regular.woff2') format('woff2');
 font-weight: normal;
 font-style: normal;
 }

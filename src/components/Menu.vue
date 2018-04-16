@@ -17,18 +17,17 @@
         <ul>
           <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.acronym}}</li>
           <li v-if="authUser && authUser.userref && authUser.userref.division">{{authUser.userref.division }}</li>
-          <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.building}}</li>
-          <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.level}}</li>
+          <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.building}} {{authUser.userref.deskref.level}}</li>
           <li v-else>Not checked in.</li>
         </ul>
       </div>
 
       <!-- default user image -->
-      <img src="../assets/icons/default-user-icon.png" alt="default user image">
+      <img src="../../static/images/default-user-icon.png" alt="default user image">
       <!-- user data image -->
-      <img :src="authUser.photoURL" alt="user profile picture">
+      <img :src="authUser.photoURL">
 
-      <img id="btn__close" src="../assets/icons/close-black-icon.png" @click="closeMenu()">
+      <img id="btn__close" src="../../static/images/close-black-icon.png" @click="closeMenu()">
 
     </div>
 
@@ -136,8 +135,6 @@ export default {
   },
   computed:{
   ...mapState({authUser: state => state.authUser})
-  },
-  created () {
   },
   methods: {
     closeMenu () {

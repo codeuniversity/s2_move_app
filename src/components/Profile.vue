@@ -37,15 +37,15 @@
       <!-- display user contact info -->
       <table class="profile__user-contact">
         <tr>
-          <td><img src="../assets/icons/mail-icon.png"></td>
+          <td><img src="../../static/images/mail-icon.png"></td>
           <td><a :href="`mailto:${selectedUser.gmailAcc}`">{{ selectedUser.gmailAcc }}</a></td> 
         </tr>
         <tr>
-          <td><img id="mobile-icon" src="../assets/icons/mobile-icon.png"></td>
+          <td><img id="mobile-icon" src="../../static/images/mobile-icon.png"></td>
           <td><a :href="`tel:${selectedUser.mobile}`">{{ selectedUser.mobile }}</a></td> 
         </tr>
         <tr>
-          <td><img src="../assets/icons/phone-icon.png"></td>
+          <td><img src="../../static/images/phone-icon.png"></td>
           <td><a :href="`tel:${selectedUser.landline}`">{{ selectedUser.landline }}</a></td> 
         </tr>
       </table>
@@ -53,10 +53,10 @@
       <div class="profile__flex-container"></div>
       <!-- display deep link icons -->
       <div class="profile__user-deep-links">
-        <a :href="selectedUser.wiki" target="_blank"><img id="wiki-icon" src="../assets/icons/wikipedia.png"></a>
-        <a :href="selectedUser.googleCal" target="_blank"><img src="../assets/icons/ic-date-range-black-24.png"></a>
-        <a :href="selectedUser.slack" target="_blank"><img src="../assets/icons/slack-mark-monochrome-black.png" target="_blank"></a>
-        <a :href="selectedUser.skillWill" target="_blank"><img src="../assets/icons/skillwill.png"></a>
+        <a :href="selectedUser.wiki" target="_blank"><img id="wiki-icon" src="../../static/images/wikipedia.png"></a>
+        <a :href="selectedUser.googleCal" target="_blank"><img src="../../static/images/ic-date-range-black-24.png"></a>
+        <a :href="selectedUser.slack" target="_blank"><img src="../../static/images/slack-mark-monochrome-black.png" target="_blank"></a>
+        <a :href="selectedUser.skillWill" target="_blank"><img src="../../static/images/skillwill.png"></a>
 
       </div>
   </div>

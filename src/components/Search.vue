@@ -17,7 +17,7 @@
 
       <div class="search__list" v-if="getListVisibility" > 
       <!-- CLEAR SEARCH BUTTON -->
-        <img class="btn__clear-search" src="../assets/icons/close-black-icon.png" @click="resetForm"> 
+        <img class="btn__clear-search" src="../../static/images/close-black-icon.png" @click="resetForm"> 
       <!-- FILTERED LIST -->
         <div class="search__item" v-for="user in getFilteredUsers">
           <p><a href="#" @click="action(user)">
@@ -40,8 +40,7 @@
               <ul>
                 <li v-if="user.deskref">{{ user.deskref.acronym }}</li>
                 <li>{{ user.division }}</li>
-                <li v-if="user.deskref">{{ user.deskref.building }}</li> 
-                <li v-if="user.deskref">{{ user.deskref.level }}</li>
+                <li v-if="user.deskref">{{ user.deskref.building }} {{ user.deskref.level }}</li> 
                 <li v-else>Not checked in.</li>
               </ul>
             </div> 
@@ -63,8 +62,8 @@
       v-if="Object.keys(getSelectedUser).length !== 0" 
       class="btn__clear-search" 
       id="btn__clear-search-profile" 
-      src="../assets/icons/close-black-icon.png" 
-      @click="resetForm"/>
+      src="../../static/images/close-black-icon.png" 
+      @click="resetForm()">
 
   </div>
 
@@ -73,9 +72,7 @@
 
 <script>
 
-//import firebase from 'firebase';
 import Menu from "./Menu.vue"
-// import axios from "axios"
 import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
@@ -86,14 +83,8 @@ export default {
   props: {
     action: Function
   },
-  created() {
-    this.checkUserStatus();
-    this.fetchUsers();
-    this.fetchDesks();
-
-  },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "checkUserStatus"]),
+    ...mapActions(["fetchUsers","updateTerm", "selectUser","fetchDesks", "checkUserStatus"]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     // refers to global menu state
@@ -112,7 +103,7 @@ export default {
   },   
   computed: {
     ...mapState({authUser: state => state.authUser}),
-    ...mapGetters(["getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm","getAuthUser"]),
+    ...mapGetters(["getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm"]),
 
       isListEmpty() {
         return this.getSearchTerm.length >=2 && Object.keys(this.$store.state.filteredUsers).length == 0;

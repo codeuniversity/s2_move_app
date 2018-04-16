@@ -1,7 +1,7 @@
 <template>
 	<div class="login">
-    <img id="s2-logo" src="../assets/images/s-2-logo.png" alt="Sinnerschrader Logo">
-    <img id="move-logo" src="../assets/images/move-logo.png" alt="Sinnerschrader Logo">
+    <img id="s2-logo" src="../../static/images/s-2-logo.png" alt="Sinnerschrader Logo">
+    <img id="move-logo" src="../../static/images/move-logo.png" alt="Sinnerschrader Logo">
 		<h1 class="login__headline"> Login via Google </h1>
     <p class="login__text">Are you looking for a colleague, meeting room or space for a new team at SinnerSchrader?</p>
     <div id="loader">Loading...</div>
