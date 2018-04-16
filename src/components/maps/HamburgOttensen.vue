@@ -103,7 +103,7 @@ export default {
       {desk: this.selectedDesk})
       axios.patch(`https://s2-move.firebaseio.com/desks/${this.selectedDesk}.json`,
       {user: selectedUser.idRef})
-      console.log(selectedUser.idRef)
+      // console.log(selectedUser.idRef)
       // this.fetchUsers()
     },
     calculatePosition(xCoord, yCoord, angle) {
