@@ -57,7 +57,7 @@ export const store = new Vuex.Store({
 		},
 		selectUser({ commit }, selectedUser) {
 			commit("selectUser", selectedUser);	
-			console.log("Hello, this is selectUser", selectedUser)
+			// console.log("Hello, this is selectUser", selectedUser)
 		},
 		fetchFilteredUsers({commit}, filteredUsers) {
 			commit("fetchFilteredUsers", filteredUsers);
@@ -82,7 +82,7 @@ export const store = new Vuex.Store({
 					if(user){
 						commit("setAuthUser", user);
 						commit("updateUser", user); //only after auth user is caught, update users from database
-						commit("updateAuthUser", user);
+						// commit("updateAuthUser", user);
 						resolve(user);
 					} else {
 						reject("User not logged in")
@@ -123,23 +123,30 @@ export const store = new Vuex.Store({
 		      if (desk) {
 			      user.deskref = desk;
 		      }
-
+          //integrates the database user info into the authUser object
           if (state.authUser && state.authUser.email == user.gmailAcc){
             state.authUser.userref = user;
           }
-		    }
-		  });
 
+          // integrates the authent. Google user to user in users object
+          if (state.authUser.email == user.gmailAcc){
+            user.authUserRef = state.authUser;
+		      }
+        }
+		  });
+      //adds userref to desks
       Object.values(state.desks).forEach(desk =>  {
+        if(desk.user) {
+          let user = state.users[desk.user];
+          if (user) {
+            desk.userref = user;
+          }
+        }
       })
     },
     setAuthUser( state, authUser ){
     	state.authUser = authUser;
     	console.log("setAuthUser", authUser)
-    },
-    //integrates the current user database info into authUser object
-    updateAuthUser(state){
-    	// remove me
     }
   }
 })

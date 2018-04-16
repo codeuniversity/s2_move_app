@@ -87,9 +87,10 @@ export default {
     action: Function
   },
   created() {
+    this.checkUserStatus();
     this.fetchUsers();
     this.fetchDesks();
-    this.checkUserStatus();
+
   },
   methods: {
     ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "checkUserStatus"]),

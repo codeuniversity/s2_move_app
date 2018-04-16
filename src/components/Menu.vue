@@ -14,11 +14,11 @@
       </div>
 
       <div class="desk-text">
-        <ul v-if="authUser">
-          <li v-if="authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.acronym}}</li>
-          <li>{{authUser.division }}</li>
-          <li v-if="authUser.userref && authUser.userref.deskref.building">{{authUser.userref.deskref.building}}</li>
-          <li v-if="authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.level}}</li>
+        <ul>
+          <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.acronym}}</li>
+          <li v-if="authUser && authUser.userref && authUser.userref.division">{{authUser.userref.division }}</li>
+          <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.building}}</li>
+          <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.level}}</li>
           <li v-else>Not checked in.</li>
         </ul>
       </div>
@@ -123,7 +123,8 @@
 </template>
 
 <script>
-
+import firebase from 'firebase';
+import firebaseui from 'firebaseui';
 import { mapState } from "vuex";
 
 export default {
@@ -147,7 +148,7 @@ export default {
     },
     logout () {
       firebase.auth().signOut().then(()=>{
-        this.$router.replace('/');
+        this.$router.replace('/login');
         this.closeMenu();
         alert("You're about to sign out.")
         })
