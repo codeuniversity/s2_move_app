@@ -10,15 +10,15 @@
     <!-- USER INFO -->
     <div class="user-info">
       <div class="user-text">
-        <h2>{{authUser.displayName}}</h2>
+        <h2 v-if="authUser">{{authUser.displayName}}</h2>
       </div>
 
       <div class="desk-text">
-        <ul >
-          <li v-if="authUser.userref.deskref">{{authUser.userref.deskref.acronym}}</li>
-          <li>{{authUser.userref.division }}</li>
-          <li v-if="authUser.userref.deskref.building">{{authUser.userref.deskref.building}}</li>
-          <li v-if="authUser.userref.deskref">{{authUser.userref.deskref.level}}</li>
+        <ul v-if="authUser">
+          <li v-if="authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.acronym}}</li>
+          <li>{{authUser.division }}</li>
+          <li v-if="authUser.userref && authUser.userref.deskref.building">{{authUser.userref.deskref.building}}</li>
+          <li v-if="authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.level}}</li>
           <li v-else>Not checked in.</li>
         </ul>
       </div>

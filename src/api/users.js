@@ -13,6 +13,7 @@ export default {
       commit("setUsers", users);
       //promise to update users
       commit('updateUser');
+      // commit('updateAuthUser');
       })
       .catch(error => console.log(error))
 	   }  

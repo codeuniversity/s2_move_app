@@ -36,6 +36,7 @@ export const store = new Vuex.Store({
 		},
 		getUsers(state) {
 			return state.users;
+      console.log(state.users)
 		},
 		getDesks(state) {
 			return state.desks;
@@ -116,14 +117,21 @@ export const store = new Vuex.Store({
     },
     updateUser(state) {
       //assign deskref to user object. Waits for desks and users axios request
-	    return Object.values(state.users).forEach(user =>  {
+	    Object.values(state.users).forEach(user =>  {
 		  	if(user.desk) {
 		      let desk = state.desks[user.desk];
 		      if (desk) {
 			      user.deskref = desk;
 		      }
+
+          if (state.authUser && state.authUser.email == user.gmailAcc){
+            state.authUser.userref = user;
+          }
 		    }
-		  })
+		  });
+
+      Object.values(state.desks).forEach(desk =>  {
+      })
     },
     setAuthUser( state, authUser ){
     	state.authUser = authUser;
@@ -131,11 +139,7 @@ export const store = new Vuex.Store({
     },
     //integrates the current user database info into authUser object
     updateAuthUser(state){
-    	return Object.values(state.users).forEach(user =>  {
-     		if (state.authUser.email == user.gmailAcc){
-     			state.authUser.userref = user;
-     		}
-		  })
+    	// remove me
     }
   }
 })
