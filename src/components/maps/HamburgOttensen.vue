@@ -39,7 +39,7 @@ export default {
   name: "HamburgOttensen",
    data() {
     return {
-	    deskList: [],
+      deskList: [],
       selectedDesk: null,
       showList:false,
       options: [
@@ -103,7 +103,7 @@ export default {
       {desk: this.selectedDesk})
       axios.patch(`https://s2-move.firebaseio.com/desks/${this.selectedDesk}.json`,
       {user: selectedUser.idRef})
-      // console.log(selectedUser.idRef)
+      console.log(selectedUser.idRef)
       // this.fetchUsers()
     },
     calculatePosition(xCoord, yCoord, angle) {
@@ -134,4 +134,3 @@ export default {
 @import "../../../styles/css/ottensen.component.css"
 
 </style>
-

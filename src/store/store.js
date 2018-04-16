@@ -14,8 +14,7 @@ export const store = new Vuex.Store({
 		hideMenu: true,
 		filteredUsers: {},
 		desks: {},
-		authUser:{}, // firebase user object
-		currentUser: {} // filter users by email, depending on auth email
+		authUser:{} // firebase user object
 	},
 	getters: {
 		getFilteredUsers(state) {
@@ -40,9 +39,6 @@ export const store = new Vuex.Store({
 		},
 		getDesks(state) {
 			return state.desks;
-		},
-		getCurrentUser(state){
-			return state.currentUser;
 		},
 		getListVisibility(state) {
       		return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
@@ -120,7 +116,7 @@ export const store = new Vuex.Store({
 			      }
 			    }
 			    // if authent. user, add reference to users
-			    if (state.authUser.email == user.gmailAcc){
+			    if (state.authUser.email == user.gmailAcc) {
 			    	user.authUserRef = state.authUser;
 			    }
 			  })
@@ -138,14 +134,6 @@ export const store = new Vuex.Store({
 	    		}
 	    	})
     		// console.log("updateAuthUser", authUser)
-   		},
-    	fetchCurrentUser(state) {
-	    	return state.currentUser = Object.values(state.users).filter(user => {
-					if (state.authUser.email == user.gmailAcc){
-						state.currentUser = user;
-					}
-	    	})
-    		// console.log("fetchCurrentUser mutation", currentUser)
-    	},
+   		}
   }
 })
