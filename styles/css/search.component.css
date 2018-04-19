@@ -24,7 +24,7 @@ f*, *:before, *:after {
   width: calc(100% - 20px);
   border: none;
   background-color: #f4f7fa;
-  background-image: url('../../src/assets/icons/search-icon.png');
+  background-image: url('../../static/images/search-icon.png');
   background-repeat: no-repeat;
   background-position: 2% 50%;  
 }
@@ -88,7 +88,7 @@ div.btn {
   float: right;
   width: 40px;
   height: 40px;
-  background-image: url("../../src/assets/icons/menu-black-icon.png");
+  background-image: url("../../static/images/menu-black-icon.png");
 }
 
 div.btn:hover {
@@ -122,7 +122,7 @@ div.btn:hover {
 /*make picture width slighty bigger to make 4x3 pics fit into square*/
 .search__list__thumbnail img {
   position: absolute;
-  width: 120%;
+  width: 100%;
   height: auto;
 }
 
@@ -163,7 +163,9 @@ div.btn:hover {
 }
 
 .search__no-user p {
+  position: relative;
   margin: 3px;
+  z-index: 10;
 }
 
 .search__no-user img {

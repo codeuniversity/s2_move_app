@@ -10,23 +10,24 @@
     <!-- USER INFO -->
     <div class="user-info">
       <div class="user-text">
-        <h2>{{authUser.displayName}}</h2>
+        <h2 v-if="authUser">{{authUser.displayName}}</h2>
       </div>
 
-<!--       <div class="desk-text">
+      <div class="desk-text">
         <ul>
-          <li>{{desk.acronym }}</li>
-          <li>{{desk.division}}</li>
-          <li>{{desk.building}}{{desk.level}}</li>
+          <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.acronym}}</li>
+          <li v-if="authUser && authUser.userref && authUser.userref.division">{{authUser.userref.division }}</li>
+          <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.building}} {{authUser.userref.deskref.level}}</li>
+          <li v-else>Not checked in.</li>
         </ul>
-      </div> -->
+      </div>
 
       <!-- default user image -->
-      <img src="../assets/icons/default-user-icon.png" alt="default user image">
+      <img src="../../static/images/default-user-icon.png" alt="default user image">
       <!-- user data image -->
-      <img :src="authUser.photoURL" alt="user profile picture">
+      <img :src="authUser.photoURL">
 
-      <img id="btn__close" src="../assets/icons/close-black-icon.png" @click="closeMenu()">
+      <img id="btn__close" src="../../static/images/close-black-icon.png" @click="closeMenu()">
 
     </div>
 
@@ -121,10 +122,9 @@
 </template>
 
 <script>
-// import axios from 'axios';
-
-//import firebase from 'firebase';
-import { mapState, mapActions, mapGetters } from "vuex";
+import firebase from 'firebase';
+import firebaseui from 'firebaseui';
+import { mapState } from "vuex";
 
 export default {
   name: 'Menu',
@@ -136,8 +136,6 @@ export default {
   computed:{
   ...mapState({authUser: state => state.authUser})
   },
-  created () {
-  },
   methods: {
     closeMenu () {
       // always close submenu when menu is closed
@@ -147,7 +145,7 @@ export default {
     },
     logout () {
       firebase.auth().signOut().then(()=>{
-        this.$router.replace('/');
+        this.$router.replace('/login');
         this.closeMenu();
         alert("You're about to sign out.")
         })
@@ -157,5 +155,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-@import "../../styles/css/menu.component.css"
+  @import "../../styles/css/menu.component.css"
 </style>

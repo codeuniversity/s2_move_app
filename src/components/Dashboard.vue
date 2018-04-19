@@ -13,7 +13,7 @@
 import Header from "./Header.vue"
 import HamburgOttensen from "./maps/HamburgOttensen"
 import Menu from "./Menu.vue"
-
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 
 export default {
@@ -28,7 +28,16 @@ export default {
     hideMenu() { 
       return this.$store.state.hideMenu;
     }
+  },
+  created() {
+    this.checkUserStatus();
+    this.fetchUsers();
+    this.fetchDesks();
+  },
+  methods:{
+    ...mapActions(["fetchUsers","fetchDesks", "checkUserStatus"])
   }
+
 }  
 
 </script>

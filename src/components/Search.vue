@@ -17,33 +17,37 @@
 
       <div class="search__list" v-if="getListVisibility" > 
       <!-- CLEAR SEARCH BUTTON -->
-        <img class="btn__clear-search" src="../assets/icons/close-black-icon.png" @click="resetForm"> 
+        <img class="btn__clear-search" src="../../static/images/close-black-icon.png" @click="resetForm"> 
       <!-- FILTERED LIST -->
         <div class="search__item" v-for="user in getFilteredUsers">
           <p><a href="#" @click="action(user)">
             <!-- display search list thumbnail -->
             <div class="search__list__thumbnail">
-              <img :src="user.image">
+              <!-- if auth user, show google picture -->
+              <img v-if="authUser.email == user.gmailAcc" :src="authUser.photoURL">
+              <img v-else :src="user.image">
             </div>
             <!-- display search list name-->
             <div class="search__list__name">
-              {{ user.fName }} 
-              {{ user.lName }}
+              <!-- if auth user, show Google name -->
+              <p v-if="authUser.email == user.gmailAcc">{{authUser.displayName }}</p>
+              <p v-else>{{ user.fName }} {{ user.lName }} </p>
             </div>
             <!-- display desk location -->
             <!-- MAKE FIREBASE REQUEST DEPENDING ON USER-->
             <div class="search__list__desk">
+              
               <ul>
                 <li v-if="user.deskref">{{ user.deskref.acronym }}</li>
                 <li>{{ user.division }}</li>
-                <li v-if="user.deskref">{{ user.deskref.building }} {{ user.deskref.level }}</li>
+                <li v-if="user.deskref">{{ user.deskref.building }} {{ user.deskref.level }}</li> 
                 <li v-else>Not checked in.</li>
               </ul>
             </div> 
             </a>
           </p>   
         </div>
-      </div>         
+      </div>
   <!-- MENU TOGGLE BUTTON -->
     <div class="btn" @click="toggleMenu()"></div>
     <!-- NO USER FOUND -->
@@ -58,8 +62,8 @@
       v-if="Object.keys(getSelectedUser).length !== 0" 
       class="btn__clear-search" 
       id="btn__clear-search-profile" 
-      src="../assets/icons/close-black-icon.png" 
-      @click="resetForm"/>
+      src="../../static/images/close-black-icon.png" 
+      @click="resetForm()">
 
   </div>
 
@@ -68,10 +72,8 @@
 
 <script>
 
-//import firebase from 'firebase';
 import Menu from "./Menu.vue"
-// import axios from "axios"
-import { mapGetters, mapActions } from 'vuex'
+import { mapState, mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Search',
@@ -81,14 +83,8 @@ export default {
   props: {
     action: Function
   },
-  created() {
-    this.fetchUsers();
-    this.fetchDesks();
-    this.checkUserStatus();
-    this.fetchCurrentUser();
-  },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser", "resetSelectedUser", "fetchFilteredUsers","fetchDesks", "checkUserStatus","fetchCurrentUser"]),
+    ...mapActions(["fetchUsers","updateTerm", "selectUser","fetchDesks", "checkUserStatus"]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     // refers to global menu state
@@ -106,7 +102,8 @@ export default {
      } 
   },   
   computed: {
-    ...mapGetters(["getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm","getAuthUser", "getCurrentUser"]),
+    ...mapState({authUser: state => state.authUser}),
+    ...mapGetters(["getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm"]),
 
       isListEmpty() {
         return this.getSearchTerm.length >=2 && Object.keys(this.$store.state.filteredUsers).length == 0;
