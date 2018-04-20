@@ -14,7 +14,7 @@
 import Header from "./Header.vue"
 import HamburgOttensen from "./maps/HamburgOttensen"
 import Menu from "./Menu.vue"
-import {mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
 	name: "appDashboard",
