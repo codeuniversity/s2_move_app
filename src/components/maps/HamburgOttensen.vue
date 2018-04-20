@@ -97,14 +97,17 @@ export default {
       this.updateTerm('')
       this.selectUser({});
     },
-    checkIn(selectedUser) {
-      console.log("I'm the check in")
+    checkIn(selectedUser, selectedDesk) {
+      // console.log("I'm the check in")
       axios.patch(`https://s2-move.firebaseio.com/users/${selectedUser.idRef}.json`,
       {desk: this.selectedDesk})
       axios.patch(`https://s2-move.firebaseio.com/desks/${this.selectedDesk}.json`,
       {user: selectedUser.idRef})
       console.log(selectedUser.idRef)
+      alert(`You're about to check ${selectedUser.fName} ${selectedUser.lName} in to ${this.selectedDesk}!`);
       // this.fetchUsers()
+
+
     },
     calculatePosition(xCoord, yCoord, angle) {
       return {
@@ -115,12 +118,14 @@ export default {
     },
     findUserImage(deskUser) {
       // console.log(deskUser)
-      var found = this.getUsers.find(function(element) {
+      var found = this.getUsers.find(function(user) {
         // console.log(element)
-        return element.idRef == deskUser
+        return user.idRef == deskUser
       });
-      return found.image;
-    }
+      if(deskUser!==undefined) {
+        return found.image;
+      } 
+    }  
   },
   computed: {
     ...mapGetters(["getSelectedUser", "getUsers"])
