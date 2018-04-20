@@ -42,15 +42,11 @@ export const store = new Vuex.Store({
 			return state.desks;
 		},
 		getListVisibility(state) {
-<<<<<<< HEAD
       		return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
-=======
-      return state.searchTerm.length >=2 && Object.keys(state.selectedUser).length == 0;
-    },
-    getAuthUser(state){
-    	return state.authUser;
->>>>>>> 84d78034c182b79eb3e7445ee68a9f7e4d255d87
-    }
+    	},
+    	getAuthUser(state){
+    		return state.authUser;
+    	}
  	},
 	actions: {
 		fetchUsers({commit}) {
@@ -148,7 +144,6 @@ export const store = new Vuex.Store({
 		},
 		toggleMenu(state) {
 		   state.hideMenu=!state.hideMenu;
-<<<<<<< HEAD
     	},
     	fetchFilteredUsers(state) {
     		state.filteredUsers = fetchFilteredUsers;
@@ -189,13 +184,7 @@ export const store = new Vuex.Store({
 					}
 	    	})
     		console.log("fetchCurrentUser mutation", currentUser)
-    	},
-=======
-    },
-    fetchFilteredUsers(state) {
-    	state.filteredUsers = fetchFilteredUsers;
+    	}
     }
->>>>>>> 84d78034c182b79eb3e7445ee68a9f7e4d255d87
-  }
 })
 
