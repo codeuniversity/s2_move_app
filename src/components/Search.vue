@@ -84,7 +84,10 @@ export default {
     action: Function
   },
   methods: {
-    ...mapActions(["fetchUsers","updateTerm", "selectUser","fetchDesks", "checkUserStatus"]),
+    ...mapActions([
+      "updateTerm",
+      "selectUser", 
+    ]),
     toggleMenu() {
       return this.$store.commit('toggleMenu');
     // refers to global menu state
@@ -104,10 +107,9 @@ export default {
   computed: {
     ...mapState({authUser: state => state.authUser}),
     ...mapGetters(["getFilteredUsers", "getSelectedUser", "getUsers", "getListVisibility", "getSearchTerm"]),
-
-      isListEmpty() {
-        return this.getSearchTerm.length >=2 && Object.keys(this.$store.state.filteredUsers).length == 0;
-      } 
+    isListEmpty() {
+      return this.getSearchTerm.length >=2 && Object.keys(this.$store.state.filteredUsers).length == 0;
+    } 
   }  
 }  
 </script>

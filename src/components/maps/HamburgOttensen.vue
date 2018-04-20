@@ -1,12 +1,14 @@
 <template>
   <div class="map">
-    <div>
+    <div v-if="getUsers.length">
           <a
           href="#"
           class="dropdown-toggle seat" 
           v-for="desk in deskList" 
           @click="handler(desk.id)"
           :style="calculatePosition(desk.xCoord, desk.yCoord, desk.angle)">
+            <img class="seat__image" :src="findUserImage(desk.user)" 
+            :style="`transform: rotate(-${desk.angle}deg)`"/>
           </a> 
           <div class="dropdown"> 
             <ul class="dropdown-menu" v-if="showList"             
@@ -29,7 +31,7 @@
 
 import axios from "axios"
 import Search from "../Search.vue"
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 
 export default {
@@ -37,7 +39,7 @@ export default {
   name: "HamburgOttensen",
    data() {
     return {
-	    deskList: [],
+      deskList: [],
       selectedDesk: null,
       showList:false,
       options: [
@@ -63,16 +65,16 @@ export default {
           const desks = []
           for (let key in data) {
             const desk = data[key]
-            // desk.id = key
+            desk.id = key
             desks.push(desk)
           }
           this.deskList = desks
-            console.log(desks)
+            // console.log(desks)
           })
       .catch(error => console.log(error))
   },
   methods: {
-    ...mapActions(["updateTerm", "selectUser"]),
+    ...mapActions(["updateTerm", "selectUser", "fetchUsers"]),
     selectDesk(deskId) {
       this.selectedDesk = deskId;
       console.log(this.selectedDesk);
@@ -93,10 +95,19 @@ export default {
     },
     resetForm() {
       this.updateTerm('')
-      // this.selectUser({});
+      this.selectUser({});
     },
-    checkIn(selectedUser) {
-      console.log("I'm the check in")
+    checkIn(selectedUser, selectedDesk) {
+      // console.log("I'm the check in")
+      axios.patch(`https://s2-move.firebaseio.com/users/${selectedUser.idRef}.json`,
+      {desk: this.selectedDesk})
+      axios.patch(`https://s2-move.firebaseio.com/desks/${this.selectedDesk}.json`,
+      {user: selectedUser.idRef})
+      console.log(selectedUser.idRef)
+      alert(`You're about to check ${selectedUser.fName} ${selectedUser.lName} in to ${this.selectedDesk}!`);
+      // this.fetchUsers()
+
+
     },
     calculatePosition(xCoord, yCoord, angle) {
       return {
@@ -104,7 +115,20 @@ export default {
         left: xCoord + "px",
         transform: "rotate("+ angle + "deg)"
       }
-    }
+    },
+    findUserImage(deskUser) {
+      // console.log(deskUser)
+      var found = this.getUsers.find(function(user) {
+        // console.log(element)
+        return user.idRef == deskUser
+      });
+      if(deskUser!==undefined) {
+        return found.image;
+      } 
+    }  
+  },
+  computed: {
+    ...mapGetters(["getSelectedUser", "getUsers"])
   }
 }
 
@@ -115,4 +139,3 @@ export default {
 @import "../../../styles/css/ottensen.component.css"
 
 </style>
-

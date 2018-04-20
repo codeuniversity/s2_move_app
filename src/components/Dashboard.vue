@@ -4,7 +4,8 @@
       <app-menu :class="{'menu-visible':hideMenu}"></app-menu>
 			<app-header></app-header>
       <app-hamburg-ottensen></app-hamburg-ottensen>
-		</div>
+<!--       <img src="/static/images/mapedited.svg"/>
+ -->		</div>
 
 </template>
 
@@ -13,8 +14,7 @@
 import Header from "./Header.vue"
 import HamburgOttensen from "./maps/HamburgOttensen"
 import Menu from "./Menu.vue"
-import { mapState, mapGetters, mapActions } from 'vuex';
-
+import {mapActions } from 'vuex';
 
 export default {
 	name: "appDashboard",
@@ -29,15 +29,18 @@ export default {
       return this.$store.state.hideMenu;
     }
   },
-  created() {
-    this.checkUserStatus();
+  methods: {
+    ...mapActions([
+      "fetchUsers", 
+      "fetchDesks", 
+      "checkUserStatus",
+    ]),
+  },
+  mounted() {
     this.fetchUsers();
     this.fetchDesks();
-  },
-  methods:{
-    ...mapActions(["fetchUsers","fetchDesks", "checkUserStatus"])
+    this.checkUserStatus();
   }
-
 }  
 
 </script>
