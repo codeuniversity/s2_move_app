@@ -1,0 +1,159 @@
+<template>
+  <div  class="menu__wrapper">
+
+  <!-- OVERLAY TO TOGGLE MENU -->
+  <div class="menu__toggle" @click="closeMenu()"></div>
+
+  <!-- BURGER MENU -->
+  <div  class="burger-menu">
+
+    <!-- USER INFO -->
+    <div class="user-info">
+      <div class="user-text">
+        <h2 v-if="authUser">{{authUser.displayName}}</h2>
+      </div>
+
+      <div class="desk-text">
+        <ul>
+          <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.acronym}}</li>
+          <li v-if="authUser && authUser.userref && authUser.userref.division">{{authUser.userref.division }}</li>
+          <li v-if="authUser && authUser.userref && authUser.userref.deskref">{{authUser.userref.deskref.building}} {{authUser.userref.deskref.level}}</li>
+          <li v-else>Not checked in.</li>
+        </ul>
+      </div>
+
+      <!-- default user image -->
+      <img src="../../static/images/default-user-icon.png" alt="default user image">
+      <!-- user data image -->
+      <img :src="authUser.photoURL">
+
+      <img id="btn__close" src="../../static/images/close-black-icon.png" @click="closeMenu()">
+
+    </div>
+
+<!-- NAVIGATION MENU -->
+    <div class="nav">
+      <ul class="nav__locations">
+
+      <!-- HAMBURG ROUTE -->
+        <router-link
+          to="/hamburg" 
+          tag="li" 
+          active-class="active"
+          @click.native="showSubmenu=!showSubmenu">
+          <a>HAMBURG</a>
+        </router-link>
+
+          <!-- SUBMENU 1 / Select location -->
+          <ul :class="{'submenu-visible':showSubmenu}" class="submenu">
+            <router-link 
+              to="/hamburg/ottensen" 
+              tag="li"
+              active-class="active" exact
+              @click.native="closeMenu()">
+              <a>S2 &amp S2S</a>
+            </router-link>
+
+            <router-link
+              to="/hamburg/schlump" 
+              tag="li"
+              active-class="active" exact
+              @click.native="closeMenu()">
+              <a>S2C</a>
+            </router-link>
+          </ul>
+
+        
+      <!-- BERLIN ROUTE -->
+        <router-link 
+          to="/berlin"
+          tag="li" 
+          active-class="active" exact
+          @click.native="closeMenu()">
+          <a>BERLIN</a>
+        </router-link>
+
+      <!-- FRANKFURT ROUTE -->
+        <router-link 
+          to="/frankfurt"
+          tag="li"
+          active-class="active"
+          @click.native="closeMenu()">
+          <a>FRANKFURT</a>
+        </router-link>
+
+      <!-- MUNICH ROUTE -->
+        <router-link 
+          to="/munich" 
+          tag="li" 
+          active-class="active" exact
+          @click.native="closeMenu()">
+          <a>MUNICH</a>
+        </router-link>
+
+              <!-- FRANKFURT ROUTE -->
+        <router-link 
+          to="/prague"
+          tag="li"
+          active-class="active" exact
+          @click.native="closeMenu">
+          <a>PRAGUE</a>
+        </router-link>
+
+      </ul>
+
+    </div>
+      <div class="menu__feedback">
+        <div class="feedback-visible">
+        <a href="mailto:marie.klaus@code.berlin?subject= Move App user feedback" id="feedback"><b>Feedback</b></a>
+        <router-link 
+          to="/login"
+          tag="li"
+          active-class="active"
+          @click.native="logout()">
+          <a id="menu__logout"><b>Logout</b></a>
+        </router-link>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</template>
+
+<script>
+import firebase from 'firebase';
+import firebaseui from 'firebaseui';
+import { mapState } from "vuex";
+
+export default {
+  name: 'Menu',
+  data () {
+    return {
+      showSubmenu: false
+    }
+  },
+  computed:{
+  ...mapState({authUser: state => state.authUser})
+  },
+  methods: {
+    closeMenu () {
+      // always close submenu when menu is closed
+      this.showSubmenu = false;
+      // hide the menu, refer to global state
+      return this.$store.state.hideMenu = !this.$store.state.hideMenu;
+    },
+    logout () {
+      firebase.auth().signOut().then(()=>{
+        this.$router.replace('/login');
+        this.closeMenu();
+        alert("You're about to sign out.")
+        })
+    }
+  },
+}
+</script>
+
+<style lang="css" scoped>
+  @import "../../styles/css/menu.component.css"
+</style>

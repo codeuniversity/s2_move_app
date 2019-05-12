@@ -1,25 +1,40 @@
 <template>
-	<div>
-		<div>
-			<app-search></app-search>
-		</div>
-
-		<h1> I am the header and I only show up together with my siblings (Profile, Search and Maps) whenever you sign in. If you don't, then you;'re not to be trusted</h1>
-	</div>	
+	<div class="app-header">
+    <div class="app-header__logos">
+      <img id="s2-logo" src="../../static/images/s-2-logo.png" alt="Sinnerschrader Logo">
+      <img id="move-logo" src="../../static/images/move-logo.png" alt="Sinnerschrader Logo">
+    </div>
+		<app-search :action="selectUser">
+				<app-profile :selectedUser="getSelectedUser"></app-profile>
+		</app-search>
+	</div>
 </template>
 
 <script>
 
 import Search from "./Search.vue"
+import Profile from "./Profile.vue"
+import { mapGetters, mapActions } from "vuex"
+
 
 export default {
-	name: "appHeader",
-	components: {
-		
-		"appSearch": Search
-
+	name: "Header",
+	components: {		
+		"appSearch": Search,
+		"appProfile": Profile
+	},
+	computed: {
+		...mapGetters(["getSelectedUser"])			
+	},
+	methods: {
+		...mapActions(["selectUser"])
 	}	
 }
-
 </script>
+
+<style lang="css">
+
+@import "../../styles/css/header.component.css"
+
+</style>
 

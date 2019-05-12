@@ -1,24 +1,52 @@
 <template>
-	<div>
-		<div>
+		<div class="dashboard">
+      <!-- App menu -->
+      <app-menu :class="{'menu-visible':hideMenu}"></app-menu>
 			<app-header></app-header>
-		</div>
-			<app-profile></app-profile>
-	</div>
+      <app-hamburg-ottensen></app-hamburg-ottensen>
+<!--       <img src="/static/images/mapedited.svg"/>
+ -->		</div>
+
 </template>
 
 <script>
 
 import Header from "./Header.vue"
-import Profile from "./Profile.vue"
-
+import HamburgOttensen from "./maps/HamburgOttensen"
+import Menu from "./Menu.vue"
+import { mapActions } from 'vuex';
 
 export default {
 	name: "appDashboard",
 	components: {
 		"appHeader": Header,
-		"appProfile": Profile
-	}
-}
+		"appHamburgOttensen": HamburgOttensen,
+    "appMenu": Menu
+	},
+   computed: {
+    // refers to global state of menu
+    hideMenu() { 
+      return this.$store.state.hideMenu;
+    }
+  },
+  methods: {
+    ...mapActions([
+      "fetchUsers", 
+      "fetchDesks", 
+      "checkUserStatus",
+    ]),
+  },
+  mounted() {
+    this.fetchUsers();
+    this.fetchDesks();
+    this.checkUserStatus();
+  }
+}  
 
 </script>
+
+<style lang="css" scoped>
+
+@import "../../styles/css/dashboard.component.css"
+
+</style>

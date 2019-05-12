@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240px" height="80px" viewBox="0 0 240 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Rectangle 2</title>
+    <defs>
+        <rect id="path-1" x="360" y="460" width="240" height="80"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desk-" transform="translate(-360.000000, -460.000000)">
+            <g id="Rectangle-2">
+                <use fill="#758985" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#054B79" stroke-width="1" x="360.5" y="460.5" width="239" height="79"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

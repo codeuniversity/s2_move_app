@@ -1,5 +1,6 @@
-[
-  {
+users: {
+
+    user1: {
     "fName": "Julian",
     "lName": "Kodlin",
     "id": "5d8f6a73-8d3a-4519-ba6c-7846e129edb8",
@@ -389,4 +390,4 @@
     "wiki":"https://de.wikipedia.org/wiki/SinnerSchrader",
     "image": "https://www.disneyclips.com/imagesnewb/images/daisysecret.gif"
     }
-]
+}

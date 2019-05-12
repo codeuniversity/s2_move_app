@@ -52,27 +52,27 @@ module.exports = {
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.(png|jpe?g|gif)(\?.*)?$/,
+        test: /\.(png|svg|jpe?g|gif)(\?.*)?$/,
         loader: 'url-loader',
         options: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
-      {
-        test: /\.svg$/,
-        loader: 'vue-svg-loader', // `vue-svg` for webpack 1.x
-        options: {
-          // optional [svgo](https://github.com/svg/svgo) options
-          svgo: {
-            plugins: [
-              {removeDoctype: true},
-              {removeComments: true},
-              {cleanupIDs: false}
-            ]
-          }
-        }
-      },
+      // {
+      //   test: /\.svg$/,
+      //   loader: 'vue-svg-loader', // `vue-svg` for webpack 1.x
+      //   options: {
+      //     // optional [svgo](https://github.com/svg/svgo) options
+      //     svgo: {
+      //       plugins: [
+      //         {removeDoctype: true},
+      //         {removeComments: true},
+      //         {cleanupIDs: false}
+      //       ]
+      //     }
+      //   }
+      // },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',

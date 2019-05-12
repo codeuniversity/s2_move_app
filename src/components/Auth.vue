@@ -1,11 +1,14 @@
 <template>
 	<div class="login">
-		<h3> Sign In </h3>
-		<div id="firebaseui-auth-container">
-		</div>		
-		<div id="loader">Loading...</div>
+    <img id="s2-logo" src="../../static/images/s-2-logo.png" alt="Sinnerschrader Logo">
+    <img id="move-logo" src="../../static/images/move-logo.png" alt="Sinnerschrader Logo">
+		<h1 class="login__headline"> Login via Google </h1>
+    <p class="login__text">Are you looking for a colleague, meeting room or space for a new team at SinnerSchrader?</p>
+    <div id="loader">Loading...</div>
+		<div id="firebaseui-auth-container"></div>
+    <h1 class="button__text">Let's go!</h1>
+    <br>
 	</div>	
-
 </template>
 
 <script>
@@ -25,7 +28,10 @@ export default {
         callbacks: {
           signInSuccess: function(currentUser, credential, redirectUrl) {
             // Return type determines whether we continue the redirect automatically or whether we leave that to developer to handle.
+            var user = signInSucces.currentUser;
+            console.log("Successfully logged in.", user)
             return true;
+            // console.log("Hello", currentUser.email)
           },
           signInFailure: function(error) {
             // Some unrecoverable error occurred during sign-in.
@@ -51,44 +57,20 @@ export default {
 	         firebase.auth.GoogleAuthProvider.PROVIDER_ID
 	      ]
       	};
-
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
-      // The start method will wait until the DOM is loaded.
-      ui.start('#firebaseui-auth-container', uiConfig);
+        let ui = firebaseui.auth.AuthUI.getInstance();
+        if(!ui) {
+          ui = new firebaseui.auth.AuthUI(firebase.auth());
+        }
+        ui.start('#firebaseui-auth-container', uiConfig);
+        //This is what it was like before and it won"t work because it says the AuthUI instance is duplicated
+        // var ui = new firebaseui.auth.AuthUI(firebase.auth());
+        // ui.start('#firebaseui-auth-container', uiConfig);
 	}
 }
-
 </script>
 
-<style>
+<style lang="css">
 
+@import "../../styles/css/auth.component.css"
 
-span.firebaseui-idp-text.firebaseui-idp-text-short {
-	display: none;
-}
-li.firebaseui-list-item {
-	list-style-type: none;
-	margin-top: -50px;
-}
-
-button.firebaseui-idp-button.mdl-button.mdl-js-button.mdl-button--raised.firebaseui-idp-google.firebaseui-id-idp-button {
-	margin:0, auto;
-}
-
-ul.firebaseui-idp-list {
-
-}
-
-div#firebaseui-auth-container {
-	width: 300px;
-	margin-left: 500px;
-	margin-top: 100px;
-}
-
-h3 {
-	width: 300px;
-	margin-left: 615px;
-	margin-top: 30px;
-}
-</style> 
-
+</style>
